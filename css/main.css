@@ -1959,7 +1959,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c970ff;
+  background: #c9ffc2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3258,10 +3258,10 @@ pre .javascript .function {
   }
 }
 .header-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .highlight {
   position: relative;
@@ -3296,4 +3296,11 @@ pre .javascript .function {
 }
 .highlight:hover .btn-copy {
   opacity: 1;
+}
+body {
+  background: url("/images/222.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
