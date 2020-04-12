@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>零件尺寸标注</title>
+    <url>/%E5%A4%A7%E5%AD%A6/undefined/</url>
+    <content><![CDATA[<p>制图…直接上图吧</p>
+<p><img src="/images/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>大学</category>
+      </categories>
+      <tags>
+        <tag>制图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown 学习</title>
-    <url>/2020/04/12/markdown-%E5%AD%A6%E4%B9%A0/</url>
+    <url>/cmpr/markdown-study/</url>
     <content><![CDATA[<h1>基础</h1>
 <h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
 <h3 id="1-使用-和-标记一级和二级标题"><a class="header-anchor" href="#1-使用-和-标记一级和二级标题">¶</a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3>
@@ -99,6 +112,45 @@ python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 </blockquote>
 </blockquote>
 <h3 id="区块中使用列表"><a class="header-anchor" href="#区块中使用列表">¶</a>区块中使用列表</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块中使用列表<br>
+1.第一项<br>
+2.第二项</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<h3 id="列表中使用区块"><a class="header-anchor" href="#列表中使用区块">¶</a>列表中使用区块</h3>
+<p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<ul>
+<li>第一项
+<blockquote>
+<p>第一个区块<br>
+第二个区块</p>
+</blockquote>
+</li>
+<li>第二项</li>
+</ul>
+<h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
+<p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="代码区块"><a class="header-anchor" href="#代码区块">¶</a>代码区块</h3>
+<p>使用<code>```</code>包裹一段代码，并指定一种语言(也可以不指定)</p>
+<p>效果图：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h2>
+<p>链接使用方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure>
+<p>效果:<br>
+这是一个链接<a href="www.baidu.com">百度</a></p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -116,7 +168,7 @@ python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
   </entry>
   <entry>
     <title>大物-气体动理论</title>
-    <url>/2020/04/11/%E5%A4%A7%E7%89%A9-%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA/</url>
+    <url>/%E5%A4%A7%E5%AD%A6/undefined/</url>
     <content><![CDATA[<p>话不多说，直接上思维导图。</p>
 <p><img src="/images/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA.jpg" alt=""></p>
 ]]></content>
@@ -125,19 +177,6 @@ python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
       </categories>
       <tags>
         <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>零件尺寸标注</title>
-    <url>/2020/04/12/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8/</url>
-    <content><![CDATA[<p>制图…直接上图吧</p>
-<p><img src="/images/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>大学</category>
-      </categories>
-      <tags>
-        <tag>制图</tag>
       </tags>
   </entry>
 </search>
