@@ -1,82 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>科学上网</title>
-    <url>/nothings/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
-    <content><![CDATA[<p>科学上网,更 <del>搞笑</del> 高效的运用Google浏览器</p>
-<p>本教程分为四个方面：</p>
-<p>准备工作</p>
-<p>服务器的购买</p>
-<p>在<code>Centos7</code>下部署<code>V2ray</code></p>
-<p>在你自己的电脑上使用<code>V2ray</code></p>
-<p>下面让我们开始吧</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，这套教程下面都是在外网操作的，所以你得有科学上网工具才能进行如下的操作，如果有科学上网工具，那么就请跳过第一步(谁还不是从买别人的VPN过来的呢？)</p>
-<p>首先打开这个网站  &lt; sstz.info &gt;  掠影网络</p>
-<p>注册登录</p>
-<p><img src="/images/科学上网/hape.png" alt="hape"></p>
-<p>因为我们不能去外网就行下面的操作，所以需要先购买一个<code>VPN</code>，红色箭头处买最便宜的.</p>
-<p>黑色箭头处是配置教程.配置成功后就可以开始下面的步骤了.</p>
-<h2 id="服务器的购买"><a href="#服务器的购买" class="headerlink" title="服务器的购买"></a>服务器的购买</h2><p>推荐在<code>Vultr</code>上购买<del>大家都推荐这个</del>反正只要是国外的服务器就可以了</p>
-<p>其实搬瓦工的更加好一点儿，但是太贵了.贫穷劝退</p>
-<p>主要是<code>Vultr</code>现在冲10美元(约70人民币左右)送100美元，相当于到手就有110美元，而且<code>Vultr</code>是按时收费，可能听到按时收费大家可能会觉得很贵，但是真的很便宜，<del>况且你还有100美元呢</del>，而且如果你不想要用时可以将服务器暂停服务.</p>
-<p>其他的服务器厂商也可以，我没用过，自己考虑</p>
-<h3 id="服务器建立"><a href="#服务器建立" class="headerlink" title="服务器建立"></a>服务器建立</h3><p><a href="https://www.bilibili.com/video/BV1pb411s7VZ?from=search&amp;seid=8283200479731741201" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1pb411s7VZ?from=search&amp;seid=8283200479731741201</a></p>
-<p>观看前面几分钟的服务器的购买和建立就可以了</p>
-<p>然后</p>
-<p><img src="/images/科学上网/2.jpg" alt="2"></p>
-<p>点进去之后就是你服务器的基本配置</p>
-<p><img src="/images/科学上网/3.png" alt="·"></p>
-<p><code>IP Address</code>是服务器的<code>ip</code>地址  </p>
-<p><code>Username</code>是你的用户名</p>
-<p><code>password</code>是密码</p>
-<p>这三样东西后面都需要用到</p>
-<h2 id="在Centos-7下部署V2ray"><a href="#在Centos-7下部署V2ray" class="headerlink" title="在Centos 7下部署V2ray"></a>在Centos 7下部署V2ray</h2><p>因为服务器是国外的，我们只有通过SSH客户端来连接到国外的<code>VPS</code>服务器,推荐使用<code>Xshell</code>来操作，使用方法参考<a href="https://jingyan.baidu.com/article/6181c3e0f7928a152ff1536e.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/6181c3e0f7928a152ff1536e.html</a></p>
-<p>最好记住密码，以免每次登陆都要重新输入一遍</p>
-<h3 id="矫正时间"><a href="#矫正时间" class="headerlink" title="矫正时间"></a>矫正时间</h3><p>不要问，照做就可以了</p>
-<p>在<code>xshell6</code>中依次输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">date -R</span><br><span class="line">cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">date -R</span><br></pre></td></tr></table></figure>
-<p>输入之后如果时间和你电脑<code>Windows</code>上的一样就说明成功了</p>
-<h3 id="安装V2ray"><a href="#安装V2ray" class="headerlink" title="安装V2ray"></a>安装V2ray</h3><p>在<code>xshell</code>终端输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)</span><br></pre></td></tr></table></figure>
-<p><img src="/images/科学上网/4.png" alt="4"></p>
-<p>出现白色箭头所指的东西即安装成功</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>xshell6</code>中输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;v2ray&#x2F;config.json</span><br></pre></td></tr></table></figure>
-<p>按一下<code>i</code>键进入编辑(这属于Linux简单命令)</p>
-<p>将光标移动到文档最后，移动到不能移动为止,然后一直按住<code>退格键</code>，全部删除即可</p>
-<p>将下面信息粘贴到刚才删除的地方去<strong>并且进行合理的配置</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log&quot;: &#123;</span><br><span class="line">    &quot;loglevel&quot;: &quot;warning&quot;,</span><br><span class="line">    &quot;access&quot;: &quot;&#x2F;var&#x2F;log&#x2F;v2ray&#x2F;access.log&quot;, </span><br><span class="line">    &quot;error&quot;: &quot;&#x2F;var&#x2F;log&#x2F;v2ray&#x2F;error.log&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;inbounds&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;port&quot;: 10086,  &#x2F;&#x2F; 服务器监听端口</span><br><span class="line">      &quot;protocol&quot;: &quot;vmess&quot;, &#x2F;&#x2F; 主传入协议</span><br><span class="line">      &quot;settings&quot;: &#123;</span><br><span class="line">        &quot;clients&quot;: [</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;id&quot;: &quot;a3467fdc-b6c4-4a24-8904-d003be772d63&quot;,  &#x2F;&#x2F; 用户id，自行修改</span><br><span class="line">            &quot;alterId&quot;: 100</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;streamSettings&quot;: &#123;</span><br><span class="line">        &quot;network&quot;: &quot;mkcp&quot;,  &#x2F;&#x2F; 此处的 mkcp 也可写成 kcp，两种写法效果一样</span><br><span class="line">        &quot;kcpSettings&quot;: &#123;</span><br><span class="line">          &quot;uplinkCapacity&quot;: 5,</span><br><span class="line">          &quot;downlinkCapacity&quot;: 100,</span><br><span class="line">          &quot;congestion&quot;: true,</span><br><span class="line">          &quot;header&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;none&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;outbounds&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;protocol&quot;: &quot;freedom&quot;,</span><br><span class="line">      &quot;settings&quot;: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一般要修改的只有<code>id</code>，id去这个网站上生成一个<a href="https://www.uuidgenerator.net/" target="_blank" rel="noopener">https://www.uuidgenerator.net/</a></p>
-<p><img src="/images/科学上网/5.png" alt="5"></p>
-<p>将原来文档中的<code>id</code>替换成生成的<code>id</code>，这个<code>id</code>下面还要使用，保存一下.</p>
-<p>配置文件改好后使用下面<code>V2Ray</code>管理命令中的 <strong>重启</strong>命令，重启后再使用<strong>查看状态</strong>命令，其它命令供你参考，这里暂时不用。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#启动 V2Ray</span><br><span class="line">service v2ray start</span><br><span class="line">#暂停 V2Ray</span><br><span class="line">service v2ray stop</span><br><span class="line">#查看 V2Ray 状态</span><br><span class="line">service v2ray status</span><br><span class="line">#重启 V2Ray</span><br><span class="line">service v2ray restart</span><br><span class="line">#重装 V2Ray</span><br><span class="line">service v2ray reload</span><br><span class="line">#强制重装 V2Ray</span><br><span class="line">service v2ray force-reload</span><br></pre></td></tr></table></figure>
-<p>查看状态，如果出现下面有绿色的<code>running</code>就可以了</p>
-<p><img src="/images/科学上网/6.png" alt="6"></p>
-<p>因为是使用Centos 7系统，所以需要防火墙放行端口，否则会连接不上，命令如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#放行10086端口TCP、UDP传输，这个10086跟你前面设置的端口对上</span><br><span class="line">firewall-cmd --permanent --add-port&#x3D;10086&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --permanent --add-port&#x3D;10086&#x2F;udp --permanent</span><br><span class="line">#放行后重新载入防火墙以使配置生效</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">#要查看所以已经开放的端口可使用下面命令</span><br><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-<p><u>别光复制，也要看里面的内容，然后做适当的修改</u></p>
-<h2 id="在Windows-你自己的电脑-上使用V2ray"><a href="#在Windows-你自己的电脑-上使用V2ray" class="headerlink" title="在Windows(你自己的电脑)上使用V2ray"></a>在Windows(你自己的电脑)上使用V2ray</h2><p>因为在准备工作中你已经下了<code>V2ray</code>所以只要打开这个软件进行配置就可以了</p>
-<p><img src="/images/科学上网/7.png" alt="7"></p>
-<p><img src="/images/科学上网/8.png" alt="8"></p>
-<p>然后进行你的网速测试</p>
-<p><img src="/images/科学上网/10.png" alt="10"></p>
-<p>点击绿色的那儿等一会儿出来紫色的东西就是配置成功了</p>
-<p>同理,如果你是mac电脑也是这样的配置的</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>手机端还没有尝试的，后面会陆续尝试一下……</p>
-]]></content>
-      <categories>
-        <category>nothings</category>
-      </categories>
-      <tags>
-        <tag>科学上网</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大物-气体动理论</title>
     <url>/UN/%E5%A4%A7%E7%89%A9-%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<p>话不多说，直接上思维导图。</p>
-<p><img src="/images/气体动理论.jpg" alt=""></p>
+<p><img src="/images/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>UN</category>
@@ -86,86 +14,211 @@
       </tags>
   </entry>
   <entry>
+    <title>零件尺寸标注</title>
+    <url>/UN/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8/</url>
+    <content><![CDATA[<p>制图…直接上图吧</p>
+<p><img src="/images/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>UN</category>
+      </categories>
+      <tags>
+        <tag>制图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux主要目录</title>
+    <url>/Linux/Linux%E4%B8%BB%E8%A6%81%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="Linux主要目录"><a class="header-anchor" href="#Linux主要目录">¶</a>Linux主要目录</h2>
+<h3 id=""><a class="header-anchor" href="#">¶</a>/</h3>
+<p>/:根目录</p>
+<p>一般根目录只存放目录，在<code>Linux</code>下有且只有一个根目录，所有的东西都是从这里开始的</p>
+<ul>
+<li>当在终端里输入<code>/home</code>，其实是在告诉电脑，先从<code>/</code>(根目录)开始，在进入到<code>home</code>目录</li>
+</ul>
+<h3 id="bin-usr-bin"><a class="header-anchor" href="#bin-usr-bin">¶</a>/bin,/usr/bin</h3>
+<p>可执行的二进制文件的目录，如常用的命令<code>ls</code>,<code>tar</code>,<code>mv</code>,<code>cat</code>等</p>
+<h3 id="boot"><a class="header-anchor" href="#boot">¶</a>/boot</h3>
+<p>放置<code>Linux</code>系统启动时用到的一些文件,如<code>Linux</code>的内核文件:<code>/boot/vmlinux</code>，系统引导器<code>/boot/grub</code></p>
+<h3 id="dev"><a class="header-anchor" href="#dev">¶</a>/dev</h3>
+<p>存放Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>入门学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown 学习</title>
     <url>/cmpr/markdown-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="1-使用-和-标记一级和二级标题"><a href="#1-使用-和-标记一级和二级标题" class="headerlink" title="1.使用=和-标记一级和二级标题"></a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
-<p>效果图如下<br><img src="/images/markdown/1.png" alt=""></p>
-<h3 id="2-使用-号标记"><a href="#2-使用-号标记" class="headerlink" title="2.使用#号标记"></a>2.使用<code>#</code>号标记</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1>基础</h1>
+<h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
+<h3 id="1-使用-和-标记一级和二级标题"><a class="header-anchor" href="#1-使用-和-标记一级和二级标题">¶</a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
+<p>效果图如下
+<img src="/images/markdown/1.png" alt=""></p>
+<h3 id="2-使用-号标记"><a class="header-anchor" href="#2-使用-号标记">¶</a>2.使用<code>#</code>号标记</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
 <p>注：每个<code>#</code>号后最好都有一个空格</p>
-<p>效果图如下<br><img src="/images/markdown/2.png" alt=""></p>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h3 id="1-段落"><a href="#1-段落" class="headerlink" title="1.段落"></a>1.段落</h3><p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong>  </p>
-<h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><p>可以使用如下字体<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure><br>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法<br>效果图如下<br><em>斜体</em><br>_斜体_<br><strong>粗斜体</strong><br><strong>粗斜体</strong><br><strong><em>粗斜体</em></strong><br><strong>_粗斜体_</strong><br>注:下划线都是英文的下划线  </p>
-<h3 id="3-分隔线"><a href="#3-分隔线" class="headerlink" title="3.分隔线"></a>3.分隔线</h3><p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure></p>
-<p>效果图  </p>
-<p><img src="/images/markdown/3.png" alt="">  </p>
-<h3 id="4-删除线"><a href="#4-删除线" class="headerlink" title="4.删除线"></a>4.删除线</h3><p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就<del>可以了<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure><br>效果图<br>hape<br>~~hape</del></p>
-<h3 id="5-下划线"><a href="#5-下划线" class="headerlink" title="5.下划线"></a>5.下划线</h3><p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
+<p>效果图如下
+<img src="/images/markdown/2.png" alt=""></p>
+<h2 id="段落"><a class="header-anchor" href="#段落">¶</a>段落</h2>
+<h3 id="1-段落"><a class="header-anchor" href="#1-段落">¶</a>1.段落</h3>
+<p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong></p>
+<h3 id="2-字体"><a class="header-anchor" href="#2-字体">¶</a>2.字体</h3>
+<p>可以使用如下字体</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure>
+<p>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法
+效果图如下
+<em>斜体</em>
+<em>斜体</em>
+<strong>粗斜体</strong>
+<strong>粗斜体</strong>
+<em><strong>粗斜体</strong></em>
+<em><strong>粗斜体</strong></em><br>
+注:下划线都是英文的下划线</p>
+<h3 id="3-分隔线"><a class="header-anchor" href="#3-分隔线">¶</a>3.分隔线</h3>
+<p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/images/markdown/3.png" alt=""></p>
+<h3 id="4-删除线"><a class="header-anchor" href="#4-删除线">¶</a>4.删除线</h3>
+<p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就~~可以了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure>
+<p>效果图
+hape
+<s>hape</s></p>
+<h3 id="5-下划线"><a class="header-anchor" href="#5-下划线">¶</a>5.下划线</h3>
+<p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;xxxx&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-<p>效果:<br><u>xxx</u> </p>
-<h3 id="6-脚注"><a href="#6-脚注" class="headerlink" title="6.脚注"></a>6.脚注</h3><p>脚注是对文本的补充说明:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure></p>
-<p>效果图:<br>python:<sup><a href="#fn_python" id="reffn_python">python</a></sup></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>效果:
+<u>xxx</u></p>
+<h3 id="6-脚注"><a class="header-anchor" href="#6-脚注">¶</a>6.脚注</h3>
+<p>脚注是对文本的补充说明:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure>
+<p>效果图:<br>
+python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
 <p>显示结果:</p>
 <ul>
 <li>第一项</li>
 <li>第二项</li>
-<li>第三项  </li>
+<li>第三项</li>
 </ul>
 <ul>
 <li>第一项</li>
 <li>第二项</li>
-<li>第三项  </li>
+<li>第三项</li>
 </ul>
 <ul>
 <li>第一项</li>
 <li>第二项</li>
-<li>第三项<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3>列表嵌套只需在子列表中的选项添加四个空格即可<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
-显示结果:<br>1.第一项:<ul>
-<li>嵌套在第一项中的第一个元素  </li>
-<li>嵌套在第一项中的第二个元素  </li>
+<li>第三项</li>
 </ul>
-</li>
+<h3 id="列表嵌套"><a class="header-anchor" href="#列表嵌套">¶</a>列表嵌套</h3>
+<p>列表嵌套只需在子列表中的选项添加四个空格即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
+<p>显示结果:<br>
+1.第一项:</p>
+<ul>
+<li>嵌套在第一项中的第一个元素</li>
+<li>嵌套在第一项中的第二个元素</li>
 </ul>
 <p>2.第二项:</p>
 <ul>
 <li>嵌套在第二项中的第一个元素</li>
 <li>嵌套在第二项中的第二个元素</li>
 </ul>
-<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号 </p>
+<h2 id="区块"><a class="header-anchor" href="#区块">¶</a>区块</h2>
+<p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块应用</span><br></pre></td></tr></table></figure>
-<p>区块嵌套<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure><br>效果图:  </p>
+<p>区块嵌套</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure>
+<p>效果图:</p>
 <blockquote>
 <p>最外层</p>
 <blockquote>
 <p>第一层嵌套</p>
 <blockquote>
 <p>第二层嵌套</p>
-<h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
-<p>效果:<br>区块中使用列表<br>1.第一项<br>2.第二项</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="区块中使用列表"><a class="header-anchor" href="#区块中使用列表">¶</a>区块中使用列表</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块中使用列表
+1.第一项
+2.第二项</p>
 <ul>
 <li>第一项</li>
 <li>第二项</li>
-<li>第三项 </li>
+<li>第三项</li>
 </ul>
 </blockquote>
-</blockquote>
-</blockquote>
-<h3 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h3><p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure><br>效果:</p>
+<h3 id="列表中使用区块"><a class="header-anchor" href="#列表中使用区块">¶</a>列表中使用区块</h3>
+<p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
 <ul>
-<li>第一项<blockquote>
-<p>第一个区块<br>第二个区块</p>
+<li>第一项
+<blockquote>
+<p>第一个区块
+第二个区块</p>
 </blockquote>
 </li>
 <li>第二项</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure></p>
-<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>使用<code>``` </code>包裹一段代码，并指定一种语言(也可以不指定)</p>
-<p>效果图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>链接使用方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure><br>例如:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure><br>效果:<br>这是一个链接<a href="www.baidu.com">百度</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>用法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure><br>效果:<br>| 表头 | 表头|<br>| —— | —— |<br>| 单元格 | 单元格 |<br>| 单元格 | 单元格 |</p>
-<h3 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式:"></a>对齐方式:</h3><p><code>-:</code>设置内容和标题栏居右对齐<br><code>:-</code>设置内容和标题栏居左对齐<br><code>:-:</code>设置内容和标题栏居中对齐<br>实现如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure><br>效果图   </p>
-<div class="table-container">
+<h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
+<p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="代码区块"><a class="header-anchor" href="#代码区块">¶</a>代码区块</h3>
+<p>使用<code>```</code>包裹一段代码，并指定一种语言(也可以不指定)</p>
+<p>效果图：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h2>
+<p>链接使用方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure>
+<p>效果:
+这是一个链接<a href="www.baidu.com">百度</a></p>
+<h2 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h2>
+<p>用法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h2>
+<p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对齐方式"><a class="header-anchor" href="#对齐方式">¶</a>对齐方式:</h3>
+<p><code>-:</code>设置内容和标题栏居右对齐<br>
+<code>:-</code>设置内容和标题栏居左对齐
+<code>:-:</code>设置内容和标题栏居中对齐
+实现如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
 <table>
 <thead>
 <tr>
@@ -187,30 +240,27 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><h2 id="支持HTML元素"><a href="#支持HTML元素" class="headerlink" title="支持HTML元素"></a>支持HTML元素</h2><p>很多HTML元素都能在markdown文件中使用</p>
-<p>在更新中…….</p>
-<h3 id="做思维导图"><a href="#做思维导图" class="headerlink" title="做思维导图"></a>做思维导图</h3><p>不想做了……</p>
-<h3 id="公式编辑"><a href="#公式编辑" class="headerlink" title="公式编辑"></a>公式编辑</h3><p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…..</p>
+<h1>进阶</h1>
+<h2 id="支持HTML元素"><a class="header-anchor" href="#支持HTML元素">¶</a>支持HTML元素</h2>
+<p>很多HTML元素都能在markdown文件中使用</p>
+<p>在更新中…</p>
+<h3 id="做思维导图"><a class="header-anchor" href="#做思维导图">¶</a>做思维导图</h3>
+<p>不想做了…</p>
+<h3 id="公式编辑"><a class="header-anchor" href="#公式编辑">¶</a>公式编辑</h3>
+<p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一种编程语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>cmpr</category>
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>零件尺寸标注</title>
-    <url>/UN/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8/</url>
-    <content><![CDATA[<p>制图…..直接上图吧</p>
-<p><img src="/images/零件尺寸标注.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>UN</category>
-      </categories>
-      <tags>
-        <tag>制图</tag>
       </tags>
   </entry>
 </search>
