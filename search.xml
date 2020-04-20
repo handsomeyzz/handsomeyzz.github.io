@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>大物-气体动理论</title>
-    <url>/UN/%E5%A4%A7%E7%89%A9-%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>话不多说，直接上思维导图。</p>
-<p><img src="/images/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>UN</category>
-      </categories>
-      <tags>
-        <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>零件尺寸标注</title>
-    <url>/UN/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8/</url>
-    <content><![CDATA[<p>制图…直接上图吧</p>
-<p><img src="/images/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>UN</category>
-      </categories>
-      <tags>
-        <tag>制图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux主要目录</title>
     <url>/Linux/Linux%E4%B8%BB%E8%A6%81%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<h2 id="Linux主要目录"><a class="header-anchor" href="#Linux主要目录">¶</a>Linux主要目录</h2>
@@ -41,7 +15,35 @@
 <h3 id="boot"><a class="header-anchor" href="#boot">¶</a>/boot</h3>
 <p>放置<code>Linux</code>系统启动时用到的一些文件,如<code>Linux</code>的内核文件:<code>/boot/vmlinux</code>，系统引导器<code>/boot/grub</code></p>
 <h3 id="dev"><a class="header-anchor" href="#dev">¶</a>/dev</h3>
-<p>存放Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备</p>
+<p>存放Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount/dev/cdrom/mnt</code></p>
+<h3 id="etc"><a class="header-anchor" href="#etc">¶</a>/etc</h3>
+<p>系统配置文件的存放目录，不建议在此目录下存放可执行文件，重要的配置文件有</p>
+<ul>
+<li><code>/etc/inittab</code></li>
+<li><code>/etc/fstab</code></li>
+<li><code>/etc/init.d</code></li>
+<li><code>/etc/X11</code></li>
+<li><code>/etc/sysconfig</code></li>
+<li><code>/etc/xinetd.d</code></li>
+</ul>
+<h3 id="home"><a class="header-anchor" href="#home">¶</a>/home</h3>
+<p>系统默认的用户家目录，新增用户账号是，用户的家目录都存放在此目录下</p>
+<ul>
+<li><code>~</code>表示当前用户的家目录</li>
+<li><code>~edu</code>表示用户<code>edu</code>的家目录</li>
+</ul>
+<h3 id="lib，-usr-lib，-usr-local-lib"><a class="header-anchor" href="#lib，-usr-lib，-usr-local-lib">¶</a>/lib，/usr/lib，/usr/local/lib</h3>
+<p>系统使用的函数库的目录，程序在执行的过程中，需要调用一些额外的参数时需要函数库的协助</p>
+<h3 id="lost-fount"><a class="header-anchor" href="#lost-fount">¶</a>/lost+fount</h3>
+<p>系统异常产生错误时，会有一些遗失的片段放置于此目录下</p>
+<h3 id="mnt-media"><a class="header-anchor" href="#mnt-media">¶</a>/mnt,/media</h3>
+<p>光盘默认挂载点，通常光盘挂载与<code>/mnt/cdrom</code>下，也不一定，可以选择任意位置进行挂载</p>
+<h3 id="opt"><a class="header-anchor" href="#opt">¶</a>/opt</h3>
+<p>给主机额外安装软件所摆放的目录</p>
+<h3 id="proc"><a class="header-anchor" href="#proc">¶</a>/proc</h3>
+<p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放在内存中，所以不占用磁盘空间，比较重要的文件有:<code>/proc/cpuinfo</code>,<code>/proc/interrupts</code>,<code>proc/dma</code>,<code>proc/ioports</code>,``/proc/net/*</p>
+<h3 id="root"><a class="header-anchor" href="#root">¶</a>/root</h3>
+<p>系统管理员的root的家目录</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -261,6 +263,222 @@ python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux简单命令</title>
+    <url>/Linux/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="常用Linux命令的基本使用"><a class="header-anchor" href="#常用Linux命令的基本使用">¶</a>常用Linux命令的基本使用</h2>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ls</td>
+<td>list</td>
+<td style="text-align:left">查看当前文件夹下的内容</td>
+</tr>
+<tr>
+<td>02</td>
+<td>pwd</td>
+<td>print work directory</td>
+<td style="text-align:left">查看当前所在文件夹</td>
+</tr>
+<tr>
+<td>03</td>
+<td>cd[目录名]</td>
+<td>change directory</td>
+<td style="text-align:left">切换文件夹</td>
+</tr>
+<tr>
+<td>04</td>
+<td>touch[文件名]</td>
+<td>touch</td>
+<td style="text-align:left">如果文件不存在，新建文件</td>
+</tr>
+<tr>
+<td>05</td>
+<td>mkdir[目录名]</td>
+<td>make directory</td>
+<td style="text-align:left">创建目录</td>
+</tr>
+<tr>
+<td>06</td>
+<td>rm[文件名]</td>
+<td>remove</td>
+<td style="text-align:left">删除指定的文件名</td>
+</tr>
+<tr>
+<td>07</td>
+<td>clear</td>
+<td>clear</td>
+<td style="text-align:left">清屏</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>小技巧</p>
+<ul>
+<li><code>ctrl + shift + =</code>放大终端窗口的字体显示</li>
+<li><code>ctrl + -</code>缩小终端窗口的字体显示</li>
+</ul>
+</blockquote>
+<h2 id="Linux终端命令格式"><a class="header-anchor" href="#Linux终端命令格式">¶</a>Linux终端命令格式</h2>
+<h3 id="终端命令格式"><a class="header-anchor" href="#终端命令格式">¶</a>终端命令格式</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
+<p>解释:</p>
+<ul>
+<li><code>command</code> :命令名，相应功能的英文单词火单词的缩写</li>
+<li><code>[-options]</code>:选项，可用来对命令进行控制，也可以省略</li>
+<li><code>parameter</code>：传给命令的参数，可以是<strong>零个</strong>，<strong>一个</strong>或者<strong>多个</strong></li>
+</ul>
+<p><code>[]</code>代表可选</p>
+<h3 id="查阅帮助信息"><a class="header-anchor" href="#查阅帮助信息">¶</a>查阅帮助信息</h3>
+<h4 id="–help"><a class="header-anchor" href="#–help">¶</a>–help</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command --help</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<ul>
+<li>提示<code>command</code>命令中的帮助信息</li>
+</ul>
+<h3 id="man"><a class="header-anchor" href="#man">¶</a>man</h3>
+<p><code>man command</code></p>
+<p>说明：</p>
+<ul>
+<li>查阅<code>command</code>命令的使用手册</li>
+</ul>
+<blockquote>
+<p><code>man</code>是<code>manual</code>的缩写，是<code>Linux</code>的一个<strong>手册</strong>，包含了绝大部分的命令，函数的详细说明</p>
+</blockquote>
+<p>使用<code>man</code>时的操作间</p>
+<table>
+<thead>
+<tr>
+<th><strong>操作键盘</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空格键</td>
+<td>显示手册的下一屏</td>
+</tr>
+<tr>
+<td>Enter键</td>
+<td>一次滚动手册页的一行</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件和目录常用命令"><a class="header-anchor" href="#文件和目录常用命令">¶</a>文件和目录常用命令</h2>
+<ul>
+<li>查看内容
+<ul>
+<li><code>ls</code></li>
+</ul>
+</li>
+<li>切换目录
+<ul>
+<li><code>cd</code></li>
+</ul>
+</li>
+<li>创建和删除操作
+<ul>
+<li><code>touch</code></li>
+<li><code>rm</code></li>
+<li><code>mkdir</code></li>
+</ul>
+</li>
+<li>拷贝和移动文件
+<ul>
+<li><code>cp</code></li>
+<li><code>mv</code></li>
+</ul>
+</li>
+<li>查看文件内容
+<ul>
+<li><code>cat</code></li>
+<li><code>more</code></li>
+<li><code>grep</code></li>
+</ul>
+</li>
+<li>其他
+<ul>
+<li><code>echo</code></li>
+<li>重定向<code>&gt;</code>和<code>&gt;&gt;</code></li>
+<li>管道<code>|</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="查看目录内容"><a class="header-anchor" href="#查看目录内容">¶</a>查看目录内容</h2>
+<h3 id="1-1终端使用技巧"><a class="header-anchor" href="#1-1终端使用技巧">¶</a>1.1终端使用技巧</h3>
+<h4 id="自动补全"><a class="header-anchor" href="#自动补全">¶</a>自动补全</h4>
+<ul>
+<li>在敲出<code>文件</code>/<code>目录</code>/<code>命令</code>的前几个字母之后，按下<code>tab</code>键盘
+<ul>
+<li>如果输入的没有歧义，系统会自动补全</li>
+<li>如果还存在其他<code>文件</code>/<code>目录</code>/<code>命令</code>，在按一下<code>tab</code>键，系统会提示可能存在的命令</li>
+</ul>
+</li>
+</ul>
+<h4 id="曾经使用过的命令"><a class="header-anchor" href="#曾经使用过的命令">¶</a>曾经使用过的命令</h4>
+<ul>
+<li>按<code>上</code>/<code>下</code>光标可以在曾经使用过的命令之间来回切换</li>
+<li>如果想要退出选择，并且不想执行当前选中的命令，可以按<code>ctrl + c</code></li>
+</ul>
+<h3 id="1-2ls命令说明"><a class="header-anchor" href="#1-2ls命令说明">¶</a>1.2ls命令说明</h3>
+<ul>
+<li><code>ls</code>是英文单词<code>list</code>的</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>简单命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大物-气体动理论</title>
+    <url>/UN/%E5%A4%A7%E7%89%A9-%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>话不多说，直接上思维导图。</p>
+<p><img src="/images/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>UN</category>
+      </categories>
+      <tags>
+        <tag>大物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>零件尺寸标注</title>
+    <url>/UN/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8/</url>
+    <content><![CDATA[<p>制图…直接上图吧</p>
+<p><img src="/images/%E9%9B%B6%E4%BB%B6%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>UN</category>
+      </categories>
+      <tags>
+        <tag>制图</tag>
       </tags>
   </entry>
 </search>
