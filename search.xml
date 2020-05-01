@@ -1,9 +1,683 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux主要目录</title>
+    <url>/Linux/Linux%E4%B8%BB%E8%A6%81%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="Linux主要目录"><a class="header-anchor" href="#Linux主要目录">¶</a>Linux主要目录</h2>
+<h3 id=""><a class="header-anchor" href="#">¶</a>/</h3>
+<p>/:根目录</p>
+<p>一般根目录只存放目录，在<code>Linux</code>下有且只有一个根目录，所有的东西都是从这里开始的</p>
+<ul>
+<li>当在终端里输入<code>/home</code>，其实是在告诉电脑，先从<code>/</code>(根目录)开始，在进入到<code>home</code>目录</li>
+</ul>
+<h3 id="bin-usr-bin"><a class="header-anchor" href="#bin-usr-bin">¶</a>/bin,/usr/bin</h3>
+<p>可执行的二进制文件的目录，如常用的命令<code>ls</code>,<code>tar</code>,<code>mv</code>,<code>cat</code>等</p>
+<h3 id="boot"><a class="header-anchor" href="#boot">¶</a>/boot</h3>
+<p>放置<code>Linux</code>系统启动时用到的一些文件,如<code>Linux</code>的内核文件:<code>/boot/vmlinux</code>，系统引导器<code>/boot/grub</code></p>
+<h3 id="dev"><a class="header-anchor" href="#dev">¶</a>/dev</h3>
+<p>存放Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount/dev/cdrom/mnt</code></p>
+<h3 id="etc"><a class="header-anchor" href="#etc">¶</a>/etc</h3>
+<p>系统配置文件的存放目录，不建议在此目录下存放可执行文件，重要的配置文件有</p>
+<ul>
+<li><code>/etc/inittab</code></li>
+<li><code>/etc/fstab</code></li>
+<li><code>/etc/init.d</code></li>
+<li><code>/etc/X11</code></li>
+<li><code>/etc/sysconfig</code></li>
+<li><code>/etc/xinetd.d</code></li>
+</ul>
+<h3 id="home"><a class="header-anchor" href="#home">¶</a>/home</h3>
+<p>系统默认的用户家目录，新增用户账号是，用户的家目录都存放在此目录下</p>
+<ul>
+<li><code>~</code>表示当前用户的家目录</li>
+<li><code>~edu</code>表示用户<code>edu</code>的家目录</li>
+</ul>
+<h3 id="lib，-usr-lib，-usr-local-lib"><a class="header-anchor" href="#lib，-usr-lib，-usr-local-lib">¶</a>/lib，/usr/lib，/usr/local/lib</h3>
+<p>系统使用的函数库的目录，程序在执行的过程中，需要调用一些额外的参数时需要函数库的协助</p>
+<h3 id="lost-fount"><a class="header-anchor" href="#lost-fount">¶</a>/lost+fount</h3>
+<p>系统异常产生错误时，会有一些遗失的片段放置于此目录下</p>
+<h3 id="mnt-media"><a class="header-anchor" href="#mnt-media">¶</a>/mnt,/media</h3>
+<p>光盘默认挂载点，通常光盘挂载与<code>/mnt/cdrom</code>下，也不一定，可以选择任意位置进行挂载</p>
+<h3 id="opt"><a class="header-anchor" href="#opt">¶</a>/opt</h3>
+<p>给主机额外安装软件所摆放的目录</p>
+<h3 id="proc"><a class="header-anchor" href="#proc">¶</a>/proc</h3>
+<p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放在内存中，所以不占用磁盘空间，比较重要的文件有:<code>/proc/cpuinfo</code>,<code>/proc/interrupts</code>,<code>proc/dma</code>,<code>proc/ioports</code>,``/proc/net/*</p>
+<h3 id="root"><a class="header-anchor" href="#root">¶</a>/root</h3>
+<p>系统管理员的root的家目录</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>入门学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown 学习</title>
+    <url>/cmpr/markdown-%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1>基础</h1>
+<h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
+<h3 id="1-使用-和-标记一级和二级标题"><a class="header-anchor" href="#1-使用-和-标记一级和二级标题">¶</a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
+<p>效果图如下
+<img src="/images/markdown/1.png" alt=""></p>
+<h3 id="2-使用-号标记"><a class="header-anchor" href="#2-使用-号标记">¶</a>2.使用<code>#</code>号标记</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>注：每个<code>#</code>号后最好都有一个空格</p>
+<p>效果图如下
+<img src="/images/markdown/2.png" alt=""></p>
+<h2 id="段落"><a class="header-anchor" href="#段落">¶</a>段落</h2>
+<h3 id="1-段落"><a class="header-anchor" href="#1-段落">¶</a>1.段落</h3>
+<p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong></p>
+<h3 id="2-字体"><a class="header-anchor" href="#2-字体">¶</a>2.字体</h3>
+<p>可以使用如下字体</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure>
+<p>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法
+效果图如下
+<em>斜体</em>
+<em>斜体</em>
+<strong>粗斜体</strong>
+<strong>粗斜体</strong>
+<em><strong>粗斜体</strong></em>
+<em><strong>粗斜体</strong></em><br>
+注:下划线都是英文的下划线</p>
+<h3 id="3-分隔线"><a class="header-anchor" href="#3-分隔线">¶</a>3.分隔线</h3>
+<p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/images/markdown/3.png" alt=""></p>
+<h3 id="4-删除线"><a class="header-anchor" href="#4-删除线">¶</a>4.删除线</h3>
+<p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就~~可以了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure>
+<p>效果图
+hape
+<s>hape</s></p>
+<h3 id="5-下划线"><a class="header-anchor" href="#5-下划线">¶</a>5.下划线</h3>
+<p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;xxxx&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+<p>效果:
+<u>xxx</u></p>
+<h3 id="6-脚注"><a class="header-anchor" href="#6-脚注">¶</a>6.脚注</h3>
+<p>脚注是对文本的补充说明:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure>
+<p>效果图:<br>
+python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>显示结果:</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h3 id="列表嵌套"><a class="header-anchor" href="#列表嵌套">¶</a>列表嵌套</h3>
+<p>列表嵌套只需在子列表中的选项添加四个空格即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
+<p>显示结果:<br>
+1.第一项:</p>
+<ul>
+<li>嵌套在第一项中的第一个元素</li>
+<li>嵌套在第一项中的第二个元素</li>
+</ul>
+<p>2.第二项:</p>
+<ul>
+<li>嵌套在第二项中的第一个元素</li>
+<li>嵌套在第二项中的第二个元素</li>
+</ul>
+<h2 id="区块"><a class="header-anchor" href="#区块">¶</a>区块</h2>
+<p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块应用</span><br></pre></td></tr></table></figure>
+<p>区块嵌套</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure>
+<p>效果图:</p>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="区块中使用列表"><a class="header-anchor" href="#区块中使用列表">¶</a>区块中使用列表</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块中使用列表
+1.第一项
+2.第二项</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<h3 id="列表中使用区块"><a class="header-anchor" href="#列表中使用区块">¶</a>列表中使用区块</h3>
+<p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<ul>
+<li>第一项
+<blockquote>
+<p>第一个区块
+第二个区块</p>
+</blockquote>
+</li>
+<li>第二项</li>
+</ul>
+<h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
+<p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="代码区块"><a class="header-anchor" href="#代码区块">¶</a>代码区块</h3>
+<p>使用<code>```</code>包裹一段代码，并指定一种语言(也可以不指定)</p>
+<p>效果图：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h2>
+<p>链接使用方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure>
+<p>效果:
+这是一个链接<a href="www.baidu.com">百度</a></p>
+<h2 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h2>
+<p>用法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h2>
+<p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对齐方式"><a class="header-anchor" href="#对齐方式">¶</a>对齐方式:</h3>
+<p><code>-:</code>设置内容和标题栏居右对齐<br>
+<code>:-</code>设置内容和标题栏居左对齐
+<code>:-:</code>设置内容和标题栏居中对齐
+实现如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">单元格</td>
+<td style="text-align:left">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:right">单元格</td>
+<td style="text-align:left">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<h1>进阶</h1>
+<h2 id="支持HTML元素"><a class="header-anchor" href="#支持HTML元素">¶</a>支持HTML元素</h2>
+<p>很多HTML元素都能在markdown文件中使用</p>
+<p>在更新中…</p>
+<h3 id="做思维导图"><a class="header-anchor" href="#做思维导图">¶</a>做思维导图</h3>
+<p>不想做了…</p>
+<h3 id="公式编辑"><a class="header-anchor" href="#公式编辑">¶</a>公式编辑</h3>
+<p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一种编程语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>cmpr</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统基础</title>
+    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="操作系统的功能"><a class="header-anchor" href="#操作系统的功能">¶</a>操作系统的功能</h2>
+<ul>
+<li>处理机管理</li>
+<li>存储器管理</li>
+<li>设备管理</li>
+<li>文件管理</li>
+<li>用户接口</li>
+</ul>
+<h2 id="操作系统类型"><a class="header-anchor" href="#操作系统类型">¶</a>操作系统类型</h2>
+<ul>
+<li>
+<p>单用户系统</p>
+<p><strong>一台</strong>处理机只支持<strong>一个</strong>用户程序</p>
+</li>
+<li>
+<p>批处理系统</p>
+<p>用户将一批作业提交给操作系统后<strong>不再干预</strong>，由操作系统控制它们自动运行。<strong>人机不交互</strong></p>
+</li>
+<li>
+<p>分时操作系统</p>
+<p>把处理机的运行时间<strong>分成很短的时间片</strong>，按时间片轮流把处理机分配给各联机作业使用。</p>
+</li>
+<li>
+<p>网络操作系统</p>
+<p>一种在通常操作系统功能的基础上提供<strong>网络通信</strong>和<strong>网络服务</strong>功能的操作系统</p>
+</li>
+<li>
+<p>分布式操作系统</p>
+<p>以计算机网络为基础的，讲物理上分布的具有<strong>自治功能</strong>的数据处理系统或计算机系统互联起来的操作系统</p>
+</li>
+<li>
+<p>嵌入式操作系统</p>
+<p>运行在<strong>嵌入式智能芯片</strong>环境中，对整个智能芯片及其它所操作、控制的各种部件装置等资源进行统一协调、处理、指挥和控制。</p>
+</li>
+</ul>
+<h2 id="进程"><a class="header-anchor" href="#进程">¶</a>进程</h2>
+<p>进行资源分配和调度的使用。</p>
+<p>进程的组成：</p>
+<ul>
+<li>程序</li>
+<li>数据集合</li>
+<li>进程控制块PCB</li>
+</ul>
+<p>为了描述和控制进程的运行，系统为每个进程定义了一个数据结构--------进程控制块<code>PCB</code>。它是进程重要的组成部分，它记录了操作系统所需的、用于描述进程的当前状态和控制进程的全部信息。操作系统就是根据进程的<code>PCB</code>来感知进程的存在，并依此对进程进行管理和控制。</p>
+<p><strong><code>PCB</code>是进程存在的唯一标识</strong></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" alt="1"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-1587971806115.png" alt="2"></p>
+<h2 id="PV操作"><a class="header-anchor" href="#PV操作">¶</a>PV操作</h2>
+<p>P操作是阻塞，V操作是唤醒</p>
+<p>P操作：</p>
+<ul>
+<li>将信号量S的值减少1，即 S = S-1</li>
+<li>如果S&gt;=0,则该进程继续执行，否则该进程置为等待状态</li>
+</ul>
+<p>V操作：</p>
+<ul>
+<li>将信号量S的值加1，即S = S+1</li>
+<li>如果S&gt;0该进程继续执行，否则说明有等待队列中有等待进程，需要唤醒等待进程。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png" alt="3"></p>
+<h2 id="存储管理"><a class="header-anchor" href="#存储管理">¶</a>存储管理</h2>
+<h3 id="逻辑管理"><a class="header-anchor" href="#逻辑管理">¶</a>逻辑管理</h3>
+<p><code>CPU</code>所生成的地址。逻辑地址是内部和变成使用的、并不唯一。例如，你在C语言指针变成中，可以读取指针变量本身值(&amp;操作)，实际上这个值就是逻辑地址，它是相对于你当前进程数据段的地址(偏移地址)，不和绝对物理地址想干。</p>
+<h3 id="物理地址"><a class="header-anchor" href="#物理地址">¶</a>物理地址</h3>
+<p>加载到内存地址寄存器中的地址，内存单元的真正地址。</p>
+<h3 id="重定位"><a class="header-anchor" href="#重定位">¶</a>重定位</h3>
+<h4 id="静态重定位"><a class="header-anchor" href="#静态重定位">¶</a>静态重定位</h4>
+<p>静态重定位是在程序执行之前进行重定位，它是根据装配模块将要装入的内存起始位置，直接修改装配模块中的有关使用地址的命令</p>
+<p>例如，MOV    AC，[500]</p>
+<p>静态重定位有着无需硬件支持的<strong>优点</strong>,但存在着如下的<strong>缺点</strong>：</p>
+<ul>
+<li>程序重定位之后就不能再内存中班中了</li>
+<li>要求程序的存储空间是连续的，不能把程序放在若干个不连续的区域内。</li>
+</ul>
+<h4 id="动态重定位"><a class="header-anchor" href="#动态重定位">¶</a>动态重定位</h4>
+<p>不是在程序执行之前而是在程序执行过程中进行地址重定位。更确切的说，是在<code>CPU</code>每次访问内存单元前才进行地址变换，<strong>需要硬件支持</strong></p>
+<p>优点：</p>
+<ul>
+<li>程序占用的内存空间动态可变，不必连续存放在一处。</li>
+<li>比较同意实现几个进程对统一程序副本的共享使用。</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>需要附加的硬件支持，增加了机器成本，而且实现存储管理的软件算法比较复杂。</li>
+</ul>
+<p><strong>现在一般计算机系统中都采用动态重定位方法。</strong></p>
+<h3 id="分区管理"><a class="header-anchor" href="#分区管理">¶</a>分区管理</h3>
+<table>
+<thead>
+<tr>
+<th>固定分区</th>
+<th><strong>静态分区</strong>，作业装入之前划分，大小固定，内存利用率不高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可变分区</td>
+<td><strong>动态分区</strong>，碎片多。首次适应算法，最佳适应算法，最坏适应算法</td>
+</tr>
+<tr>
+<td>可重定位分区</td>
+<td>合并零散空间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分页管理"><a class="header-anchor" href="#分页管理">¶</a>分页管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png" alt="4"></p>
+<h3 id="分段存储管理"><a class="header-anchor" href="#分段存储管理">¶</a>分段存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.png" alt="5"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.png" alt="6"></p>
+<h3 id="段页式存储管理"><a class="header-anchor" href="#段页式存储管理">¶</a>段页式存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.png" alt="7"></p>
+<h2 id="设备管理"><a class="header-anchor" href="#设备管理">¶</a>设备管理</h2>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.png" alt="8"></p>
+<p>在计算机中，I/O系统可以有5种不同的工作方式，分别是</p>
+<ul>
+<li>程序控制方式</li>
+<li>程序中断方式</li>
+<li>DMA工作方式</li>
+<li>通道方式</li>
+<li>I/O处理机</li>
+</ul>
+<h4 id="程序控制方式"><a class="header-anchor" href="#程序控制方式">¶</a>程序控制方式</h4>
+<ul>
+<li>
+<p>无条件传送方式</p>
+<p>I/O端口总是准备好接受主机的输出数据，或是总是准备好想主机输入数据，而cpu在需要时，随时直接利用I/O指令访问对应的I/O端口，实现与外设的数据交换。优点是软、硬件结构简单，缺点是对时序要求高，只是用与简单的I/O控制</p>
+</li>
+<li>
+<p>程序查询方式</p>
+<p>程序查询方式也称为程序轮询方式，该方式采用用户程序直接控制主机与外部设备之间输入/输出操作。CPU必须不停的循环测试I/O设备的状态端口，当发现设备处于准备好(Ready)状态是，CPU就可以与I/O设备进行数据存取操作。这种方式下的CPU与I/O设备是串行工作的。</p>
+</li>
+</ul>
+<h4 id="终端方式"><a class="header-anchor" href="#终端方式">¶</a>终端方式</h4>
+<p>当I/O设备结束(完成、特殊或异常)是，就会向CPU发出终端请求信号，CPU收到信号就可以才去相应措施。当某个进程要启动某个设备室，CPU就向相应的设备控制器发出一条设备I/O启动指令，然后CPU又返回做原来的工作。CPU与I/O设备可以并行工作，与程序查询方式相比，大大提高了CPU的利用率。</p>
+<h4 id="DMA-直接内存存取-方式"><a class="header-anchor" href="#DMA-直接内存存取-方式">¶</a>DMA(直接内存存取)方式</h4>
+<p>DMA方式也称为直接主存存取方式，其思想是：允许主存储器和I/O设备之间通过“DMA控制器(DMAC)”直接进行批量数据交换，除了在数据传输开始和结束是，整个过程无需CPU的干预</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.png" alt="9"></p>
+<h4 id="通道控制方式"><a class="header-anchor" href="#通道控制方式">¶</a>通道控制方式</h4>
+<p>在一定的硬件基础上利用软件手段实现I/O的控制和传送，更多地免去了CPU的接入，使主机与外设并行工作程度更高</p>
+<h4 id="I-O处理机"><a class="header-anchor" href="#I-O处理机">¶</a>I/O处理机</h4>
+<p>指专门负责输入/输出的处理机。可以有独立的存储器、运算部件和指令控制部件。</p>
+<h2 id="文件管理"><a class="header-anchor" href="#文件管理">¶</a>文件管理</h2>
+<h4 id="文件的逻辑结构"><a class="header-anchor" href="#文件的逻辑结构">¶</a>文件的逻辑结构</h4>
+<p>文件的逻辑组织是为了方便用户使用。一般文件的逻辑结构可以分文两种：无结构的字符流文件和有结构的记录文件。记录文件由记录组成，即文件内的信息划分成多个记录，以记录为单位组织的使用信息。</p>
+<p>记录文件有：</p>
+<ul>
+<li>
+<p>顺序文件</p>
+<p>大多数文件是顺序文件。顺序文件的记录定长，记录中的数据项的类型长度和次序固定，一般还有一个可以唯一标识记录的数据项，称为键(key)，记录是按键值的约定次序组织的。顺序文件常用于批处理应用，对于查询或更新某个记录的处理性能不太好</p>
+</li>
+<li>
+<p>索引顺序文件</p>
+</li>
+<li>
+<p>索引文件</p>
+</li>
+<li>
+<p>直接文件</p>
+<p>直接文件又称哈希(Hash)文件。记录以他们直接访问存储设备上的物理地址直接(随机地)访问。直接文件常用语需要高速访问文件而且每次仅访问一条记录的应用中。</p>
+</li>
+</ul>
+<h4 id="文件的物理结构"><a class="header-anchor" href="#文件的物理结构">¶</a>文件的物理结构</h4>
+<p>文件的物理结构是指文件在存储设备上的存放方法。文件的物理结构侧重于提高存储器的利用效率和奖代存取时间。文件的存储设备通常划分为大小相同的物理块。物理块是分配和传输信息的基本单位。文件的物理结构设计文件存储设备的组块策略和文件分配策略，决定文件信息在存储设备上的存储位置。常用的文件分配策略有：</p>
+<ul>
+<li>顺序分配(连续分配)</li>
+<li>连接分配( 串联分配)</li>
+<li>索引分配。这是另一种对文件存储不连续分配的方法。采用索引分配方法的系统，为每一个文件建立一张索引表，索引表中每一表项支出文件信息所在的逻辑块好和与之对应的物理块号。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.png" alt="10"></p>
+<h3 id="文件存储设备管理"><a class="header-anchor" href="#文件存储设备管理">¶</a>文件存储设备管理</h3>
+<p>位示图法。该方法是在外存上建立一张位示图（Bitmap），记录文件存储器的使 用情况。每一位仅对应文件存储器上的一个物理块，取值0 和1 分别表示空闲和占用。文件存储器上的物理块依次编号为：0、1、2、…。假如系统中字长为32位，有4096个物理块，那么在位示图中的第1个字对应文件存储器上的0、1、2、…、31号物理块；第2 个字对应文件存储器上的32、33、34、…、63号物理块；第128字对应文件存储器上的4064、4065、…、4095号物理块。这样位示图的大小为32字。</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.png" alt="11"></p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机基础(一)</title>
+    <url>/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="计算机的组成"><a class="header-anchor" href="#计算机的组成">¶</a>计算机的组成</h2>
+<h3 id="硬件系统"><a class="header-anchor" href="#硬件系统">¶</a>硬件系统</h3>
+<ul>
+<li>主机
+<ul>
+<li>中央处理器(运算器、控制器)</li>
+<li>内部存储器(随机存储器、只读存储器)</li>
+<li>I/O设备接口</li>
+</ul>
+</li>
+<li>外部设备
+<ul>
+<li>外部存储器(磁盘、光盘等)</li>
+<li>输入设备(键盘、鼠标、扫描仪等)</li>
+<li>输出设备(显示器，打印机，绘图仪等)</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件系统"><a class="header-anchor" href="#软件系统">¶</a>软件系统</h3>
+<ul>
+<li>系统软件(操作系统、语言处理程序、网络通讯管理程序等)</li>
+<li>应用软件(office办公软件，游戏软件)</li>
+</ul>
+<h2 id="CPU的功能"><a class="header-anchor" href="#CPU的功能">¶</a>CPU的功能</h2>
+<ul>
+<li>程序控制功能。CPU通过<strong>执行指令</strong>来控制程序的执行顺序</li>
+<li>操作控制</li>
+<li>时间控制</li>
+<li>数据处理。<strong>CPU最根本的任务</strong></li>
+</ul>
+<h3 id="CPU的主要部件"><a class="header-anchor" href="#CPU的主要部件">¶</a>CPU的主要部件</h3>
+<h4 id="运算器"><a class="header-anchor" href="#运算器">¶</a>运算器</h4>
+<p>运算器也称为算数逻辑单元(<code>ArithmeticandLogicUnit,ALU</code>),其主要功能是在控制器的控制下完成各种算数运算和逻辑运算。运算器的组成包含如下:</p>
+<ul>
+<li>算术逻辑单元<code>ALU</code>：数据的算数运算和逻辑运算</li>
+<li>累加寄存器<code>AC</code>：通用寄存器，为<code>ALU</code>提供一个工作区，用来暂存数据</li>
+<li>数据缓冲寄存器<code>DR</code>：写内存时，暂存指令或数据</li>
+<li>状态条件寄存器<code>PSW</code>：存状态标志与控制标志</li>
+</ul>
+<h4 id="控制器"><a class="header-anchor" href="#控制器">¶</a>控制器</h4>
+<p>控制器是分析和执行指令的部件，也是统一指挥并控制计算机各部件协调工作的重心部件，所依据的是机器指令。控制器的组成包含如下：</p>
+<ul>
+<li>程序计数器<code>PC</code>:存储下一条要执行指令的地址</li>
+<li>指令寄存器<code>IR</code>:存储即将执行的指令</li>
+<li>指令译码器<code>ID</code>:对指令中的操作码字段进行分析解释</li>
+<li>地址寄存器<code>AR</code>:用来保存当前CPU所访问的内存单元的地址</li>
+<li>时序部件：提供时序控制信号</li>
+</ul>
+<h3 id="指令系统"><a class="header-anchor" href="#指令系统">¶</a>指令系统</h3>
+<h4 id="复杂指令系统CISC的特点"><a class="header-anchor" href="#复杂指令系统CISC的特点">¶</a>复杂指令系统CISC的特点</h4>
+<ul>
+<li>指令数量众多。指令系统拥有大量的指令，通常有100~250条</li>
+<li>指令使用频率相差悬殊。最常用的是一些比较简单的指令，仅占指令总数的20%，但是程序中出现的频率却占80%，而大部分指令却很少使用。</li>
+<li>支持很多种寻址方式。支持的寻址方式通常为5~20种。</li>
+<li>变长的指令。指令长度不是固定的，变长的指令增加指令译码电路的复杂性。</li>
+<li>指令可以对主存单元中的数据直接进行处理。典型的CISC通常都有指令能够直接对存单元中的数据进行处理，其执行速度较慢</li>
+<li>以微程序控制为主。CISC的指令系统很复杂，难以用硬布线逻辑(组合逻辑)电路实现控制器，通常采用微程序控制。</li>
+</ul>
+<h4 id="精简指令系统RISC的特点"><a class="header-anchor" href="#精简指令系统RISC的特点">¶</a>精简指令系统RISC的特点</h4>
+<ul>
+<li>指令数量少。有限选取使用频率最高的一些简单指令和一些常用指令。避免使用复杂指令。只提供了<code>LOAD</code>(从存储器种读取)和<code>STORE</code>(把数据写入存储器)两条指令对存储器操作，其余所有的操作都在<code>CPU</code>的寄存器之间进行。</li>
+<li>指令的寻址方式少。通常只支持存储器寻址方式。立即数寻址方式和相对寻址方式</li>
+<li>指令长度固定，指令格式种类少。因为<code>RISC</code>指令数量少、格式少、相对简单，其指令长度固定，指令之间各字段的划分比较一直，译码相对容易</li>
+<li>以硬布线逻辑控制为主。为了提高操作的执行熟读，通常采用硬布线逻辑(组合逻辑)来构建控制器</li>
+<li>单周期指令执行，采用流水线技术。因为简化了指令系统，很容易利用流水线技术，使得大部分指令都能在一个机器周期内完成。少数指令可能会需要多周期，例如，<code>LOAD/STORE</code>指令因为需要访问存储器，其执行时间就会长一些</li>
+<li>优化的编译器：<code>RISC</code>的精简指令集使编译工作简单化。因为指令长度固定，个事少，寻址方式少，编译时不必再具有相似功能的许多指令种进行选择，也不必为寻址方式的选择而费心，同时易于实现优化，从而可以生成高效率执行的机器代码。</li>
+<li><code>CPU</code>中的通用寄存器数量多，一般在32各以上，有的可达上</li>
+</ul>
+<p>总结图：</p>
+<p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/1.png" alt="image-20200426170025024"></p>
+<h3 id="校验码"><a class="header-anchor" href="#校验码">¶</a>校验码</h3>
+<ul>
+<li>
+<p>奇偶校验码</p>
+<p>只能检测代码中奇数位出错的编码，但不能发现偶数位出错的情况</p>
+</li>
+<li>
+<p>海明码</p>
+</li>
+<li>
+<p>循环冗余校验码CRC</p>
+</li>
+</ul>
+<h3 id="指令控制方式"><a class="header-anchor" href="#指令控制方式">¶</a>指令控制方式</h3>
+<ul>
+<li>
+<p>顺序方式</p>
+<p>各条机器指令之间顺序串行地执行，执行完一条指令后才取下一条指令。缺点是速度慢，机器各部件利用率低。</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2.png" alt="2"></p>
+</li>
+<li>
+<p>重叠方式</p>
+<p>在解释第K条指令的操作完成之前就可以开始解释低K+1条指令。(部分并行)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/3.jpg" alt="3"></p>
+</li>
+<li>
+<p>流水方式</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/4.png" alt="4"></p>
+<p>流水线周期：执行时间最长的一段</p>
+<p>公式：</p>
+<ul>
+<li>理论公式：(t1+t2+…tk)+(n-1)*△t</li>
+<li>实践公式：(k+n-1)*△t</li>
+</ul>
+<p>流水线的吞吐率和最大吞吐率：吞吐率是指单位内流水线处理机流出的结果数。对指令而言，就是单位时间内执行的指令数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 吞吐率</span><br><span class="line">TP &#x3D; 指令条数&#x2F;流水线执行时间</span><br><span class="line"></span><br><span class="line"># 最大吞吐率</span><br><span class="line">TP(max) &#x3D; 1&#x2F;△t</span><br><span class="line"></span><br><span class="line"># 流水线加速比</span><br><span class="line">S &#x3D; 不适用流水线执行时间&#x2F;使用流水线执行时间</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="存储系统"><a class="header-anchor" href="#存储系统">¶</a>存储系统</h2>
+<p>主存：</p>
+<ul>
+<li>CPU内部通用寄存器</li>
+<li>Cache：CPU和主存速度不匹配而产生的中间过渡元件</li>
+</ul>
+<p>外部存储器：</p>
+<ul>
+<li>主存储器</li>
+<li>联机磁盘存储器</li>
+<li>脱机光盘、磁盘存储器</li>
+</ul>
+<h4 id="内存编址"><a class="header-anchor" href="#内存编址">¶</a>内存编址</h4>
+<p>存储器有一块块的空间(存储单元)组成，为了方便寻找到每一块空间，我们需要对每一个空间进行标识------内存编址</p>
+<h4 id="芯片"><a class="header-anchor" href="#芯片">¶</a>芯片</h4>
+<p>存储器由若干个芯片构成</p>
+<h4 id="内存容量"><a class="header-anchor" href="#内存容量">¶</a>内存容量</h4>
+<p>存储器的大小。</p>
+<p>内存容量 = 每个芯片容量*芯片个数</p>
+<p>每个芯片的容量 = 一个地址代表的容量*编址总数</p>
+<h4 id="数据总线"><a class="header-anchor" href="#数据总线">¶</a>数据总线</h4>
+<p>计算机一次处理n位的数据，则数据总线的长度为n。注意的是：数据总线的长度，并不一定代表一个地址的长度</p>
+<h4 id="字"><a class="header-anchor" href="#字">¶</a>字</h4>
+<p>和数据总线密切相关。数据总线有几位，则一个字就由多少位组成。如64位计算机，表示一次可以处理64位数据，则一个字就是64位。</p>
+<h4 id="地址总线"><a class="header-anchor" href="#地址总线">¶</a>地址总线</h4>
+<p>假如需要n位二进制数来表示所有的地址，则地址总线的个数为n。</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/5.png" alt="5"></p>
+<h3 id="Cache"><a class="header-anchor" href="#Cache">¶</a>Cache</h3>
+<p>在<code>CPU</code>的所有操作中，访问内存是最频繁的操作。由于一般微机中的主存储器的工作速度比<code>CPU</code>低一个数量级，加上<code>CPU</code>的所有访问都要通过总线这个瓶颈，所以，缩短存储器的访问时间是提高计算机速度的关键。采用在<code>CPU</code>和内存之间加进告诉缓冲存储器<code>Cache</code>的办法较好的解决了这一问题。</p>
+<p>简单来说<code>Cache</code>是为了解决高速运行的<code>cpu</code>与主存储器速度不匹配的问题。</p>
+<p>Cache的地址映像方法：</p>
+<ul>
+<li>
+<p>直接映像</p>
+<p>缺点：容易造成资源的浪费</p>
+<p>优点：索引容易(找起来更加方便)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/6.png" alt="6"></p>
+</li>
+<li>
+<p>全相连映像</p>
+<p>优点：灵活</p>
+<p>缺点：索引不方便(找起来麻烦)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/7.png" alt="7"></p>
+</li>
+<li>
+<p>组相连映像</p>
+<p>前两种连接方式的结合，内存先分组在分页。</p>
+<p>缺点：增加开销</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/8.jpg" alt="8"></p>
+</li>
+</ul>
+<h5 id="cache的性能"><a class="header-anchor" href="#cache的性能">¶</a>cache的性能</h5>
+<p><code>CPU</code>访问内存是，首先判断所要访问的内容是否在Cache中，如果在，就称为“命中”，此时<code>CPU</code>直接总Cache中调用该内容；否则，就称为“不命中”，<code>CPU</code>只好去内存中调用所需的子程序或指令了。<code>CPU</code>不但可以直接从Cache中读出内容，也可以直接往其中写入内容。由于Cache的存取速率相当快，使得<code>CPU</code>的李永乐大大提高，进而使整个系统的性能得以提升。</p>
+<p>如果以<code>Hc</code>为代表对Cache的访问命中率，<code>tc</code>为Cache的存取时间，<code>tm</code>为主存的访问时间，则Cache的平均访问时间<code>ta</code>为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ta &#x3D; Hctc+(1-Hc)tm</span><br></pre></td></tr></table></figure>
+<p>因为cache的内容是部分主存内容的副本，应该与主存内容保持一致。而<code>CPU</code>对cache的写入更改了cache内容，如何与主存内容保持一致就有几种写操作方式可供选择，统称为写策略。</p>
+<ul>
+<li>
+<p>写回法(write-back)</p>
+<p>当<code>CPU</code>对cache写命中时，只修改cache的内容不立即写入主存，只当此行被换出时才写回主存。这种策略使cache在<code>CPU</code>----主存之间，不仅在读方向而且在写方向都起到了高速缓存作用</p>
+</li>
+<li>
+<p>写直达法(write-through)</p>
+<p>又称全写法，写透。是当cache写命中时，cache与主存同时发生写修改。</p>
+</li>
+<li>
+<p>标记法</p>
+<p>数据进入cache后，有效位置1，当<code>CPU</code>对该数据修改时，数据只写入主存并将该有效位置0。要从cache中读取数据是要测试其有效位，若为1则直接从cache中区属，否则从主存中取数</p>
+</li>
+</ul>
+<h3 id="磁盘存储器"><a class="header-anchor" href="#磁盘存储器">¶</a>磁盘存储器</h3>
+<h3 id="总线"><a class="header-anchor" href="#总线">¶</a>总线</h3>
+<p>总线(Bus)是计算机各种功能部件之间传送信息的公共通信干线。</p>
+<p>按照总线相对应<code>CPU</code>或其他芯片的位置可分为：</p>
+<ul>
+<li>
+<p>内部总线</p>
+<p>寄存器之间和算术逻辑部件<code>ALU</code>与控制部件之间传输数据所用的线。</p>
+</li>
+<li>
+<p>外部总线</p>
+<p><code>CPU</code>与内存和I/O设备接口之间通讯</p>
+</li>
+</ul>
+<p>按总线功能划分：</p>
+<ul>
+<li>地址总线------传送地址信息</li>
+<li>数据总线------传送数据信息</li>
+<li>控制总线-------传送控制信号和时序信号</li>
+</ul>
+<p>按总线在微机中的位置，可分为：</p>
+<ul>
+<li>机内总线</li>
+<li>机外总线</li>
+</ul>
+<p>按总线功能划分：</p>
+<ul>
+<li>局部总线</li>
+<li>系统总线</li>
+<li>通信总线</li>
+</ul>
+<p>按照总线中数据线的多少</p>
+<ul>
+<li>并行总线</li>
+<li>串行总线</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux简单命令</title>
     <url>/Linux/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="常用Linux命令的基本使用"><a href="#常用Linux命令的基本使用" class="headerlink" title="常用Linux命令的基本使用"></a>常用Linux命令的基本使用</h1><div class="table-container">
+    <content><![CDATA[<h1>常用Linux命令的基本使用</h1>
 <table>
 <thead>
 <tr>
@@ -50,7 +724,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>小技巧</p>
 <ul>
@@ -58,7 +731,9 @@
 <li><code>ctrl + -</code>缩小终端窗口的字体显示</li>
 </ul>
 </blockquote>
-<h2 id="Linux终端命令格式"><a href="#Linux终端命令格式" class="headerlink" title="Linux终端命令格式"></a>Linux终端命令格式</h2><h3 id="终端命令格式"><a href="#终端命令格式" class="headerlink" title="终端命令格式"></a>终端命令格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
+<h2 id="Linux终端命令格式"><a class="header-anchor" href="#Linux终端命令格式">¶</a>Linux终端命令格式</h2>
+<h3 id="终端命令格式"><a class="header-anchor" href="#终端命令格式">¶</a>终端命令格式</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
 <p>解释:</p>
 <ul>
 <li><code>command</code> :命令名，相应功能的英文单词火单词的缩写</li>
@@ -66,12 +741,15 @@
 <li><code>parameter</code>：传给命令的参数，可以是<strong>零个</strong>，<strong>一个</strong>或者<strong>多个</strong></li>
 </ul>
 <p><code>[]</code>代表可选</p>
-<h3 id="查阅帮助信息"><a href="#查阅帮助信息" class="headerlink" title="查阅帮助信息"></a>查阅帮助信息</h3><h4 id="—help"><a href="#—help" class="headerlink" title="—help"></a>—help</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command --help</span><br></pre></td></tr></table></figure>
+<h3 id="查阅帮助信息"><a class="header-anchor" href="#查阅帮助信息">¶</a>查阅帮助信息</h3>
+<h4 id="–help"><a class="header-anchor" href="#–help">¶</a>–help</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">command --help</span><br></pre></td></tr></table></figure>
 <p>说明：</p>
 <ul>
 <li>提示<code>command</code>命令中的帮助信息</li>
 </ul>
-<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p><code>man command</code></p>
+<h3 id="man"><a class="header-anchor" href="#man">¶</a>man</h3>
+<p><code>man command</code></p>
 <p>说明：</p>
 <ul>
 <li>查阅<code>command</code>命令的使用手册</li>
@@ -80,7 +758,6 @@
 <p><code>man</code>是<code>manual</code>的缩写，是<code>Linux</code>的一个<strong>手册</strong>，包含了绝大部分的命令，函数的详细说明</p>
 </blockquote>
 <p>使用<code>man</code>时的操作间</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -111,61 +788,74 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="文件和目录常用命令"></a>文件和目录常用命令</h2><ul>
-<li>查看内容<ul>
+<h2 id="文件和目录常用命令"><a class="header-anchor" href="#文件和目录常用命令">¶</a>文件和目录常用命令</h2>
+<ul>
+<li>查看内容
+<ul>
 <li><code>ls</code></li>
 </ul>
 </li>
-<li>切换目录<ul>
+<li>切换目录
+<ul>
 <li><code>cd</code></li>
 </ul>
 </li>
-<li>创建和删除操作<ul>
+<li>创建和删除操作
+<ul>
 <li><code>touch</code></li>
 <li><code>rm</code></li>
 <li><code>mkdir</code></li>
 </ul>
 </li>
-<li>拷贝和移动文件<ul>
+<li>拷贝和移动文件
+<ul>
 <li><code>cp</code></li>
 <li><code>mv</code></li>
 </ul>
 </li>
-<li>查看文件内容<ul>
+<li>查看文件内容
+<ul>
 <li><code>cat</code></li>
 <li><code>more</code></li>
 <li><code>grep</code></li>
 </ul>
 </li>
-<li>其他<ul>
+<li>其他
+<ul>
 <li><code>echo</code></li>
 <li>重定向<code>&gt;</code>和<code>&gt;&gt;</code></li>
 <li>管道<code>|</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="查看目录内容"><a href="#查看目录内容" class="headerlink" title="查看目录内容"></a>查看目录内容</h2><h3 id="终端使用技巧"><a href="#终端使用技巧" class="headerlink" title="终端使用技巧"></a>终端使用技巧</h3><h4 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h4><ul>
-<li>在敲出<code>文件</code>/<code>目录</code>/<code>命令</code>的前几个字母之后，按下<code>tab</code>键盘<ul>
+<h2 id="查看目录内容"><a class="header-anchor" href="#查看目录内容">¶</a>查看目录内容</h2>
+<h3 id="终端使用技巧"><a class="header-anchor" href="#终端使用技巧">¶</a>终端使用技巧</h3>
+<h4 id="自动补全"><a class="header-anchor" href="#自动补全">¶</a>自动补全</h4>
+<ul>
+<li>在敲出<code>文件</code>/<code>目录</code>/<code>命令</code>的前几个字母之后，按下<code>tab</code>键盘
+<ul>
 <li>如果输入的没有歧义，系统会自动补全</li>
 <li>如果还存在其他<code>文件</code>/<code>目录</code>/<code>命令</code>，在按一下<code>tab</code>键，系统会提示可能存在的命令</li>
 </ul>
 </li>
 </ul>
-<h4 id="曾经使用过的命令"><a href="#曾经使用过的命令" class="headerlink" title="曾经使用过的命令"></a>曾经使用过的命令</h4><ul>
+<h4 id="曾经使用过的命令"><a class="header-anchor" href="#曾经使用过的命令">¶</a>曾经使用过的命令</h4>
+<ul>
 <li>按<code>上</code>/<code>下</code>光标可以在曾经使用过的命令之间来回切换</li>
 <li>如果想要退出选择，并且不想执行当前选中的命令，可以按<code>ctrl + c</code></li>
 </ul>
-<h2 id="ls命令说明"><a href="#ls命令说明" class="headerlink" title="ls命令说明"></a>ls命令说明</h2><ul>
+<h2 id="ls命令说明"><a class="header-anchor" href="#ls命令说明">¶</a>ls命令说明</h2>
+<ul>
 <li><code>ls</code>是英文单词<code>list</code>的，其功能为列出目录的内容，使用户最常用的命令之一，类似于DOS下的<code>dir</code>命令</li>
 </ul>
-<h2 id="Linux下文件和目录的特点"><a href="#Linux下文件和目录的特点" class="headerlink" title="Linux下文件和目录的特点"></a>Linux下文件和目录的特点</h2><ul>
+<h2 id="Linux下文件和目录的特点"><a class="header-anchor" href="#Linux下文件和目录的特点">¶</a>Linux下文件和目录的特点</h2>
+<ul>
 <li>Linux<strong>文件</strong>或者<strong>目录</strong>名称最长可以有<code>256</code>个字符</li>
 <li>以<code>.</code>开头的文件为隐藏文件，需要用<code>-a</code>参数才能显示</li>
 <li><code>.</code>代表当前目录</li>
 <li><code>..</code>代表上级目录</li>
 </ul>
-<h2 id="ls-常用选项"><a href="#ls-常用选项" class="headerlink" title="ls 常用选项"></a>ls 常用选项</h2><div class="table-container">
+<h2 id="ls-常用选项"><a class="header-anchor" href="#ls-常用选项">¶</a>ls 常用选项</h2>
 <table>
 <thead>
 <tr>
@@ -188,8 +878,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="ls通配符的使用"><a href="#ls通配符的使用" class="headerlink" title="ls通配符的使用"></a>ls通配符的使用</h2><div class="table-container">
+<h2 id="ls通配符的使用"><a class="header-anchor" href="#ls通配符的使用">¶</a>ls通配符的使用</h2>
 <table>
 <thead>
 <tr>
@@ -220,39 +909,91 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
-<li><p><code>cd</code>是英文单词<strong>change directory</strong>的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</p>
+<h2 id="切换目录"><a class="header-anchor" href="#切换目录">¶</a>切换目录</h2>
+<h3 id="cd"><a class="header-anchor" href="#cd">¶</a>cd</h3>
+<ul>
+<li>
+<p><code>cd</code>是英文单词<strong>change directory</strong>的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</p>
 <blockquote>
 <p>注意：Linux所有的<strong>目录</strong>和<strong>文件名</strong>都是大小写敏感的</p>
 </blockquote>
-<p>| 命令  | 含义                                   |<br>| ——- | ——————————————————— |<br>| cd    | 切换到当前用户的主目录(/home/用户目录) |<br>| cd ~  | 切换到当前用户的主目录(/home/用户目录) |<br>| cd .  | 保持到当前目录不变                     |<br>| cd .. | 切换到上级目录                         |<br>| cd -  | 可以再最近两次工作目录来回切换         |</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd .</td>
+<td>保持到当前目录不变</td>
+</tr>
+<tr>
+<td>cd …</td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>可以再最近两次工作目录来回切换</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
-<h3 id="相对路径和绝对路径"><a href="#相对路径和绝对路径" class="headerlink" title="相对路径和绝对路径"></a>相对路径和绝对路径</h3><ul>
+<h3 id="相对路径和绝对路径"><a class="header-anchor" href="#相对路径和绝对路径">¶</a>相对路径和绝对路径</h3>
+<ul>
 <li><strong>相对路径</strong>在输入路径是，最前面不是/或者~，表示当前相对<strong>当前目录</strong>所在的目录位置</li>
 <li><strong>绝对路径</strong>在输入路径是，最前面是/或者~，表示从<strong>根目录/家目录</strong>开始的具体目录位置</li>
 </ul>
-<h2 id="创建和删除操作"><a href="#创建和删除操作" class="headerlink" title="创建和删除操作"></a>创建和删除操作</h2><h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><ul>
-<li><p>创建文件或者修改文件时</p>
+<h2 id="创建和删除操作"><a class="header-anchor" href="#创建和删除操作">¶</a>创建和删除操作</h2>
+<h4 id="touch"><a class="header-anchor" href="#touch">¶</a>touch</h4>
+<ul>
+<li>创建文件或者修改文件时
 <ul>
 <li>如果文件<strong>不存在</strong>，可以创建一个空白文件</li>
 <li>如果文件<strong>已经存在</strong>，可以修改文件的末次修改日期</li>
 </ul>
-<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4></li>
-<li><p>创建一个新的目录</p>
-<p>| 选项 | 含义             |<br>| —— | ———————— |<br>| -p   | 可以递归创建目录 |</p>
+</li>
+</ul>
+<h4 id="mkdir"><a class="header-anchor" href="#mkdir">¶</a>mkdir</h4>
+<ul>
+<li>
+<p>创建一个新的目录</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td>可以递归创建目录</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><strong>新建目录的名称</strong>不能与当前目录中<strong>已有的文件或者目录</strong>同名</p>
 </blockquote>
-<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4></li>
-<li><p>删除文件或者目录</p>
+</li>
+</ul>
+<h4 id="rm"><a class="header-anchor" href="#rm">¶</a>rm</h4>
+<ul>
+<li>删除文件或者目录</li>
+</ul>
 <blockquote>
 <p>使用<code>rm</code>命令要小心，因为文件删除后不能恢复</p>
 </blockquote>
-</li>
-</ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -271,8 +1012,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="拷贝和移动文件"><a href="#拷贝和移动文件" class="headerlink" title="拷贝和移动文件"></a>拷贝和移动文件</h2><div class="table-container">
+<h2 id="拷贝和移动文件"><a class="header-anchor" href="#拷贝和移动文件">¶</a>拷贝和移动文件</h2>
 <table>
 <thead>
 <tr>
@@ -299,11 +1039,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h4><ul>
+<h4 id="tree"><a class="header-anchor" href="#tree">¶</a>tree</h4>
+<ul>
 <li><code>tree</code>命令可以以树状图列出文件目录结构</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -318,11 +1057,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><ul>
+<h4 id="cp"><a class="header-anchor" href="#cp">¶</a>cp</h4>
+<ul>
 <li><code>cp</code>命令的功能是将给出的<strong>文件</strong>或<strong>目录</strong>复制到另外一个<strong>文件</strong>或<strong>目录</strong>中，相当于<strong>DOS</strong>下的<code>copy</code>命令</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -345,13 +1083,27 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h4><ul>
-<li><p><code>mv</code>命令可以用来<strong>移动文件</strong>或<strong>目录</strong>复制到另一个<strong>文件</strong>或<strong>目录</strong>，相当于<strong>DOS</strong>下的<code>copy</code>命令</p>
-<p>| 选项 | 含义           |<br>| —— | ——————— |<br>| -i   | 覆盖文件前提示 |</p>
+<h4 id="mv"><a class="header-anchor" href="#mv">¶</a>mv</h4>
+<ul>
+<li>
+<p><code>mv</code>命令可以用来<strong>移动文件</strong>或<strong>目录</strong>复制到另一个<strong>文件</strong>或<strong>目录</strong>，相当于<strong>DOS</strong>下的<code>copy</code>命令</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
-<h3 id="查看文件目录"><a href="#查看文件目录" class="headerlink" title="查看文件目录"></a>查看文件目录</h3><div class="table-container">
+<h3 id="查看文件目录"><a class="header-anchor" href="#查看文件目录">¶</a>查看文件目录</h3>
 <table>
 <thead>
 <tr>
@@ -378,12 +1130,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><ul>
+<h4 id="cat"><a class="header-anchor" href="#cat">¶</a>cat</h4>
+<ul>
 <li><code>cat</code>命令可用来<strong>查看文件内容</strong>，<strong>创建文件</strong>，<strong>文件合并</strong>，<strong>追加文件内容</strong>等功能</li>
 <li><code>cat</code>会一次显示所有的内容，适合<strong>查看内容较少</strong>的文本文件</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -402,16 +1153,15 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>Linux中还有一个<code>nl</code>的命令和<code>cat -b</code>的效果等价</p>
 </blockquote>
-<h4 id="more"><a href="#more" class="headerlink" title="more"></a>more</h4><ul>
+<h4 id="more"><a class="header-anchor" href="#more">¶</a>more</h4>
+<ul>
 <li><code>more</code>命令可以用与分屏显示文件内容，每次只显示一夜的内容</li>
 <li>适合<strong>查看内容较多</strong>的文本文件</li>
 </ul>
 <p>使用<code>more</code>的操作键:</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -446,12 +1196,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
+<h4 id="grep"><a class="header-anchor" href="#grep">¶</a>grep</h4>
+<ul>
 <li>Linux系统中<code>grep</code>命令是一种强大的文本搜索工具</li>
 <li><code>grep</code>允许对文本文件进行<strong>模式</strong>查找，所谓模式查找，又被称为<strong>正则表达式</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -474,11 +1223,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li>常用的两种模式查找</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -497,11 +1244,13 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="echo文字内容"><a href="#echo文字内容" class="headerlink" title="echo文字内容"></a>echo文字内容</h4><ul>
+<h3 id="其他"><a class="header-anchor" href="#其他">¶</a>其他</h3>
+<h4 id="echo文字内容"><a class="header-anchor" href="#echo文字内容">¶</a>echo文字内容</h4>
+<ul>
 <li><code>echo</code>会在终端中显示参数指定的文字，通常回合<strong>重定向</strong>联合使用</li>
 </ul>
-<h4 id="重定向-gt-和-gt-gt"><a href="#重定向-gt-和-gt-gt" class="headerlink" title="重定向&gt;和&gt;&gt;"></a>重定向&gt;和&gt;&gt;</h4><ul>
+<h4 id="重定向-和"><a class="header-anchor" href="#重定向-和">¶</a>重定向&gt;和&gt;&gt;</h4>
+<ul>
 <li>Linux允许将命令指向结果重定向到一个文件</li>
 <li>将本应显示在<strong>终端上得内容输出/追加</strong>到<strong>指定文件</strong>中</li>
 </ul>
@@ -510,7 +1259,8 @@
 <li><code>&gt;</code>表示输出，会覆盖原有得内容</li>
 <li><code>&gt;&gt;</code>表示追加，会将内容追加到已有文件的末尾</li>
 </ul>
-<h4 id="管道"><a href="#管道" class="headerlink" title="管道|"></a>管道|</h4><ul>
+<h4 id="管道"><a class="header-anchor" href="#管道">¶</a>管道|</h4>
+<ul>
 <li>Linux允许将<strong>一个命令得输出</strong>可以<strong>通过管道</strong>做为<strong>另一个命令的输入</strong></li>
 <li>可以理解显示生活中的管子，管子的一头塞东西进去，另外一头取出来，这里的<code>|</code>分为左右两端，左端塞东西(写)，右端取东西(读)</li>
 </ul>
@@ -519,23 +1269,28 @@
 <li><code>more</code>：分屏显示内容</li>
 <li><code>grep</code>：在命令指向结果的基础上查找指定的文件</li>
 </ul>
-<h1 id="远程管理常用命令"><a href="#远程管理常用命令" class="headerlink" title="远程管理常用命令"></a>远程管理常用命令</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>关机/重启<ul>
+<h1>远程管理常用命令</h1>
+<h2 id="目标"><a class="header-anchor" href="#目标">¶</a>目标</h2>
+<ul>
+<li>关机/重启
+<ul>
 <li><code>shutdown</code></li>
 </ul>
 </li>
-<li>查看或配置网卡信息<ul>
+<li>查看或配置网卡信息
+<ul>
 <li><code>ifconfig</code></li>
 <li><code>ping</code></li>
 </ul>
 </li>
-<li>远程登录和复制文件<ul>
+<li>远程登录和复制文件
+<ul>
 <li><code>ssh</code></li>
 <li><code>scp</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><div class="table-container">
+<h2 id="关机-重启"><a class="header-anchor" href="#关机-重启">¶</a>关机/重启</h2>
 <table>
 <thead>
 <tr>
@@ -552,11 +1307,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><ul>
+<h3 id="shutdown"><a class="header-anchor" href="#shutdown">¶</a>shutdown</h3>
+<ul>
 <li><code>shutdown</code>命令可以<strong>安全关闭</strong>或者<strong>重新启动系统</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -571,7 +1325,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>提示：</p>
 <ul>
@@ -583,7 +1336,7 @@
 <li>常用命令示例</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 重新启动操作系统，其中now表示现在</span><br><span class="line">$ shutdown -r now</span><br><span class="line"></span><br><span class="line"># 立刻关机，其中 now 表示现在</span><br><span class="line">$ shutdown now</span><br><span class="line"></span><br><span class="line"># 系统在今天的 20:25 会关机</span><br><span class="line">$ shutdown 20:25</span><br><span class="line"></span><br><span class="line"># 系统再过十分钟后自动关机</span><br><span class="line">$ shutdown +10</span><br><span class="line"></span><br><span class="line"># 取消之前指定的关机计划</span><br><span class="line">$ shutdown -c</span><br></pre></td></tr></table></figure>
-<h2 id="查看或配置网卡信息"><a href="#查看或配置网卡信息" class="headerlink" title="查看或配置网卡信息"></a>查看或配置网卡信息</h2><div class="table-container">
+<h2 id="查看或配置网卡信息"><a class="header-anchor" href="#查看或配置网卡信息">¶</a>查看或配置网卡信息</h2>
 <table>
 <thead>
 <tr>
@@ -602,22 +1355,25 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="网卡和IP地址"><a href="#网卡和IP地址" class="headerlink" title="网卡和IP地址"></a>网卡和IP地址</h3><h4 id="网卡"><a href="#网卡" class="headerlink" title="网卡"></a>网卡</h4><ul>
+<h3 id="网卡和IP地址"><a class="header-anchor" href="#网卡和IP地址">¶</a>网卡和IP地址</h3>
+<h4 id="网卡"><a class="header-anchor" href="#网卡">¶</a>网卡</h4>
+<ul>
 <li>网卡是一个专门负责网络通讯的硬件设备</li>
 <li><strong>IP地址</strong>是设置在网卡上的地址信息</li>
 </ul>
 <blockquote>
 <p><em>我们可以把<strong>电脑</strong>比作<strong>电话</strong>，<strong>网卡</strong>相当于<strong>SIM卡，IP地址</strong>相当于<strong>电话号码</strong></em></p>
 </blockquote>
-<h4 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h4><ul>
+<h4 id="IP地址"><a class="header-anchor" href="#IP地址">¶</a>IP地址</h4>
+<ul>
 <li><strong>每台联网的电脑上</strong>都有<strong>IP地址，是保证电脑之间正常通讯的重要设置</strong></li>
 </ul>
 <blockquote>
 <p>注意：每天电脑的IP地址不能相同，否则会出现IP地址冲突，并且无法正常通讯</p>
 <p>提示：有关IP地址的详细内容自己百度</p>
 </blockquote>
-<h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><ul>
+<h3 id="ifconfig"><a class="header-anchor" href="#ifconfig">¶</a>ifconfig</h3>
+<ul>
 <li><code>ifconfig</code>可以查看/配置计算机当前的网卡配置信息</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查看网卡配置信息</span><br><span class="line">$ ifconfig</span><br><span class="line"></span><br><span class="line"># 查看王阿库对应的 IP 地址</span><br><span class="line">$ ifconfig | grep inet</span><br></pre></td></tr></table></figure>
@@ -627,21 +1383,22 @@
 <ul>
 <li><code>127.0.0.1</code>被称为<strong>本地回环/环回地址</strong>，一般用来测试本机网卡是否正常</li>
 </ul>
-<h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 检测到目标主机正常连接</span><br><span class="line">$ ping IP地址</span><br><span class="line"></span><br><span class="line"># 检测本地网卡工作正常</span><br><span class="line">$ ping 127.0.0.1</span><br></pre></td></tr></table></figure>
+<h3 id="ping"><a class="header-anchor" href="#ping">¶</a>ping</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 检测到目标主机正常连接</span><br><span class="line">$ ping IP地址</span><br><span class="line"></span><br><span class="line"># 检测本地网卡工作正常</span><br><span class="line">$ ping 127.0.0.1</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>ping</code>一般用于检测当前计算几到目标计算机之间的网络<strong>是否通畅，数值越大，速度越慢</strong></li>
 </ul>
 <blockquote>
 <ul>
 <li><code>ping</code>的工作原理与潜水艇的声纳像是，<code>ping</code>这个命令就是取自<strong>声纳的声音</strong></li>
-<li>网络管理员之间也常将<code>ping</code>用作东侧——-<strong>ping一下计算机X，看他是否开着</strong></li>
+<li>网络管理员之间也常将<code>ping</code>用作东侧-----<strong>ping一下计算机X，看他是否开着</strong></li>
 </ul>
 </blockquote>
 <p>原理：网络上的机器又有 <strong>唯一确定的IP地址</strong>，我们给<strong>目标IP地址</strong>发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们就可以确定目标主机的存在</p>
 <blockquote>
 <p>提示：在Linux中，想要终止一个终端程序的执行，绝大多数都可以使用<code>CTRL+C</code></p>
 </blockquote>
-<h2 id="远程登录和复制文件"><a href="#远程登录和复制文件" class="headerlink" title="远程登录和复制文件"></a>远程登录和复制文件</h2><div class="table-container">
+<h2 id="远程登录和复制文件"><a class="header-anchor" href="#远程登录和复制文件">¶</a>远程登录和复制文件</h2>
 <table>
 <thead>
 <tr>
@@ -663,31 +1420,35 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="SSH基础-重点"><a href="#SSH基础-重点" class="headerlink" title="SSH基础(重点)"></a>SSH基础(重点)</h3><p>在Linux中SSH是<strong>非常常用</strong>的工具，通过<strong>SSH 客户端</strong>我们可以连接到运行了<strong>SSH服务器</strong>的远程机器上</p>
-<p><img src="/images/Linux简单命令/1.png" alt="1"></p>
+<h3 id="SSH基础-重点"><a class="header-anchor" href="#SSH基础-重点">¶</a>SSH基础(重点)</h3>
+<p>在Linux中SSH是<strong>非常常用</strong>的工具，通过<strong>SSH 客户端</strong>我们可以连接到运行了<strong>SSH服务器</strong>的远程机器上</p>
+<p><img src="/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/1.png" alt="1"></p>
 <ul>
 <li><strong>SSH客户端</strong>是一种使用<code>Secure Shell(SSH)</code>协议连接到远程计算机的软件程序</li>
-<li><code>SSH</code>是目前较可靠，<strong>专为远程登录回话和其他网络服务</strong>提供安全性的协议<ul>
+<li><code>SSH</code>是目前较可靠，<strong>专为远程登录回话和其他网络服务</strong>提供安全性的协议
+<ul>
 <li>利用<code>SSH 协议</code>可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
 <li>通过<code>SSH协议</code>可以对所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗</li>
 </ul>
 </li>
 <li><code>SSH</code>的另一项有点是对传输的数据可以是经过压缩的，所以可以加快传输的速度</li>
 </ul>
-<h4 id="域名-和端口"><a href="#域名-和端口" class="headerlink" title="域名 和端口"></a>域名 和端口</h4><h5 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h5><ul>
+<h4 id="域名-和端口"><a class="header-anchor" href="#域名-和端口">¶</a>域名 和端口</h4>
+<h5 id="域名"><a class="header-anchor" href="#域名">¶</a>域名</h5>
+<ul>
 <li>由一串<strong>用点分割</strong>的名字组成，例如：<code>www.baidu.com</code></li>
 <li>是<strong>IP地址</strong>的别名，方便用户记忆</li>
 </ul>
-<h5 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h5><ul>
+<h5 id="端口号"><a class="header-anchor" href="#端口号">¶</a>端口号</h5>
+<ul>
 <li><strong>IP地址</strong>：通过<strong>IP地址</strong>扎到网络上的计算机</li>
-<li><strong>端口号</strong>：通过<strong>端口号</strong>可以找到<strong>计算机上运行的应用程序</strong><ul>
+<li><strong>端口号</strong>：通过<strong>端口号</strong>可以找到<strong>计算机上运行的应用程序</strong>
+<ul>
 <li><strong>SSH服务器</strong>的默认端口号是<code>22</code>，如果是默认端口号，在连接的时候，可以省略</li>
 </ul>
 </li>
 <li>常见服务端口号列表：</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -714,11 +1475,11 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>提示：有关<strong>端口号</strong>的详细内容，请百度</p>
 </blockquote>
-<h4 id="SSH客户端的简单使用"><a href="#SSH客户端的简单使用" class="headerlink" title="SSH客户端的简单使用"></a>SSH客户端的简单使用</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
+<h4 id="SSH客户端的简单使用"><a class="header-anchor" href="#SSH客户端的简单使用">¶</a>SSH客户端的简单使用</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>user</code>是在远程机器上的目录名，如果不指定的话默认为当前用户</li>
 <li><code>remote</code>是远程机器的地址，可以是<strong>IP/域名</strong>，或者是<strong>后面会提到的别名</strong></li>
@@ -739,13 +1500,13 @@
 <li>在工作中，SSH服务器的端口号很有可能<strong>不是22</strong>，如果遇到这种情况就需要使用<code>-p</code>选项，指定正确的端口号，否则无法正常连接到服务器</li>
 </ul>
 </blockquote>
-<h3 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h3><ul>
+<h3 id="scp"><a class="header-anchor" href="#scp">¶</a>scp</h3>
+<ul>
 <li>scp就是<code>secure copy</code>，是一个在Linux下用来进行<strong>远程拷贝文件</strong>的命令</li>
 <li>它的<strong>地址格式与ssh基本相同，需要注意的是</strong>，在指定端口时用的是大写的<code>-p</code>而不是小写的</li>
 </ul>
-<p><img src="/source/images/Linux简单命令/image-20200424010226836.png" alt="image-20200424010226836"></p>
+<p><img src="/source/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/image-20200424010226836.png" alt="image-20200424010226836"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 把本地目录下的 01.py 文件复制到远程家目录下的Desktop&#x2F;01.py</span><br><span class="line"># 注意; &#96;:&#96;后面的路径如果不是绝对路径，则以用户的家目录作为参考路径</span><br><span class="line">scp -P port 01.py user@remote:Desktop&#x2F;01.py</span><br><span class="line"></span><br><span class="line"># 把远程家目录下的Desktop&#x2F;01.py文件复制到本地当前目录下的01.py</span><br><span class="line">scp -P port user@remote:Desktop&#x2F;01.py 01.py</span><br><span class="line"></span><br><span class="line"># 加上 -r 选项可以传送文件夹</span><br><span class="line"># 把当前目录下的demo文件夹复制到远程家目录下的Desktop</span><br><span class="line">scp -r demo user@remote:Desktop</span><br><span class="line"></span><br><span class="line"># 把远程 家目录下的Desktop复制到当前目录下的demo文件夹</span><br><span class="line">scp -r user@remote:Desktop demo</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -764,27 +1525,30 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="SSH高级"><a href="#SSH高级" class="headerlink" title="SSH高级"></a>SSH高级</h4><ul>
+<h4 id="SSH高级"><a class="header-anchor" href="#SSH高级">¶</a>SSH高级</h4>
+<ul>
 <li>免密码登陆</li>
 <li>配置别名</li>
 </ul>
 <blockquote>
 <p>提示：有关SSH配置信息都保存在用户家目录下的<code>.ssh</code>目录下</p>
 </blockquote>
-<h5 id="免密登陆"><a href="#免密登陆" class="headerlink" title="免密登陆"></a>免密登陆</h5><p>步骤</p>
+<h5 id="免密登陆"><a class="header-anchor" href="#免密登陆">¶</a>免密登陆</h5>
+<p>步骤</p>
 <ul>
-<li>配置公钥<ul>
+<li>配置公钥
+<ul>
 <li>执行<code>ssh-keygen</code>即可生成SSH钥钥，一路回车即可</li>
 </ul>
 </li>
-<li>上传公钥到服务器<ul>
+<li>上传公钥到服务器
+<ul>
 <li>执行<code>ssh-copy-id -p port user@remote</code>，可以让远程服务器记住我们的公钥</li>
 </ul>
 </li>
 </ul>
 <p>示意图</p>
-<p><img src="/source/images/Linux简单命令/image-20200424005617262.png" alt="image-20200424005617262"></p>
+<p><img src="/source/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/image-20200424005617262.png" alt="image-20200424005617262"></p>
 <blockquote>
 <p>非对称加密算法</p>
 <ul>
@@ -792,7 +1556,8 @@
 <li>使用<strong>私钥</strong>加密的数据，需要使用<strong>公钥</strong>解密</li>
 </ul>
 </blockquote>
-<h5 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h5><p>每次都输入<code>ssh -p port user@remote</code>时间久了会觉得很麻烦，特别是当<code>user</code>,<code>remore</code>和<code>port</code>都输入，而且还不好记忆</p>
+<h5 id="配置别名"><a class="header-anchor" href="#配置别名">¶</a>配置别名</h5>
+<p>每次都输入<code>ssh -p port user@remote</code>时间久了会觉得很麻烦，特别是当<code>user</code>,<code>remore</code>和<code>port</code>都输入，而且还不好记忆</p>
 <p>而 <strong>配置别名</strong>可以让我们进一步偷懒，譬如用：<code>ssh mac</code>来替代上面这么长一串，那么就在<code>~/.ssh/config</code>里面追加以下内容：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host mac</span><br><span class="line">	HostName ip地址</span><br><span class="line">	User xxx</span><br><span class="line">	port  22</span><br></pre></td></tr></table></figure>
 <p><strong>保存之后，即可用<code>ssh mac</code>实现远程登陆了，<code>scp</code>同样可以使用</strong></p>
@@ -802,303 +1567,6 @@
       </categories>
       <tags>
         <tag>简单命令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机基础(一)</title>
-    <url>/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="计算机的组成"><a href="#计算机的组成" class="headerlink" title="计算机的组成"></a>计算机的组成</h2><h3 id="硬件系统"><a href="#硬件系统" class="headerlink" title="硬件系统"></a>硬件系统</h3><ul>
-<li>主机<ul>
-<li>中央处理器(运算器、控制器)</li>
-<li>内部存储器(随机存储器、只读存储器)</li>
-<li>I/O设备接口</li>
-</ul>
-</li>
-<li>外部设备<ul>
-<li>外部存储器(磁盘、光盘等)</li>
-<li>输入设备(键盘、鼠标、扫描仪等)</li>
-<li>输出设备(显示器，打印机，绘图仪等)</li>
-</ul>
-</li>
-</ul>
-<h3 id="软件系统"><a href="#软件系统" class="headerlink" title="软件系统"></a>软件系统</h3><ul>
-<li>系统软件(操作系统、语言处理程序、网络通讯管理程序等)</li>
-<li>应用软件(office办公软件，游戏软件)</li>
-</ul>
-<h2 id="CPU的功能"><a href="#CPU的功能" class="headerlink" title="CPU的功能"></a>CPU的功能</h2><ul>
-<li>程序控制功能。CPU通过<strong>执行指令</strong>来控制程序的执行顺序</li>
-<li>操作控制</li>
-<li>时间控制</li>
-<li>数据处理。<strong>CPU最根本的任务</strong></li>
-</ul>
-<h3 id="CPU的主要部件"><a href="#CPU的主要部件" class="headerlink" title="CPU的主要部件"></a>CPU的主要部件</h3><h4 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h4><p>运算器也称为算数逻辑单元(<code>ArithmeticandLogicUnit,ALU</code>),其主要功能是在控制器的控制下完成各种算数运算和逻辑运算。运算器的组成包含如下:</p>
-<ul>
-<li>算术逻辑单元<code>ALU</code>：数据的算数运算和逻辑运算</li>
-<li>累加寄存器<code>AC</code>：通用寄存器，为<code>ALU</code>提供一个工作区，用来暂存数据</li>
-<li>数据缓冲寄存器<code>DR</code>：写内存时，暂存指令或数据</li>
-<li>状态条件寄存器<code>PSW</code>：存状态标志与控制标志</li>
-</ul>
-<h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><p>控制器是分析和执行指令的部件，也是统一指挥并控制计算机各部件协调工作的重心部件，所依据的是机器指令。控制器的组成包含如下：</p>
-<ul>
-<li>程序计数器<code>PC</code>:存储下一条要执行指令的地址</li>
-<li>指令寄存器<code>IR</code>:存储即将执行的指令</li>
-<li>指令译码器<code>ID</code>:对指令中的操作码字段进行分析解释</li>
-<li>地址寄存器<code>AR</code>:用来保存当前CPU所访问的内存单元的地址</li>
-<li>时序部件：提供时序控制信号</li>
-</ul>
-<h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><h4 id="复杂指令系统CISC的特点"><a href="#复杂指令系统CISC的特点" class="headerlink" title="复杂指令系统CISC的特点"></a>复杂指令系统CISC的特点</h4><ul>
-<li>指令数量众多。指令系统拥有大量的指令，通常有100~250条</li>
-<li>指令使用频率相差悬殊。最常用的是一些比较简单的指令，仅占指令总数的20%，但是程序中出现的频率却占80%，而大部分指令却很少使用。</li>
-<li>支持很多种寻址方式。支持的寻址方式通常为5~20种。</li>
-<li>变长的指令。指令长度不是固定的，变长的指令增加指令译码电路的复杂性。</li>
-<li>指令可以对主存单元中的数据直接进行处理。典型的CISC通常都有指令能够直接对存单元中的数据进行处理，其执行速度较慢</li>
-<li>以微程序控制为主。CISC的指令系统很复杂，难以用硬布线逻辑(组合逻辑)电路实现控制器，通常采用微程序控制。</li>
-</ul>
-<h4 id="精简指令系统RISC的特点"><a href="#精简指令系统RISC的特点" class="headerlink" title="精简指令系统RISC的特点"></a>精简指令系统RISC的特点</h4><ul>
-<li>指令数量少。有限选取使用频率最高的一些简单指令和一些常用指令。避免使用复杂指令。只提供了<code>LOAD</code>(从存储器种读取)和<code>STORE</code>(把数据写入存储器)两条指令对存储器操作，其余所有的操作都在<code>CPU</code>的寄存器之间进行。</li>
-<li>指令的寻址方式少。通常只支持存储器寻址方式。立即数寻址方式和相对寻址方式</li>
-<li>指令长度固定，指令格式种类少。因为<code>RISC</code>指令数量少、格式少、相对简单，其指令长度固定，指令之间各字段的划分比较一直，译码相对容易</li>
-<li>以硬布线逻辑控制为主。为了提高操作的执行熟读，通常采用硬布线逻辑(组合逻辑)来构建控制器</li>
-<li>单周期指令执行，采用流水线技术。因为简化了指令系统，很容易利用流水线技术，使得大部分指令都能在一个机器周期内完成。少数指令可能会需要多周期，例如，<code>LOAD/STORE</code>指令因为需要访问存储器，其执行时间就会长一些</li>
-<li>优化的编译器：<code>RISC</code>的精简指令集使编译工作简单化。因为指令长度固定，个事少，寻址方式少，编译时不必再具有相似功能的许多指令种进行选择，也不必为寻址方式的选择而费心，同时易于实现优化，从而可以生成高效率执行的机器代码。</li>
-<li><code>CPU</code>中的通用寄存器数量多，一般在32各以上，有的可达上</li>
-</ul>
-<p>总结图：</p>
-<p><img src="/images/计算机基础/1.png" alt="image-20200426170025024"></p>
-<h3 id="校验码"><a href="#校验码" class="headerlink" title="校验码"></a>校验码</h3><ul>
-<li><p>奇偶校验码</p>
-<p>只能检测代码中奇数位出错的编码，但不能发现偶数位出错的情况</p>
-</li>
-<li><p>海明码</p>
-</li>
-<li><p>循环冗余校验码CRC</p>
-</li>
-</ul>
-<h3 id="指令控制方式"><a href="#指令控制方式" class="headerlink" title="指令控制方式"></a>指令控制方式</h3><ul>
-<li><p>顺序方式</p>
-<p>各条机器指令之间顺序串行地执行，执行完一条指令后才取下一条指令。缺点是速度慢，机器各部件利用率低。</p>
-<p><img src="/source/images/计算机基础/2.png" alt="2"></p>
-</li>
-<li><p>重叠方式</p>
-<p>在解释第K条指令的操作完成之前就可以开始解释低K+1条指令。(部分并行)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/3.jpg" alt="3"></p>
-</li>
-<li><p>流水方式</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/4.png" alt="4"></p>
-<p>流水线周期：执行时间最长的一段</p>
-<p>公式： </p>
-<ul>
-<li>理论公式：(t1+t2+….tk)+(n-1)*△t</li>
-<li>实践公式：(k+n-1)*△t</li>
-</ul>
-<p>流水线的吞吐率和最大吞吐率：吞吐率是指单位内流水线处理机流出的结果数。对指令而言，就是单位时间内执行的指令数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 吞吐率</span><br><span class="line">TP &#x3D; 指令条数&#x2F;流水线执行时间</span><br><span class="line"></span><br><span class="line"># 最大吞吐率</span><br><span class="line">TP(max) &#x3D; 1&#x2F;△t</span><br><span class="line"></span><br><span class="line"># 流水线加速比</span><br><span class="line">S &#x3D; 不适用流水线执行时间&#x2F;使用流水线执行时间</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h2><p>主存：</p>
-<ul>
-<li>CPU内部通用寄存器</li>
-<li>Cache：CPU和主存速度不匹配而产生的中间过渡元件</li>
-</ul>
-<p>外部存储器：</p>
-<ul>
-<li>主存储器</li>
-<li>联机磁盘存储器</li>
-<li>脱机光盘、磁盘存储器</li>
-</ul>
-<h4 id="内存编址"><a href="#内存编址" class="headerlink" title="内存编址"></a>内存编址</h4><p>存储器有一块块的空间(存储单元)组成，为了方便寻找到每一块空间，我们需要对每一个空间进行标识———内存编址</p>
-<h4 id="芯片"><a href="#芯片" class="headerlink" title="芯片"></a>芯片</h4><p>存储器由若干个芯片构成</p>
-<h4 id="内存容量"><a href="#内存容量" class="headerlink" title="内存容量"></a>内存容量</h4><p>存储器的大小。</p>
-<p>内存容量 = 每个芯片容量*芯片个数</p>
-<p>每个芯片的容量 = 一个地址代表的容量*编址总数 </p>
-<h4 id="数据总线"><a href="#数据总线" class="headerlink" title="数据总线"></a>数据总线</h4><p>计算机一次处理n位的数据，则数据总线的长度为n。注意的是：数据总线的长度，并不一定代表一个地址的长度</p>
-<h4 id="字"><a href="#字" class="headerlink" title="字"></a>字</h4><p>和数据总线密切相关。数据总线有几位，则一个字就由多少位组成。如64位计算机，表示一次可以处理64位数据，则一个字就是64位。</p>
-<h4 id="地址总线"><a href="#地址总线" class="headerlink" title="地址总线"></a>地址总线</h4><p>假如需要n位二进制数来表示所有的地址，则地址总线的个数为n。</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/5.png" alt="5"></p>
-<h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><p>在<code>CPU</code>的所有操作中，访问内存是最频繁的操作。由于一般微机中的主存储器的工作速度比<code>CPU</code>低一个数量级，加上<code>CPU</code>的所有访问都要通过总线这个瓶颈，所以，缩短存储器的访问时间是提高计算机速度的关键。采用在<code>CPU</code>和内存之间加进告诉缓冲存储器<code>Cache</code>的办法较好的解决了这一问题。</p>
-<p>简单来说<code>Cache</code>是为了解决高速运行的<code>cpu</code>与主存储器速度不匹配的问题。</p>
-<p>Cache的地址映像方法：</p>
-<ul>
-<li><p>直接映像</p>
-<p>缺点：容易造成资源的浪费</p>
-<p>优点：索引容易(找起来更加方便)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/6.png" alt="6"></p>
-</li>
-<li><p>全相连映像</p>
-<p>优点：灵活</p>
-<p>缺点：索引不方便(找起来麻烦)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/7.png" alt="7"></p>
-</li>
-<li><p>组相连映像</p>
-<p>前两种连接方式的结合，内存先分组在分页。</p>
-<p>缺点：增加开销</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/8.jpg" alt="8"></p>
-</li>
-</ul>
-<h5 id="cache的性能"><a href="#cache的性能" class="headerlink" title="cache的性能"></a>cache的性能</h5><p><code>CPU</code>访问内存是，首先判断所要访问的内容是否在Cache中，如果在，就称为“命中”，此时<code>CPU</code>直接总Cache中调用该内容；否则，就称为“不命中”，<code>CPU</code>只好去内存中调用所需的子程序或指令了。<code>CPU</code>不但可以直接从Cache中读出内容，也可以直接往其中写入内容。由于Cache的存取速率相当快，使得<code>CPU</code>的李永乐大大提高，进而使整个系统的性能得以提升。</p>
-<p>如果以<code>Hc</code>为代表对Cache的访问命中率，<code>tc</code>为Cache的存取时间，<code>tm</code>为主存的访问时间，则Cache的平均访问时间<code>ta</code>为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ta &#x3D; Hctc+(1-Hc)tm</span><br></pre></td></tr></table></figure>
-<p>因为cache的内容是部分主存内容的副本，应该与主存内容保持一致。而<code>CPU</code>对cache的写入更改了cache内容，如何与主存内容保持一致就有几种写操作方式可供选择，统称为写策略。</p>
-]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>(一)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux主要目录</title>
-    <url>/Linux/Linux%E4%B8%BB%E8%A6%81%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="Linux主要目录"><a href="#Linux主要目录" class="headerlink" title="Linux主要目录"></a>Linux主要目录</h2><h3 id=""><a href="#" class="headerlink" title="/"></a>/</h3><p>/:根目录</p>
-<p>一般根目录只存放目录，在<code>Linux</code>下有且只有一个根目录，所有的东西都是从这里开始的</p>
-<ul>
-<li>当在终端里输入<code>/home</code>，其实是在告诉电脑，先从<code>/</code>(根目录)开始，在进入到<code>home</code>目录</li>
-</ul>
-<h3 id="bin-usr-bin"><a href="#bin-usr-bin" class="headerlink" title="/bin,/usr/bin"></a>/bin,/usr/bin</h3><p>可执行的二进制文件的目录，如常用的命令<code>ls</code>,<code>tar</code>,<code>mv</code>,<code>cat</code>等</p>
-<h3 id="boot"><a href="#boot" class="headerlink" title="/boot"></a>/boot</h3><p>放置<code>Linux</code>系统启动时用到的一些文件,如<code>Linux</code>的内核文件:<code>/boot/vmlinux</code>，系统引导器<code>/boot/grub</code></p>
-<h3 id="dev"><a href="#dev" class="headerlink" title="/dev"></a>/dev</h3><p>存放Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount/dev/cdrom/mnt</code></p>
-<h3 id="etc"><a href="#etc" class="headerlink" title="/etc"></a>/etc</h3><p>系统配置文件的存放目录，不建议在此目录下存放可执行文件，重要的配置文件有</p>
-<ul>
-<li><code>/etc/inittab</code></li>
-<li><code>/etc/fstab</code></li>
-<li><code>/etc/init.d</code></li>
-<li><code>/etc/X11</code></li>
-<li><code>/etc/sysconfig</code></li>
-<li><code>/etc/xinetd.d</code></li>
-</ul>
-<h3 id="home"><a href="#home" class="headerlink" title="/home"></a>/home</h3><p>系统默认的用户家目录，新增用户账号是，用户的家目录都存放在此目录下</p>
-<ul>
-<li><code>~</code>表示当前用户的家目录</li>
-<li><code>~edu</code>表示用户<code>edu</code>的家目录</li>
-</ul>
-<h3 id="lib，-usr-lib，-usr-local-lib"><a href="#lib，-usr-lib，-usr-local-lib" class="headerlink" title="/lib，/usr/lib，/usr/local/lib"></a>/lib，/usr/lib，/usr/local/lib</h3><p>系统使用的函数库的目录，程序在执行的过程中，需要调用一些额外的参数时需要函数库的协助</p>
-<h3 id="lost-fount"><a href="#lost-fount" class="headerlink" title="/lost+fount"></a>/lost+fount</h3><p>系统异常产生错误时，会有一些遗失的片段放置于此目录下</p>
-<h3 id="mnt-media"><a href="#mnt-media" class="headerlink" title="/mnt,/media"></a>/mnt,/media</h3><p>光盘默认挂载点，通常光盘挂载与<code>/mnt/cdrom</code>下，也不一定，可以选择任意位置进行挂载</p>
-<h3 id="opt"><a href="#opt" class="headerlink" title="/opt"></a>/opt</h3><p>给主机额外安装软件所摆放的目录</p>
-<h3 id="proc"><a href="#proc" class="headerlink" title="/proc"></a>/proc</h3><p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放在内存中，所以不占用磁盘空间，比较重要的文件有:<code>/proc/cpuinfo</code>,<code>/proc/interrupts</code>,<code>proc/dma</code>,<code>proc/ioports</code>,``/proc/net/*</p>
-<h3 id="root"><a href="#root" class="headerlink" title="/root"></a>/root</h3><p>系统管理员的root的家目录</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>入门学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown 学习</title>
-    <url>/cmpr/markdown-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="1-使用-和-标记一级和二级标题"><a href="#1-使用-和-标记一级和二级标题" class="headerlink" title="1.使用=和-标记一级和二级标题"></a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
-<p>效果图如下<br><img src="/images/markdown/1.png" alt=""></p>
-<h3 id="2-使用-号标记"><a href="#2-使用-号标记" class="headerlink" title="2.使用#号标记"></a>2.使用<code>#</code>号标记</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-<p>注：每个<code>#</code>号后最好都有一个空格</p>
-<p>效果图如下<br><img src="/images/markdown/2.png" alt=""></p>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h3 id="1-段落"><a href="#1-段落" class="headerlink" title="1.段落"></a>1.段落</h3><p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong>  </p>
-<h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><p>可以使用如下字体<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure><br>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法<br>效果图如下<br><em>斜体</em><br>_斜体_<br><strong>粗斜体</strong><br><strong>粗斜体</strong><br><strong><em>粗斜体</em></strong><br><strong>_粗斜体_</strong><br>注:下划线都是英文的下划线  </p>
-<h3 id="3-分隔线"><a href="#3-分隔线" class="headerlink" title="3.分隔线"></a>3.分隔线</h3><p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure></p>
-<p>效果图  </p>
-<p><img src="/images/markdown/3.png" alt="">  </p>
-<h3 id="4-删除线"><a href="#4-删除线" class="headerlink" title="4.删除线"></a>4.删除线</h3><p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就<del>可以了<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure><br>效果图<br>hape<br>~~hape</del></p>
-<h3 id="5-下划线"><a href="#5-下划线" class="headerlink" title="5.下划线"></a>5.下划线</h3><p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;xxxx&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-<p>效果:<br><u>xxx</u> </p>
-<h3 id="6-脚注"><a href="#6-脚注" class="headerlink" title="6.脚注"></a>6.脚注</h3><p>脚注是对文本的补充说明:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure></p>
-<p>效果图:<br>python:<sup><a href="#fn_python" id="reffn_python">python</a></sup></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
-<p>显示结果:</p>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项  </li>
-</ul>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项  </li>
-</ul>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3>列表嵌套只需在子列表中的选项添加四个空格即可<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
-显示结果:<br>1.第一项:<ul>
-<li>嵌套在第一项中的第一个元素  </li>
-<li>嵌套在第一项中的第二个元素  </li>
-</ul>
-</li>
-</ul>
-<p>2.第二项:</p>
-<ul>
-<li>嵌套在第二项中的第一个元素</li>
-<li>嵌套在第二项中的第二个元素</li>
-</ul>
-<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块应用</span><br></pre></td></tr></table></figure>
-<p>区块嵌套<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure><br>效果图:  </p>
-<blockquote>
-<p>最外层</p>
-<blockquote>
-<p>第一层嵌套</p>
-<blockquote>
-<p>第二层嵌套</p>
-<h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
-<p>效果:<br>区块中使用列表<br>1.第一项<br>2.第二项</p>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项 </li>
-</ul>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h3><p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure><br>效果:</p>
-<ul>
-<li>第一项<blockquote>
-<p>第一个区块<br>第二个区块</p>
-</blockquote>
-</li>
-<li>第二项</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure></p>
-<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>使用<code>``` </code>包裹一段代码，并指定一种语言(也可以不指定)</p>
-<p>效果图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>链接使用方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure><br>例如:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure><br>效果:<br>这是一个链接<a href="www.baidu.com">百度</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>用法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure><br>效果:<br>| 表头 | 表头|<br>| —— | —— |<br>| 单元格 | 单元格 |<br>| 单元格 | 单元格 |</p>
-<h3 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式:"></a>对齐方式:</h3><p><code>-:</code>设置内容和标题栏居右对齐<br><code>:-</code>设置内容和标题栏居左对齐<br><code>:-:</code>设置内容和标题栏居中对齐<br>实现如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure><br>效果图   </p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:right">右对齐</th>
-<th style="text-align:left">左对齐</th>
-<th style="text-align:center">居中对齐</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">单元格</td>
-<td style="text-align:left">单元格</td>
-<td style="text-align:center">单元格</td>
-</tr>
-<tr>
-<td style="text-align:right">单元格</td>
-<td style="text-align:left">单元格</td>
-<td style="text-align:center">单元格</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><h2 id="支持HTML元素"><a href="#支持HTML元素" class="headerlink" title="支持HTML元素"></a>支持HTML元素</h2><p>很多HTML元素都能在markdown文件中使用</p>
-<p>在更新中…….</p>
-<h3 id="做思维导图"><a href="#做思维导图" class="headerlink" title="做思维导图"></a>做思维导图</h3><p>不想做了……</p>
-<h3 id="公式编辑"><a href="#公式编辑" class="headerlink" title="公式编辑"></a>公式编辑</h3><p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…..</p>
-]]></content>
-      <categories>
-        <category>cmpr</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

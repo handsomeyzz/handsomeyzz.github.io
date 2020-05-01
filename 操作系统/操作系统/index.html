@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/unname.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/unname.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="study," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="¶操作系统的功能  处理机管理 存储器管理 设备管理 文件管理 用户接口  ¶操作系统类型   单用户系统 一台处理机只支持一个用户程序   批处理系统 用户将一批作业提交给操作系统后不再干预，由操作系统控制它们自动运行。人机不交互   分时操作系统 把处理机的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。   网络操作系统 一种在通常操作系统功能的基础上提供网络通信和网络服">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统基础">
+<meta property="og:url" content="https://handsomeyzz.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Harry&#39;s  Note">
+<meta property="og:description" content="¶操作系统的功能  处理机管理 存储器管理 设备管理 文件管理 用户接口  ¶操作系统类型   单用户系统 一台处理机只支持一个用户程序   批处理系统 用户将一批作业提交给操作系统后不再干预，由操作系统控制它们自动运行。人机不交互   分时操作系统 把处理机的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。   网络操作系统 一种在通常操作系统功能的基础上提供网络通信和网络服">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-1587971806115.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.png">
+<meta property="og:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.png">
+<meta property="article:published_time" content="2020-04-27T00:51:15.000Z">
+<meta property="article:modified_time" content="2020-04-30T05:32:10.169Z">
+<meta property="article:author" content="YhmYzz">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://handsomeyzz.github.io/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://handsomeyzz.github.io/操作系统/操作系统/"/>
+
+
+
+
+
+  <title>操作系统基础 | Harry's  Note</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/handsomeyzz" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harry's  Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://handsomeyzz.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YhmYzz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's  Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">操作系统基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-27T08:51:15+08:00">
+                2020-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="操作系统/操作系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="操作系统的功能"><a class="header-anchor" href="#操作系统的功能">¶</a>操作系统的功能</h2>
+<ul>
+<li>处理机管理</li>
+<li>存储器管理</li>
+<li>设备管理</li>
+<li>文件管理</li>
+<li>用户接口</li>
+</ul>
+<h2 id="操作系统类型"><a class="header-anchor" href="#操作系统类型">¶</a>操作系统类型</h2>
+<ul>
+<li>
+<p>单用户系统</p>
+<p><strong>一台</strong>处理机只支持<strong>一个</strong>用户程序</p>
+</li>
+<li>
+<p>批处理系统</p>
+<p>用户将一批作业提交给操作系统后<strong>不再干预</strong>，由操作系统控制它们自动运行。<strong>人机不交互</strong></p>
+</li>
+<li>
+<p>分时操作系统</p>
+<p>把处理机的运行时间<strong>分成很短的时间片</strong>，按时间片轮流把处理机分配给各联机作业使用。</p>
+</li>
+<li>
+<p>网络操作系统</p>
+<p>一种在通常操作系统功能的基础上提供<strong>网络通信</strong>和<strong>网络服务</strong>功能的操作系统</p>
+</li>
+<li>
+<p>分布式操作系统</p>
+<p>以计算机网络为基础的，讲物理上分布的具有<strong>自治功能</strong>的数据处理系统或计算机系统互联起来的操作系统</p>
+</li>
+<li>
+<p>嵌入式操作系统</p>
+<p>运行在<strong>嵌入式智能芯片</strong>环境中，对整个智能芯片及其它所操作、控制的各种部件装置等资源进行统一协调、处理、指挥和控制。</p>
+</li>
+</ul>
+<h2 id="进程"><a class="header-anchor" href="#进程">¶</a>进程</h2>
+<p>进行资源分配和调度的使用。</p>
+<p>进程的组成：</p>
+<ul>
+<li>程序</li>
+<li>数据集合</li>
+<li>进程控制块PCB</li>
+</ul>
+<p>为了描述和控制进程的运行，系统为每个进程定义了一个数据结构--------进程控制块<code>PCB</code>。它是进程重要的组成部分，它记录了操作系统所需的、用于描述进程的当前状态和控制进程的全部信息。操作系统就是根据进程的<code>PCB</code>来感知进程的存在，并依此对进程进行管理和控制。</p>
+<p><strong><code>PCB</code>是进程存在的唯一标识</strong></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" alt="1"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-1587971806115.png" alt="2"></p>
+<h2 id="PV操作"><a class="header-anchor" href="#PV操作">¶</a>PV操作</h2>
+<p>P操作是阻塞，V操作是唤醒</p>
+<p>P操作：</p>
+<ul>
+<li>将信号量S的值减少1，即 S = S-1</li>
+<li>如果S&gt;=0,则该进程继续执行，否则该进程置为等待状态</li>
+</ul>
+<p>V操作：</p>
+<ul>
+<li>将信号量S的值加1，即S = S+1</li>
+<li>如果S&gt;0该进程继续执行，否则说明有等待队列中有等待进程，需要唤醒等待进程。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png" alt="3"></p>
+<h2 id="存储管理"><a class="header-anchor" href="#存储管理">¶</a>存储管理</h2>
+<h3 id="逻辑管理"><a class="header-anchor" href="#逻辑管理">¶</a>逻辑管理</h3>
+<p><code>CPU</code>所生成的地址。逻辑地址是内部和变成使用的、并不唯一。例如，你在C语言指针变成中，可以读取指针变量本身值(&amp;操作)，实际上这个值就是逻辑地址，它是相对于你当前进程数据段的地址(偏移地址)，不和绝对物理地址想干。</p>
+<h3 id="物理地址"><a class="header-anchor" href="#物理地址">¶</a>物理地址</h3>
+<p>加载到内存地址寄存器中的地址，内存单元的真正地址。</p>
+<h3 id="重定位"><a class="header-anchor" href="#重定位">¶</a>重定位</h3>
+<h4 id="静态重定位"><a class="header-anchor" href="#静态重定位">¶</a>静态重定位</h4>
+<p>静态重定位是在程序执行之前进行重定位，它是根据装配模块将要装入的内存起始位置，直接修改装配模块中的有关使用地址的命令</p>
+<p>例如，MOV    AC，[500]</p>
+<p>静态重定位有着无需硬件支持的<strong>优点</strong>,但存在着如下的<strong>缺点</strong>：</p>
+<ul>
+<li>程序重定位之后就不能再内存中班中了</li>
+<li>要求程序的存储空间是连续的，不能把程序放在若干个不连续的区域内。</li>
+</ul>
+<h4 id="动态重定位"><a class="header-anchor" href="#动态重定位">¶</a>动态重定位</h4>
+<p>不是在程序执行之前而是在程序执行过程中进行地址重定位。更确切的说，是在<code>CPU</code>每次访问内存单元前才进行地址变换，<strong>需要硬件支持</strong></p>
+<p>优点：</p>
+<ul>
+<li>程序占用的内存空间动态可变，不必连续存放在一处。</li>
+<li>比较同意实现几个进程对统一程序副本的共享使用。</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>需要附加的硬件支持，增加了机器成本，而且实现存储管理的软件算法比较复杂。</li>
+</ul>
+<p><strong>现在一般计算机系统中都采用动态重定位方法。</strong></p>
+<h3 id="分区管理"><a class="header-anchor" href="#分区管理">¶</a>分区管理</h3>
+<table>
+<thead>
+<tr>
+<th>固定分区</th>
+<th><strong>静态分区</strong>，作业装入之前划分，大小固定，内存利用率不高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可变分区</td>
+<td><strong>动态分区</strong>，碎片多。首次适应算法，最佳适应算法，最坏适应算法</td>
+</tr>
+<tr>
+<td>可重定位分区</td>
+<td>合并零散空间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分页管理"><a class="header-anchor" href="#分页管理">¶</a>分页管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png" alt="4"></p>
+<h3 id="分段存储管理"><a class="header-anchor" href="#分段存储管理">¶</a>分段存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.png" alt="5"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.png" alt="6"></p>
+<h3 id="段页式存储管理"><a class="header-anchor" href="#段页式存储管理">¶</a>段页式存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.png" alt="7"></p>
+<h2 id="设备管理"><a class="header-anchor" href="#设备管理">¶</a>设备管理</h2>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.png" alt="8"></p>
+<p>在计算机中，I/O系统可以有5种不同的工作方式，分别是</p>
+<ul>
+<li>程序控制方式</li>
+<li>程序中断方式</li>
+<li>DMA工作方式</li>
+<li>通道方式</li>
+<li>I/O处理机</li>
+</ul>
+<h4 id="程序控制方式"><a class="header-anchor" href="#程序控制方式">¶</a>程序控制方式</h4>
+<ul>
+<li>
+<p>无条件传送方式</p>
+<p>I/O端口总是准备好接受主机的输出数据，或是总是准备好想主机输入数据，而cpu在需要时，随时直接利用I/O指令访问对应的I/O端口，实现与外设的数据交换。优点是软、硬件结构简单，缺点是对时序要求高，只是用与简单的I/O控制</p>
+</li>
+<li>
+<p>程序查询方式</p>
+<p>程序查询方式也称为程序轮询方式，该方式采用用户程序直接控制主机与外部设备之间输入/输出操作。CPU必须不停的循环测试I/O设备的状态端口，当发现设备处于准备好(Ready)状态是，CPU就可以与I/O设备进行数据存取操作。这种方式下的CPU与I/O设备是串行工作的。</p>
+</li>
+</ul>
+<h4 id="终端方式"><a class="header-anchor" href="#终端方式">¶</a>终端方式</h4>
+<p>当I/O设备结束(完成、特殊或异常)是，就会向CPU发出终端请求信号，CPU收到信号就可以才去相应措施。当某个进程要启动某个设备室，CPU就向相应的设备控制器发出一条设备I/O启动指令，然后CPU又返回做原来的工作。CPU与I/O设备可以并行工作，与程序查询方式相比，大大提高了CPU的利用率。</p>
+<h4 id="DMA-直接内存存取-方式"><a class="header-anchor" href="#DMA-直接内存存取-方式">¶</a>DMA(直接内存存取)方式</h4>
+<p>DMA方式也称为直接主存存取方式，其思想是：允许主存储器和I/O设备之间通过“DMA控制器(DMAC)”直接进行批量数据交换，除了在数据传输开始和结束是，整个过程无需CPU的干预</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.png" alt="9"></p>
+<h4 id="通道控制方式"><a class="header-anchor" href="#通道控制方式">¶</a>通道控制方式</h4>
+<p>在一定的硬件基础上利用软件手段实现I/O的控制和传送，更多地免去了CPU的接入，使主机与外设并行工作程度更高</p>
+<h4 id="I-O处理机"><a class="header-anchor" href="#I-O处理机">¶</a>I/O处理机</h4>
+<p>指专门负责输入/输出的处理机。可以有独立的存储器、运算部件和指令控制部件。</p>
+<h2 id="文件管理"><a class="header-anchor" href="#文件管理">¶</a>文件管理</h2>
+<h4 id="文件的逻辑结构"><a class="header-anchor" href="#文件的逻辑结构">¶</a>文件的逻辑结构</h4>
+<p>文件的逻辑组织是为了方便用户使用。一般文件的逻辑结构可以分文两种：无结构的字符流文件和有结构的记录文件。记录文件由记录组成，即文件内的信息划分成多个记录，以记录为单位组织的使用信息。</p>
+<p>记录文件有：</p>
+<ul>
+<li>
+<p>顺序文件</p>
+<p>大多数文件是顺序文件。顺序文件的记录定长，记录中的数据项的类型长度和次序固定，一般还有一个可以唯一标识记录的数据项，称为键(key)，记录是按键值的约定次序组织的。顺序文件常用于批处理应用，对于查询或更新某个记录的处理性能不太好</p>
+</li>
+<li>
+<p>索引顺序文件</p>
+</li>
+<li>
+<p>索引文件</p>
+</li>
+<li>
+<p>直接文件</p>
+<p>直接文件又称哈希(Hash)文件。记录以他们直接访问存储设备上的物理地址直接(随机地)访问。直接文件常用语需要高速访问文件而且每次仅访问一条记录的应用中。</p>
+</li>
+</ul>
+<h4 id="文件的物理结构"><a class="header-anchor" href="#文件的物理结构">¶</a>文件的物理结构</h4>
+<p>文件的物理结构是指文件在存储设备上的存放方法。文件的物理结构侧重于提高存储器的利用效率和奖代存取时间。文件的存储设备通常划分为大小相同的物理块。物理块是分配和传输信息的基本单位。文件的物理结构设计文件存储设备的组块策略和文件分配策略，决定文件信息在存储设备上的存储位置。常用的文件分配策略有：</p>
+<ul>
+<li>顺序分配(连续分配)</li>
+<li>连接分配( 串联分配)</li>
+<li>索引分配。这是另一种对文件存储不连续分配的方法。采用索引分配方法的系统，为每一个文件建立一张索引表，索引表中每一表项支出文件信息所在的逻辑块好和与之对应的物理块号。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.png" alt="10"></p>
+<h3 id="文件存储设备管理"><a class="header-anchor" href="#文件存储设备管理">¶</a>文件存储设备管理</h3>
+<p>位示图法。该方法是在外存上建立一张位示图（Bitmap），记录文件存储器的使 用情况。每一位仅对应文件存储器上的一个物理块，取值0 和1 分别表示空闲和占用。文件存储器上的物理块依次编号为：0、1、2、…。假如系统中字长为32位，有4096个物理块，那么在位示图中的第1个字对应文件存储器上的0、1、2、…、31号物理块；第2 个字对应文件存储器上的32、33、34、…、63号物理块；第128字对应文件存储器上的4064、4065、…、4095号物理块。这样位示图的大小为32字。</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.png" alt="11"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一分一毛也是心意</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.jpg" alt="YhmYzz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alibaba.jpg" alt="YhmYzz 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/study/" rel="tag"><i class="fa fa-linux"></i> study</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="next" title="计算机基础(一)">
+                <i class="fa fa-chevron-left"></i> 计算机基础(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="操作系统/操作系统/"
+           data-title="操作系统基础" data-url="https://handsomeyzz.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="YhmYzz" />
+            
+              <p class="site-author-name" itemprop="name">YhmYzz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/handsomeyzz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:handsomeyzz@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/356595360" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+                  </span>
+                
+            </div>
+          
+          
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统的功能"><span class="nav-number">1.</span> <span class="nav-text">操作系统的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统类型"><span class="nav-number">2.</span> <span class="nav-text">操作系统类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PV操作"><span class="nav-number">4.</span> <span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储管理"><span class="nav-number">5.</span> <span class="nav-text">存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑管理"><span class="nav-number">5.1.</span> <span class="nav-text">逻辑管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理地址"><span class="nav-number">5.2.</span> <span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定位"><span class="nav-number">5.3.</span> <span class="nav-text">重定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态重定位"><span class="nav-number">5.3.1.</span> <span class="nav-text">静态重定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态重定位"><span class="nav-number">5.3.2.</span> <span class="nav-text">动态重定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区管理"><span class="nav-number">5.4.</span> <span class="nav-text">分区管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页管理"><span class="nav-number">5.5.</span> <span class="nav-text">分页管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分段存储管理"><span class="nav-number">5.6.</span> <span class="nav-text">分段存储管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段页式存储管理"><span class="nav-number">5.7.</span> <span class="nav-text">段页式存储管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备管理"><span class="nav-number">6.</span> <span class="nav-text">设备管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#程序控制方式"><span class="nav-number">6.0.1.</span> <span class="nav-text">程序控制方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端方式"><span class="nav-number">6.0.2.</span> <span class="nav-text">终端方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DMA-直接内存存取-方式"><span class="nav-number">6.0.3.</span> <span class="nav-text">DMA(直接内存存取)方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通道控制方式"><span class="nav-number">6.0.4.</span> <span class="nav-text">通道控制方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#I-O处理机"><span class="nav-number">6.0.5.</span> <span class="nav-text">I&#x2F;O处理机</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件管理"><span class="nav-number">7.</span> <span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的逻辑结构"><span class="nav-number">7.0.1.</span> <span class="nav-text">文件的逻辑结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的物理结构"><span class="nav-number">7.0.2.</span> <span class="nav-text">文件的物理结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件存储设备管理"><span class="nav-number">7.1.</span> <span class="nav-text">文件存储设备管理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("04/08/2020 14:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YhmYzz</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"your-duoshuo-shortname"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '6bBKwYikPBUvasbhJYt8bRAn-gzGzoHsz',
+        appKey: 'alzOWvJQWVW7eulWxwdDqG8k',
+        placeholder: '留下你的宝贵的建议吧！爱你哟~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+
+<!doctype html>
+...
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  ...
+</head>

@@ -427,7 +427,7 @@
       
 
       
-        <h1 id="常用Linux命令的基本使用"><a href="#常用Linux命令的基本使用" class="headerlink" title="常用Linux命令的基本使用"></a>常用Linux命令的基本使用</h1><div class="table-container">
+        <h1>常用Linux命令的基本使用</h1>
 <table>
 <thead>
 <tr>
@@ -474,7 +474,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>小技巧</p>
 <ul>
@@ -482,7 +481,9 @@
 <li><code>ctrl + -</code>缩小终端窗口的字体显示</li>
 </ul>
 </blockquote>
-<h2 id="Linux终端命令格式"><a href="#Linux终端命令格式" class="headerlink" title="Linux终端命令格式"></a>Linux终端命令格式</h2><h3 id="终端命令格式"><a href="#终端命令格式" class="headerlink" title="终端命令格式"></a>终端命令格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
+<h2 id="Linux终端命令格式"><a class="header-anchor" href="#Linux终端命令格式">¶</a>Linux终端命令格式</h2>
+<h3 id="终端命令格式"><a class="header-anchor" href="#终端命令格式">¶</a>终端命令格式</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
 <p>解释:</p>
 <ul>
 <li><code>command</code> :命令名，相应功能的英文单词火单词的缩写</li>
@@ -490,12 +491,15 @@
 <li><code>parameter</code>：传给命令的参数，可以是<strong>零个</strong>，<strong>一个</strong>或者<strong>多个</strong></li>
 </ul>
 <p><code>[]</code>代表可选</p>
-<h3 id="查阅帮助信息"><a href="#查阅帮助信息" class="headerlink" title="查阅帮助信息"></a>查阅帮助信息</h3><h4 id="—help"><a href="#—help" class="headerlink" title="—help"></a>—help</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command --help</span><br></pre></td></tr></table></figure>
+<h3 id="查阅帮助信息"><a class="header-anchor" href="#查阅帮助信息">¶</a>查阅帮助信息</h3>
+<h4 id="–help"><a class="header-anchor" href="#–help">¶</a>–help</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command --help</span><br></pre></td></tr></table></figure>
 <p>说明：</p>
 <ul>
 <li>提示<code>command</code>命令中的帮助信息</li>
 </ul>
-<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p><code>man command</code></p>
+<h3 id="man"><a class="header-anchor" href="#man">¶</a>man</h3>
+<p><code>man command</code></p>
 <p>说明：</p>
 <ul>
 <li>查阅<code>command</code>命令的使用手册</li>
@@ -504,7 +508,6 @@
 <p><code>man</code>是<code>manual</code>的缩写，是<code>Linux</code>的一个<strong>手册</strong>，包含了绝大部分的命令，函数的详细说明</p>
 </blockquote>
 <p>使用<code>man</code>时的操作间</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -535,61 +538,74 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="文件和目录常用命令"></a>文件和目录常用命令</h2><ul>
-<li>查看内容<ul>
+<h2 id="文件和目录常用命令"><a class="header-anchor" href="#文件和目录常用命令">¶</a>文件和目录常用命令</h2>
+<ul>
+<li>查看内容
+<ul>
 <li><code>ls</code></li>
 </ul>
 </li>
-<li>切换目录<ul>
+<li>切换目录
+<ul>
 <li><code>cd</code></li>
 </ul>
 </li>
-<li>创建和删除操作<ul>
+<li>创建和删除操作
+<ul>
 <li><code>touch</code></li>
 <li><code>rm</code></li>
 <li><code>mkdir</code></li>
 </ul>
 </li>
-<li>拷贝和移动文件<ul>
+<li>拷贝和移动文件
+<ul>
 <li><code>cp</code></li>
 <li><code>mv</code></li>
 </ul>
 </li>
-<li>查看文件内容<ul>
+<li>查看文件内容
+<ul>
 <li><code>cat</code></li>
 <li><code>more</code></li>
 <li><code>grep</code></li>
 </ul>
 </li>
-<li>其他<ul>
+<li>其他
+<ul>
 <li><code>echo</code></li>
 <li>重定向<code>&gt;</code>和<code>&gt;&gt;</code></li>
 <li>管道<code>|</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="查看目录内容"><a href="#查看目录内容" class="headerlink" title="查看目录内容"></a>查看目录内容</h2><h3 id="终端使用技巧"><a href="#终端使用技巧" class="headerlink" title="终端使用技巧"></a>终端使用技巧</h3><h4 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h4><ul>
-<li>在敲出<code>文件</code>/<code>目录</code>/<code>命令</code>的前几个字母之后，按下<code>tab</code>键盘<ul>
+<h2 id="查看目录内容"><a class="header-anchor" href="#查看目录内容">¶</a>查看目录内容</h2>
+<h3 id="终端使用技巧"><a class="header-anchor" href="#终端使用技巧">¶</a>终端使用技巧</h3>
+<h4 id="自动补全"><a class="header-anchor" href="#自动补全">¶</a>自动补全</h4>
+<ul>
+<li>在敲出<code>文件</code>/<code>目录</code>/<code>命令</code>的前几个字母之后，按下<code>tab</code>键盘
+<ul>
 <li>如果输入的没有歧义，系统会自动补全</li>
 <li>如果还存在其他<code>文件</code>/<code>目录</code>/<code>命令</code>，在按一下<code>tab</code>键，系统会提示可能存在的命令</li>
 </ul>
 </li>
 </ul>
-<h4 id="曾经使用过的命令"><a href="#曾经使用过的命令" class="headerlink" title="曾经使用过的命令"></a>曾经使用过的命令</h4><ul>
+<h4 id="曾经使用过的命令"><a class="header-anchor" href="#曾经使用过的命令">¶</a>曾经使用过的命令</h4>
+<ul>
 <li>按<code>上</code>/<code>下</code>光标可以在曾经使用过的命令之间来回切换</li>
 <li>如果想要退出选择，并且不想执行当前选中的命令，可以按<code>ctrl + c</code></li>
 </ul>
-<h2 id="ls命令说明"><a href="#ls命令说明" class="headerlink" title="ls命令说明"></a>ls命令说明</h2><ul>
+<h2 id="ls命令说明"><a class="header-anchor" href="#ls命令说明">¶</a>ls命令说明</h2>
+<ul>
 <li><code>ls</code>是英文单词<code>list</code>的，其功能为列出目录的内容，使用户最常用的命令之一，类似于DOS下的<code>dir</code>命令</li>
 </ul>
-<h2 id="Linux下文件和目录的特点"><a href="#Linux下文件和目录的特点" class="headerlink" title="Linux下文件和目录的特点"></a>Linux下文件和目录的特点</h2><ul>
+<h2 id="Linux下文件和目录的特点"><a class="header-anchor" href="#Linux下文件和目录的特点">¶</a>Linux下文件和目录的特点</h2>
+<ul>
 <li>Linux<strong>文件</strong>或者<strong>目录</strong>名称最长可以有<code>256</code>个字符</li>
 <li>以<code>.</code>开头的文件为隐藏文件，需要用<code>-a</code>参数才能显示</li>
 <li><code>.</code>代表当前目录</li>
 <li><code>..</code>代表上级目录</li>
 </ul>
-<h2 id="ls-常用选项"><a href="#ls-常用选项" class="headerlink" title="ls 常用选项"></a>ls 常用选项</h2><div class="table-container">
+<h2 id="ls-常用选项"><a class="header-anchor" href="#ls-常用选项">¶</a>ls 常用选项</h2>
 <table>
 <thead>
 <tr>
@@ -612,8 +628,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="ls通配符的使用"><a href="#ls通配符的使用" class="headerlink" title="ls通配符的使用"></a>ls通配符的使用</h2><div class="table-container">
+<h2 id="ls通配符的使用"><a class="header-anchor" href="#ls通配符的使用">¶</a>ls通配符的使用</h2>
 <table>
 <thead>
 <tr>
@@ -644,39 +659,91 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
-<li><p><code>cd</code>是英文单词<strong>change directory</strong>的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</p>
+<h2 id="切换目录"><a class="header-anchor" href="#切换目录">¶</a>切换目录</h2>
+<h3 id="cd"><a class="header-anchor" href="#cd">¶</a>cd</h3>
+<ul>
+<li>
+<p><code>cd</code>是英文单词<strong>change directory</strong>的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</p>
 <blockquote>
 <p>注意：Linux所有的<strong>目录</strong>和<strong>文件名</strong>都是大小写敏感的</p>
 </blockquote>
-<p>| 命令  | 含义                                   |<br>| ——- | ——————————————————— |<br>| cd    | 切换到当前用户的主目录(/home/用户目录) |<br>| cd ~  | 切换到当前用户的主目录(/home/用户目录) |<br>| cd .  | 保持到当前目录不变                     |<br>| cd .. | 切换到上级目录                         |<br>| cd -  | 可以再最近两次工作目录来回切换         |</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd .</td>
+<td>保持到当前目录不变</td>
+</tr>
+<tr>
+<td>cd …</td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>可以再最近两次工作目录来回切换</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
-<h3 id="相对路径和绝对路径"><a href="#相对路径和绝对路径" class="headerlink" title="相对路径和绝对路径"></a>相对路径和绝对路径</h3><ul>
+<h3 id="相对路径和绝对路径"><a class="header-anchor" href="#相对路径和绝对路径">¶</a>相对路径和绝对路径</h3>
+<ul>
 <li><strong>相对路径</strong>在输入路径是，最前面不是/或者~，表示当前相对<strong>当前目录</strong>所在的目录位置</li>
 <li><strong>绝对路径</strong>在输入路径是，最前面是/或者~，表示从<strong>根目录/家目录</strong>开始的具体目录位置</li>
 </ul>
-<h2 id="创建和删除操作"><a href="#创建和删除操作" class="headerlink" title="创建和删除操作"></a>创建和删除操作</h2><h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><ul>
-<li><p>创建文件或者修改文件时</p>
+<h2 id="创建和删除操作"><a class="header-anchor" href="#创建和删除操作">¶</a>创建和删除操作</h2>
+<h4 id="touch"><a class="header-anchor" href="#touch">¶</a>touch</h4>
+<ul>
+<li>创建文件或者修改文件时
 <ul>
 <li>如果文件<strong>不存在</strong>，可以创建一个空白文件</li>
 <li>如果文件<strong>已经存在</strong>，可以修改文件的末次修改日期</li>
 </ul>
-<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4></li>
-<li><p>创建一个新的目录</p>
-<p>| 选项 | 含义             |<br>| —— | ———————— |<br>| -p   | 可以递归创建目录 |</p>
+</li>
+</ul>
+<h4 id="mkdir"><a class="header-anchor" href="#mkdir">¶</a>mkdir</h4>
+<ul>
+<li>
+<p>创建一个新的目录</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td>可以递归创建目录</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><strong>新建目录的名称</strong>不能与当前目录中<strong>已有的文件或者目录</strong>同名</p>
 </blockquote>
-<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4></li>
-<li><p>删除文件或者目录</p>
+</li>
+</ul>
+<h4 id="rm"><a class="header-anchor" href="#rm">¶</a>rm</h4>
+<ul>
+<li>删除文件或者目录</li>
+</ul>
 <blockquote>
 <p>使用<code>rm</code>命令要小心，因为文件删除后不能恢复</p>
 </blockquote>
-</li>
-</ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -695,8 +762,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="拷贝和移动文件"><a href="#拷贝和移动文件" class="headerlink" title="拷贝和移动文件"></a>拷贝和移动文件</h2><div class="table-container">
+<h2 id="拷贝和移动文件"><a class="header-anchor" href="#拷贝和移动文件">¶</a>拷贝和移动文件</h2>
 <table>
 <thead>
 <tr>
@@ -723,11 +789,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h4><ul>
+<h4 id="tree"><a class="header-anchor" href="#tree">¶</a>tree</h4>
+<ul>
 <li><code>tree</code>命令可以以树状图列出文件目录结构</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -742,11 +807,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><ul>
+<h4 id="cp"><a class="header-anchor" href="#cp">¶</a>cp</h4>
+<ul>
 <li><code>cp</code>命令的功能是将给出的<strong>文件</strong>或<strong>目录</strong>复制到另外一个<strong>文件</strong>或<strong>目录</strong>中，相当于<strong>DOS</strong>下的<code>copy</code>命令</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -769,13 +833,27 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h4><ul>
-<li><p><code>mv</code>命令可以用来<strong>移动文件</strong>或<strong>目录</strong>复制到另一个<strong>文件</strong>或<strong>目录</strong>，相当于<strong>DOS</strong>下的<code>copy</code>命令</p>
-<p>| 选项 | 含义           |<br>| —— | ——————— |<br>| -i   | 覆盖文件前提示 |</p>
+<h4 id="mv"><a class="header-anchor" href="#mv">¶</a>mv</h4>
+<ul>
+<li>
+<p><code>mv</code>命令可以用来<strong>移动文件</strong>或<strong>目录</strong>复制到另一个<strong>文件</strong>或<strong>目录</strong>，相当于<strong>DOS</strong>下的<code>copy</code>命令</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
-<h3 id="查看文件目录"><a href="#查看文件目录" class="headerlink" title="查看文件目录"></a>查看文件目录</h3><div class="table-container">
+<h3 id="查看文件目录"><a class="header-anchor" href="#查看文件目录">¶</a>查看文件目录</h3>
 <table>
 <thead>
 <tr>
@@ -802,12 +880,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><ul>
+<h4 id="cat"><a class="header-anchor" href="#cat">¶</a>cat</h4>
+<ul>
 <li><code>cat</code>命令可用来<strong>查看文件内容</strong>，<strong>创建文件</strong>，<strong>文件合并</strong>，<strong>追加文件内容</strong>等功能</li>
 <li><code>cat</code>会一次显示所有的内容，适合<strong>查看内容较少</strong>的文本文件</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -826,16 +903,15 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>Linux中还有一个<code>nl</code>的命令和<code>cat -b</code>的效果等价</p>
 </blockquote>
-<h4 id="more"><a href="#more" class="headerlink" title="more"></a>more</h4><ul>
+<h4 id="more"><a class="header-anchor" href="#more">¶</a>more</h4>
+<ul>
 <li><code>more</code>命令可以用与分屏显示文件内容，每次只显示一夜的内容</li>
 <li>适合<strong>查看内容较多</strong>的文本文件</li>
 </ul>
 <p>使用<code>more</code>的操作键:</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -870,12 +946,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
+<h4 id="grep"><a class="header-anchor" href="#grep">¶</a>grep</h4>
+<ul>
 <li>Linux系统中<code>grep</code>命令是一种强大的文本搜索工具</li>
 <li><code>grep</code>允许对文本文件进行<strong>模式</strong>查找，所谓模式查找，又被称为<strong>正则表达式</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -898,11 +973,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li>常用的两种模式查找</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -921,11 +994,13 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="echo文字内容"><a href="#echo文字内容" class="headerlink" title="echo文字内容"></a>echo文字内容</h4><ul>
+<h3 id="其他"><a class="header-anchor" href="#其他">¶</a>其他</h3>
+<h4 id="echo文字内容"><a class="header-anchor" href="#echo文字内容">¶</a>echo文字内容</h4>
+<ul>
 <li><code>echo</code>会在终端中显示参数指定的文字，通常回合<strong>重定向</strong>联合使用</li>
 </ul>
-<h4 id="重定向-gt-和-gt-gt"><a href="#重定向-gt-和-gt-gt" class="headerlink" title="重定向&gt;和&gt;&gt;"></a>重定向&gt;和&gt;&gt;</h4><ul>
+<h4 id="重定向-和"><a class="header-anchor" href="#重定向-和">¶</a>重定向&gt;和&gt;&gt;</h4>
+<ul>
 <li>Linux允许将命令指向结果重定向到一个文件</li>
 <li>将本应显示在<strong>终端上得内容输出/追加</strong>到<strong>指定文件</strong>中</li>
 </ul>
@@ -934,7 +1009,8 @@
 <li><code>&gt;</code>表示输出，会覆盖原有得内容</li>
 <li><code>&gt;&gt;</code>表示追加，会将内容追加到已有文件的末尾</li>
 </ul>
-<h4 id="管道"><a href="#管道" class="headerlink" title="管道|"></a>管道|</h4><ul>
+<h4 id="管道"><a class="header-anchor" href="#管道">¶</a>管道|</h4>
+<ul>
 <li>Linux允许将<strong>一个命令得输出</strong>可以<strong>通过管道</strong>做为<strong>另一个命令的输入</strong></li>
 <li>可以理解显示生活中的管子，管子的一头塞东西进去，另外一头取出来，这里的<code>|</code>分为左右两端，左端塞东西(写)，右端取东西(读)</li>
 </ul>
@@ -943,23 +1019,28 @@
 <li><code>more</code>：分屏显示内容</li>
 <li><code>grep</code>：在命令指向结果的基础上查找指定的文件</li>
 </ul>
-<h1 id="远程管理常用命令"><a href="#远程管理常用命令" class="headerlink" title="远程管理常用命令"></a>远程管理常用命令</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>关机/重启<ul>
+<h1>远程管理常用命令</h1>
+<h2 id="目标"><a class="header-anchor" href="#目标">¶</a>目标</h2>
+<ul>
+<li>关机/重启
+<ul>
 <li><code>shutdown</code></li>
 </ul>
 </li>
-<li>查看或配置网卡信息<ul>
+<li>查看或配置网卡信息
+<ul>
 <li><code>ifconfig</code></li>
 <li><code>ping</code></li>
 </ul>
 </li>
-<li>远程登录和复制文件<ul>
+<li>远程登录和复制文件
+<ul>
 <li><code>ssh</code></li>
 <li><code>scp</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><div class="table-container">
+<h2 id="关机-重启"><a class="header-anchor" href="#关机-重启">¶</a>关机/重启</h2>
 <table>
 <thead>
 <tr>
@@ -976,11 +1057,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><ul>
+<h3 id="shutdown"><a class="header-anchor" href="#shutdown">¶</a>shutdown</h3>
+<ul>
 <li><code>shutdown</code>命令可以<strong>安全关闭</strong>或者<strong>重新启动系统</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -995,7 +1075,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>提示：</p>
 <ul>
@@ -1007,7 +1086,7 @@
 <li>常用命令示例</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 重新启动操作系统，其中now表示现在</span><br><span class="line">$ shutdown -r now</span><br><span class="line"></span><br><span class="line"># 立刻关机，其中 now 表示现在</span><br><span class="line">$ shutdown now</span><br><span class="line"></span><br><span class="line"># 系统在今天的 20:25 会关机</span><br><span class="line">$ shutdown 20:25</span><br><span class="line"></span><br><span class="line"># 系统再过十分钟后自动关机</span><br><span class="line">$ shutdown +10</span><br><span class="line"></span><br><span class="line"># 取消之前指定的关机计划</span><br><span class="line">$ shutdown -c</span><br></pre></td></tr></table></figure>
-<h2 id="查看或配置网卡信息"><a href="#查看或配置网卡信息" class="headerlink" title="查看或配置网卡信息"></a>查看或配置网卡信息</h2><div class="table-container">
+<h2 id="查看或配置网卡信息"><a class="header-anchor" href="#查看或配置网卡信息">¶</a>查看或配置网卡信息</h2>
 <table>
 <thead>
 <tr>
@@ -1026,22 +1105,25 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="网卡和IP地址"><a href="#网卡和IP地址" class="headerlink" title="网卡和IP地址"></a>网卡和IP地址</h3><h4 id="网卡"><a href="#网卡" class="headerlink" title="网卡"></a>网卡</h4><ul>
+<h3 id="网卡和IP地址"><a class="header-anchor" href="#网卡和IP地址">¶</a>网卡和IP地址</h3>
+<h4 id="网卡"><a class="header-anchor" href="#网卡">¶</a>网卡</h4>
+<ul>
 <li>网卡是一个专门负责网络通讯的硬件设备</li>
 <li><strong>IP地址</strong>是设置在网卡上的地址信息</li>
 </ul>
 <blockquote>
 <p><em>我们可以把<strong>电脑</strong>比作<strong>电话</strong>，<strong>网卡</strong>相当于<strong>SIM卡，IP地址</strong>相当于<strong>电话号码</strong></em></p>
 </blockquote>
-<h4 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h4><ul>
+<h4 id="IP地址"><a class="header-anchor" href="#IP地址">¶</a>IP地址</h4>
+<ul>
 <li><strong>每台联网的电脑上</strong>都有<strong>IP地址，是保证电脑之间正常通讯的重要设置</strong></li>
 </ul>
 <blockquote>
 <p>注意：每天电脑的IP地址不能相同，否则会出现IP地址冲突，并且无法正常通讯</p>
 <p>提示：有关IP地址的详细内容自己百度</p>
 </blockquote>
-<h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><ul>
+<h3 id="ifconfig"><a class="header-anchor" href="#ifconfig">¶</a>ifconfig</h3>
+<ul>
 <li><code>ifconfig</code>可以查看/配置计算机当前的网卡配置信息</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看网卡配置信息</span><br><span class="line">$ ifconfig</span><br><span class="line"></span><br><span class="line"># 查看王阿库对应的 IP 地址</span><br><span class="line">$ ifconfig | grep inet</span><br></pre></td></tr></table></figure>
@@ -1051,21 +1133,22 @@
 <ul>
 <li><code>127.0.0.1</code>被称为<strong>本地回环/环回地址</strong>，一般用来测试本机网卡是否正常</li>
 </ul>
-<h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 检测到目标主机正常连接</span><br><span class="line">$ ping IP地址</span><br><span class="line"></span><br><span class="line"># 检测本地网卡工作正常</span><br><span class="line">$ ping 127.0.0.1</span><br></pre></td></tr></table></figure>
+<h3 id="ping"><a class="header-anchor" href="#ping">¶</a>ping</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 检测到目标主机正常连接</span><br><span class="line">$ ping IP地址</span><br><span class="line"></span><br><span class="line"># 检测本地网卡工作正常</span><br><span class="line">$ ping 127.0.0.1</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>ping</code>一般用于检测当前计算几到目标计算机之间的网络<strong>是否通畅，数值越大，速度越慢</strong></li>
 </ul>
 <blockquote>
 <ul>
 <li><code>ping</code>的工作原理与潜水艇的声纳像是，<code>ping</code>这个命令就是取自<strong>声纳的声音</strong></li>
-<li>网络管理员之间也常将<code>ping</code>用作东侧——-<strong>ping一下计算机X，看他是否开着</strong></li>
+<li>网络管理员之间也常将<code>ping</code>用作东侧-----<strong>ping一下计算机X，看他是否开着</strong></li>
 </ul>
 </blockquote>
 <p>原理：网络上的机器又有 <strong>唯一确定的IP地址</strong>，我们给<strong>目标IP地址</strong>发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们就可以确定目标主机的存在</p>
 <blockquote>
 <p>提示：在Linux中，想要终止一个终端程序的执行，绝大多数都可以使用<code>CTRL+C</code></p>
 </blockquote>
-<h2 id="远程登录和复制文件"><a href="#远程登录和复制文件" class="headerlink" title="远程登录和复制文件"></a>远程登录和复制文件</h2><div class="table-container">
+<h2 id="远程登录和复制文件"><a class="header-anchor" href="#远程登录和复制文件">¶</a>远程登录和复制文件</h2>
 <table>
 <thead>
 <tr>
@@ -1087,31 +1170,35 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="SSH基础-重点"><a href="#SSH基础-重点" class="headerlink" title="SSH基础(重点)"></a>SSH基础(重点)</h3><p>在Linux中SSH是<strong>非常常用</strong>的工具，通过<strong>SSH 客户端</strong>我们可以连接到运行了<strong>SSH服务器</strong>的远程机器上</p>
-<p><img src="/images/Linux简单命令/1.png" alt="1"></p>
+<h3 id="SSH基础-重点"><a class="header-anchor" href="#SSH基础-重点">¶</a>SSH基础(重点)</h3>
+<p>在Linux中SSH是<strong>非常常用</strong>的工具，通过<strong>SSH 客户端</strong>我们可以连接到运行了<strong>SSH服务器</strong>的远程机器上</p>
+<p><img src="/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/1.png" alt="1"></p>
 <ul>
 <li><strong>SSH客户端</strong>是一种使用<code>Secure Shell(SSH)</code>协议连接到远程计算机的软件程序</li>
-<li><code>SSH</code>是目前较可靠，<strong>专为远程登录回话和其他网络服务</strong>提供安全性的协议<ul>
+<li><code>SSH</code>是目前较可靠，<strong>专为远程登录回话和其他网络服务</strong>提供安全性的协议
+<ul>
 <li>利用<code>SSH 协议</code>可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
 <li>通过<code>SSH协议</code>可以对所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗</li>
 </ul>
 </li>
 <li><code>SSH</code>的另一项有点是对传输的数据可以是经过压缩的，所以可以加快传输的速度</li>
 </ul>
-<h4 id="域名-和端口"><a href="#域名-和端口" class="headerlink" title="域名 和端口"></a>域名 和端口</h4><h5 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h5><ul>
+<h4 id="域名-和端口"><a class="header-anchor" href="#域名-和端口">¶</a>域名 和端口</h4>
+<h5 id="域名"><a class="header-anchor" href="#域名">¶</a>域名</h5>
+<ul>
 <li>由一串<strong>用点分割</strong>的名字组成，例如：<code>www.baidu.com</code></li>
 <li>是<strong>IP地址</strong>的别名，方便用户记忆</li>
 </ul>
-<h5 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h5><ul>
+<h5 id="端口号"><a class="header-anchor" href="#端口号">¶</a>端口号</h5>
+<ul>
 <li><strong>IP地址</strong>：通过<strong>IP地址</strong>扎到网络上的计算机</li>
-<li><strong>端口号</strong>：通过<strong>端口号</strong>可以找到<strong>计算机上运行的应用程序</strong><ul>
+<li><strong>端口号</strong>：通过<strong>端口号</strong>可以找到<strong>计算机上运行的应用程序</strong>
+<ul>
 <li><strong>SSH服务器</strong>的默认端口号是<code>22</code>，如果是默认端口号，在连接的时候，可以省略</li>
 </ul>
 </li>
 <li>常见服务端口号列表：</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1138,11 +1225,11 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>提示：有关<strong>端口号</strong>的详细内容，请百度</p>
 </blockquote>
-<h4 id="SSH客户端的简单使用"><a href="#SSH客户端的简单使用" class="headerlink" title="SSH客户端的简单使用"></a>SSH客户端的简单使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
+<h4 id="SSH客户端的简单使用"><a class="header-anchor" href="#SSH客户端的简单使用">¶</a>SSH客户端的简单使用</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>user</code>是在远程机器上的目录名，如果不指定的话默认为当前用户</li>
 <li><code>remote</code>是远程机器的地址，可以是<strong>IP/域名</strong>，或者是<strong>后面会提到的别名</strong></li>
@@ -1163,13 +1250,13 @@
 <li>在工作中，SSH服务器的端口号很有可能<strong>不是22</strong>，如果遇到这种情况就需要使用<code>-p</code>选项，指定正确的端口号，否则无法正常连接到服务器</li>
 </ul>
 </blockquote>
-<h3 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h3><ul>
+<h3 id="scp"><a class="header-anchor" href="#scp">¶</a>scp</h3>
+<ul>
 <li>scp就是<code>secure copy</code>，是一个在Linux下用来进行<strong>远程拷贝文件</strong>的命令</li>
 <li>它的<strong>地址格式与ssh基本相同，需要注意的是</strong>，在指定端口时用的是大写的<code>-p</code>而不是小写的</li>
 </ul>
-<p><img src="/source/images/Linux简单命令/image-20200424010226836.png" alt="image-20200424010226836"></p>
+<p><img src="/source/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/image-20200424010226836.png" alt="image-20200424010226836"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 把本地目录下的 01.py 文件复制到远程家目录下的Desktop&#x2F;01.py</span><br><span class="line"># 注意; &#96;:&#96;后面的路径如果不是绝对路径，则以用户的家目录作为参考路径</span><br><span class="line">scp -P port 01.py user@remote:Desktop&#x2F;01.py</span><br><span class="line"></span><br><span class="line"># 把远程家目录下的Desktop&#x2F;01.py文件复制到本地当前目录下的01.py</span><br><span class="line">scp -P port user@remote:Desktop&#x2F;01.py 01.py</span><br><span class="line"></span><br><span class="line"># 加上 -r 选项可以传送文件夹</span><br><span class="line"># 把当前目录下的demo文件夹复制到远程家目录下的Desktop</span><br><span class="line">scp -r demo user@remote:Desktop</span><br><span class="line"></span><br><span class="line"># 把远程 家目录下的Desktop复制到当前目录下的demo文件夹</span><br><span class="line">scp -r user@remote:Desktop demo</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1188,27 +1275,30 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="SSH高级"><a href="#SSH高级" class="headerlink" title="SSH高级"></a>SSH高级</h4><ul>
+<h4 id="SSH高级"><a class="header-anchor" href="#SSH高级">¶</a>SSH高级</h4>
+<ul>
 <li>免密码登陆</li>
 <li>配置别名</li>
 </ul>
 <blockquote>
 <p>提示：有关SSH配置信息都保存在用户家目录下的<code>.ssh</code>目录下</p>
 </blockquote>
-<h5 id="免密登陆"><a href="#免密登陆" class="headerlink" title="免密登陆"></a>免密登陆</h5><p>步骤</p>
+<h5 id="免密登陆"><a class="header-anchor" href="#免密登陆">¶</a>免密登陆</h5>
+<p>步骤</p>
 <ul>
-<li>配置公钥<ul>
+<li>配置公钥
+<ul>
 <li>执行<code>ssh-keygen</code>即可生成SSH钥钥，一路回车即可</li>
 </ul>
 </li>
-<li>上传公钥到服务器<ul>
+<li>上传公钥到服务器
+<ul>
 <li>执行<code>ssh-copy-id -p port user@remote</code>，可以让远程服务器记住我们的公钥</li>
 </ul>
 </li>
 </ul>
 <p>示意图</p>
-<p><img src="/source/images/Linux简单命令/image-20200424005617262.png" alt="image-20200424005617262"></p>
+<p><img src="/source/images/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/image-20200424005617262.png" alt="image-20200424005617262"></p>
 <blockquote>
 <p>非对称加密算法</p>
 <ul>
@@ -1216,7 +1306,8 @@
 <li>使用<strong>私钥</strong>加密的数据，需要使用<strong>公钥</strong>解密</li>
 </ul>
 </blockquote>
-<h5 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h5><p>每次都输入<code>ssh -p port user@remote</code>时间久了会觉得很麻烦，特别是当<code>user</code>,<code>remore</code>和<code>port</code>都输入，而且还不好记忆</p>
+<h5 id="配置别名"><a class="header-anchor" href="#配置别名">¶</a>配置别名</h5>
+<p>每次都输入<code>ssh -p port user@remote</code>时间久了会觉得很麻烦，特别是当<code>user</code>,<code>remore</code>和<code>port</code>都输入，而且还不好记忆</p>
 <p>而 <strong>配置别名</strong>可以让我们进一步偷懒，譬如用：<code>ssh mac</code>来替代上面这么长一串，那么就在<code>~/.ssh/config</code>里面追加以下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host mac</span><br><span class="line">	HostName ip地址</span><br><span class="line">	User xxx</span><br><span class="line">	port  22</span><br></pre></td></tr></table></figure>
 <p><strong>保存之后，即可用<code>ssh mac</code>实现远程登陆了，<code>scp</code>同样可以使用</strong></p>
@@ -1404,7 +1495,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1415,7 +1506,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1426,7 +1517,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1483,7 +1574,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用Linux命令的基本使用"><span class="nav-number">1.</span> <span class="nav-text">常用Linux命令的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux终端命令格式"><span class="nav-number">1.1.</span> <span class="nav-text">Linux终端命令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端命令格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">终端命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查阅帮助信息"><span class="nav-number">1.1.2.</span> <span class="nav-text">查阅帮助信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#—help"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">—help</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man"><span class="nav-number">1.1.3.</span> <span class="nav-text">man</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件和目录常用命令"><span class="nav-number">1.2.</span> <span class="nav-text">文件和目录常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看目录内容"><span class="nav-number">1.3.</span> <span class="nav-text">查看目录内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端使用技巧"><span class="nav-number">1.3.1.</span> <span class="nav-text">终端使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">自动补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#曾经使用过的命令"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">曾经使用过的命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令说明"><span class="nav-number">1.4.</span> <span class="nav-text">ls命令说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下文件和目录的特点"><span class="nav-number">1.5.</span> <span class="nav-text">Linux下文件和目录的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls-常用选项"><span class="nav-number">1.6.</span> <span class="nav-text">ls 常用选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls通配符的使用"><span class="nav-number">1.7.</span> <span class="nav-text">ls通配符的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换目录"><span class="nav-number">1.8.</span> <span class="nav-text">切换目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">1.8.1.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径和绝对路径"><span class="nav-number">1.8.2.</span> <span class="nav-text">相对路径和绝对路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和删除操作"><span class="nav-number">1.9.</span> <span class="nav-text">创建和删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">touch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm"><span class="nav-number">1.9.0.3.</span> <span class="nav-text">rm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝和移动文件"><span class="nav-number">1.10.</span> <span class="nav-text">拷贝和移动文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tree"><span class="nav-number">1.10.0.1.</span> <span class="nav-text">tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp"><span class="nav-number">1.10.0.2.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv"><span class="nav-number">1.10.0.3.</span> <span class="nav-text">mv</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件目录"><span class="nav-number">1.10.1.</span> <span class="nav-text">查看文件目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more"><span class="nav-number">1.10.1.2.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep"><span class="nav-number">1.10.1.3.</span> <span class="nav-text">grep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.10.2.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo文字内容"><span class="nav-number">1.10.2.1.</span> <span class="nav-text">echo文字内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向-gt-和-gt-gt"><span class="nav-number">1.10.2.2.</span> <span class="nav-text">重定向&gt;和&gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管道"><span class="nav-number">1.10.2.3.</span> <span class="nav-text">管道|</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程管理常用命令"><span class="nav-number">2.</span> <span class="nav-text">远程管理常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机-重启"><span class="nav-number">2.2.</span> <span class="nav-text">关机&#x2F;重启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shutdown"><span class="nav-number">2.2.1.</span> <span class="nav-text">shutdown</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看或配置网卡信息"><span class="nav-number">2.3.</span> <span class="nav-text">查看或配置网卡信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网卡和IP地址"><span class="nav-number">2.3.1.</span> <span class="nav-text">网卡和IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网卡"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">网卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">IP地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-number">2.3.2.</span> <span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ping"><span class="nav-number">2.3.3.</span> <span class="nav-text">ping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程登录和复制文件"><span class="nav-number">2.4.</span> <span class="nav-text">远程登录和复制文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH基础-重点"><span class="nav-number">2.4.1.</span> <span class="nav-text">SSH基础(重点)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#域名-和端口"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">域名 和端口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#域名"><span class="nav-number">2.4.1.1.1.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号"><span class="nav-number">2.4.1.1.2.</span> <span class="nav-text">端口号</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH客户端的简单使用"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">SSH客户端的简单使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.4.2.</span> <span class="nav-text">scp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH高级"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">SSH高级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#免密登陆"><span class="nav-number">2.4.2.1.1.</span> <span class="nav-text">免密登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置别名"><span class="nav-number">2.4.2.1.2.</span> <span class="nav-text">配置别名</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">常用Linux命令的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux终端命令格式"><span class="nav-number">1.1.</span> <span class="nav-text">Linux终端命令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端命令格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">终端命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查阅帮助信息"><span class="nav-number">1.1.2.</span> <span class="nav-text">查阅帮助信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#–help"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">–help</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man"><span class="nav-number">1.1.3.</span> <span class="nav-text">man</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件和目录常用命令"><span class="nav-number">1.2.</span> <span class="nav-text">文件和目录常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看目录内容"><span class="nav-number">1.3.</span> <span class="nav-text">查看目录内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端使用技巧"><span class="nav-number">1.3.1.</span> <span class="nav-text">终端使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">自动补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#曾经使用过的命令"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">曾经使用过的命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令说明"><span class="nav-number">1.4.</span> <span class="nav-text">ls命令说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下文件和目录的特点"><span class="nav-number">1.5.</span> <span class="nav-text">Linux下文件和目录的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls-常用选项"><span class="nav-number">1.6.</span> <span class="nav-text">ls 常用选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls通配符的使用"><span class="nav-number">1.7.</span> <span class="nav-text">ls通配符的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换目录"><span class="nav-number">1.8.</span> <span class="nav-text">切换目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">1.8.1.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径和绝对路径"><span class="nav-number">1.8.2.</span> <span class="nav-text">相对路径和绝对路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和删除操作"><span class="nav-number">1.9.</span> <span class="nav-text">创建和删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">touch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm"><span class="nav-number">1.9.0.3.</span> <span class="nav-text">rm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝和移动文件"><span class="nav-number">1.10.</span> <span class="nav-text">拷贝和移动文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tree"><span class="nav-number">1.10.0.1.</span> <span class="nav-text">tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp"><span class="nav-number">1.10.0.2.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv"><span class="nav-number">1.10.0.3.</span> <span class="nav-text">mv</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件目录"><span class="nav-number">1.10.1.</span> <span class="nav-text">查看文件目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more"><span class="nav-number">1.10.1.2.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep"><span class="nav-number">1.10.1.3.</span> <span class="nav-text">grep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.10.2.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo文字内容"><span class="nav-number">1.10.2.1.</span> <span class="nav-text">echo文字内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向-和"><span class="nav-number">1.10.2.2.</span> <span class="nav-text">重定向&gt;和&gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管道"><span class="nav-number">1.10.2.3.</span> <span class="nav-text">管道|</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">远程管理常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机-重启"><span class="nav-number">2.2.</span> <span class="nav-text">关机&#x2F;重启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shutdown"><span class="nav-number">2.2.1.</span> <span class="nav-text">shutdown</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看或配置网卡信息"><span class="nav-number">2.3.</span> <span class="nav-text">查看或配置网卡信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网卡和IP地址"><span class="nav-number">2.3.1.</span> <span class="nav-text">网卡和IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网卡"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">网卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">IP地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-number">2.3.2.</span> <span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ping"><span class="nav-number">2.3.3.</span> <span class="nav-text">ping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程登录和复制文件"><span class="nav-number">2.4.</span> <span class="nav-text">远程登录和复制文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH基础-重点"><span class="nav-number">2.4.1.</span> <span class="nav-text">SSH基础(重点)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#域名-和端口"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">域名 和端口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#域名"><span class="nav-number">2.4.1.1.1.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号"><span class="nav-number">2.4.1.1.2.</span> <span class="nav-text">端口号</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH客户端的简单使用"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">SSH客户端的简单使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.4.2.</span> <span class="nav-text">scp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH高级"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">SSH高级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#免密登陆"><span class="nav-number">2.4.2.1.1.</span> <span class="nav-text">免密登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置别名"><span class="nav-number">2.4.2.1.2.</span> <span class="nav-text">配置别名</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -2099,7 +2190,7 @@ setInterval("createtime()",250);
         }
       });
     </script>
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
