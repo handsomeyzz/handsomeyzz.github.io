@@ -53,628 +53,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 学习</title>
-    <url>/cmpr/markdown-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1>基础</h1>
-<h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
-<h3 id="1-使用-和-标记一级和二级标题"><a class="header-anchor" href="#1-使用-和-标记一级和二级标题">¶</a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
-<p>效果图如下
-<img src="/images/markdown/1.png" alt=""></p>
-<h3 id="2-使用-号标记"><a class="header-anchor" href="#2-使用-号标记">¶</a>2.使用<code>#</code>号标记</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-<p>注：每个<code>#</code>号后最好都有一个空格</p>
-<p>效果图如下
-<img src="/images/markdown/2.png" alt=""></p>
-<h2 id="段落"><a class="header-anchor" href="#段落">¶</a>段落</h2>
-<h3 id="1-段落"><a class="header-anchor" href="#1-段落">¶</a>1.段落</h3>
-<p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong></p>
-<h3 id="2-字体"><a class="header-anchor" href="#2-字体">¶</a>2.字体</h3>
-<p>可以使用如下字体</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure>
-<p>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法
-效果图如下
-<em>斜体</em>
-<em>斜体</em>
-<strong>粗斜体</strong>
-<strong>粗斜体</strong>
-<em><strong>粗斜体</strong></em>
-<em><strong>粗斜体</strong></em><br>
-注:下划线都是英文的下划线</p>
-<h3 id="3-分隔线"><a class="header-anchor" href="#3-分隔线">¶</a>3.分隔线</h3>
-<p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure>
-<p>效果图</p>
-<p><img src="/images/markdown/3.png" alt=""></p>
-<h3 id="4-删除线"><a class="header-anchor" href="#4-删除线">¶</a>4.删除线</h3>
-<p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就~~可以了</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure>
-<p>效果图
-hape
-<s>hape</s></p>
-<h3 id="5-下划线"><a class="header-anchor" href="#5-下划线">¶</a>5.下划线</h3>
-<p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;xxxx&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-<p>效果:
-<u>xxx</u></p>
-<h3 id="6-脚注"><a class="header-anchor" href="#6-脚注">¶</a>6.脚注</h3>
-<p>脚注是对文本的补充说明:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure>
-<p>效果图:<br>
-python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<h2 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
-<p>显示结果:</p>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<h3 id="列表嵌套"><a class="header-anchor" href="#列表嵌套">¶</a>列表嵌套</h3>
-<p>列表嵌套只需在子列表中的选项添加四个空格即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
-<p>显示结果:<br>
-1.第一项:</p>
-<ul>
-<li>嵌套在第一项中的第一个元素</li>
-<li>嵌套在第一项中的第二个元素</li>
-</ul>
-<p>2.第二项:</p>
-<ul>
-<li>嵌套在第二项中的第一个元素</li>
-<li>嵌套在第二项中的第二个元素</li>
-</ul>
-<h2 id="区块"><a class="header-anchor" href="#区块">¶</a>区块</h2>
-<p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块应用</span><br></pre></td></tr></table></figure>
-<p>区块嵌套</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure>
-<p>效果图:</p>
-<blockquote>
-<p>最外层</p>
-<blockquote>
-<p>第一层嵌套</p>
-<blockquote>
-<p>第二层嵌套</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="区块中使用列表"><a class="header-anchor" href="#区块中使用列表">¶</a>区块中使用列表</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<blockquote>
-<p>区块中使用列表
-1.第一项
-2.第二项</p>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-</blockquote>
-<h3 id="列表中使用区块"><a class="header-anchor" href="#列表中使用区块">¶</a>列表中使用区块</h3>
-<p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<ul>
-<li>第一项
-<blockquote>
-<p>第一个区块
-第二个区块</p>
-</blockquote>
-</li>
-<li>第二项</li>
-</ul>
-<h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
-<p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure>
-<h3 id="代码区块"><a class="header-anchor" href="#代码区块">¶</a>代码区块</h3>
-<p>使用<code>```</code>包裹一段代码，并指定一种语言(也可以不指定)</p>
-<p>效果图：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h2>
-<p>链接使用方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
-<p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure>
-<p>效果:
-这是一个链接<a href="www.baidu.com">百度</a></p>
-<h2 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h2>
-<p>用法:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure>
-<h2 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h2>
-<p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody>
-</table>
-<h3 id="对齐方式"><a class="header-anchor" href="#对齐方式">¶</a>对齐方式:</h3>
-<p><code>-:</code>设置内容和标题栏居右对齐<br>
-<code>:-</code>设置内容和标题栏居左对齐
-<code>:-:</code>设置内容和标题栏居中对齐
-实现如下:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure>
-<p>效果图</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">右对齐</th>
-<th style="text-align:left">左对齐</th>
-<th style="text-align:center">居中对齐</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">单元格</td>
-<td style="text-align:left">单元格</td>
-<td style="text-align:center">单元格</td>
-</tr>
-<tr>
-<td style="text-align:right">单元格</td>
-<td style="text-align:left">单元格</td>
-<td style="text-align:center">单元格</td>
-</tr>
-</tbody>
-</table>
-<h1>进阶</h1>
-<h2 id="支持HTML元素"><a class="header-anchor" href="#支持HTML元素">¶</a>支持HTML元素</h2>
-<p>很多HTML元素都能在markdown文件中使用</p>
-<p>在更新中…</p>
-<h3 id="做思维导图"><a class="header-anchor" href="#做思维导图">¶</a>做思维导图</h3>
-<p>不想做了…</p>
-<h3 id="公式编辑"><a class="header-anchor" href="#公式编辑">¶</a>公式编辑</h3>
-<p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>一种编程语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>cmpr</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统基础</title>
-    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h2 id="操作系统的功能"><a class="header-anchor" href="#操作系统的功能">¶</a>操作系统的功能</h2>
-<ul>
-<li>处理机管理</li>
-<li>存储器管理</li>
-<li>设备管理</li>
-<li>文件管理</li>
-<li>用户接口</li>
-</ul>
-<h2 id="操作系统类型"><a class="header-anchor" href="#操作系统类型">¶</a>操作系统类型</h2>
-<ul>
-<li>
-<p>单用户系统</p>
-<p><strong>一台</strong>处理机只支持<strong>一个</strong>用户程序</p>
-</li>
-<li>
-<p>批处理系统</p>
-<p>用户将一批作业提交给操作系统后<strong>不再干预</strong>，由操作系统控制它们自动运行。<strong>人机不交互</strong></p>
-</li>
-<li>
-<p>分时操作系统</p>
-<p>把处理机的运行时间<strong>分成很短的时间片</strong>，按时间片轮流把处理机分配给各联机作业使用。</p>
-</li>
-<li>
-<p>网络操作系统</p>
-<p>一种在通常操作系统功能的基础上提供<strong>网络通信</strong>和<strong>网络服务</strong>功能的操作系统</p>
-</li>
-<li>
-<p>分布式操作系统</p>
-<p>以计算机网络为基础的，讲物理上分布的具有<strong>自治功能</strong>的数据处理系统或计算机系统互联起来的操作系统</p>
-</li>
-<li>
-<p>嵌入式操作系统</p>
-<p>运行在<strong>嵌入式智能芯片</strong>环境中，对整个智能芯片及其它所操作、控制的各种部件装置等资源进行统一协调、处理、指挥和控制。</p>
-</li>
-</ul>
-<h2 id="进程"><a class="header-anchor" href="#进程">¶</a>进程</h2>
-<p>进行资源分配和调度的使用。</p>
-<p>进程的组成：</p>
-<ul>
-<li>程序</li>
-<li>数据集合</li>
-<li>进程控制块PCB</li>
-</ul>
-<p>为了描述和控制进程的运行，系统为每个进程定义了一个数据结构--------进程控制块<code>PCB</code>。它是进程重要的组成部分，它记录了操作系统所需的、用于描述进程的当前状态和控制进程的全部信息。操作系统就是根据进程的<code>PCB</code>来感知进程的存在，并依此对进程进行管理和控制。</p>
-<p><strong><code>PCB</code>是进程存在的唯一标识</strong></p>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" alt="1"></p>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-1587971806115.png" alt="2"></p>
-<h2 id="PV操作"><a class="header-anchor" href="#PV操作">¶</a>PV操作</h2>
-<p>P操作是阻塞，V操作是唤醒</p>
-<p>P操作：</p>
-<ul>
-<li>将信号量S的值减少1，即 S = S-1</li>
-<li>如果S&gt;=0,则该进程继续执行，否则该进程置为等待状态</li>
-</ul>
-<p>V操作：</p>
-<ul>
-<li>将信号量S的值加1，即S = S+1</li>
-<li>如果S&gt;0该进程继续执行，否则说明有等待队列中有等待进程，需要唤醒等待进程。</li>
-</ul>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png" alt="3"></p>
-<h2 id="存储管理"><a class="header-anchor" href="#存储管理">¶</a>存储管理</h2>
-<h3 id="逻辑管理"><a class="header-anchor" href="#逻辑管理">¶</a>逻辑管理</h3>
-<p><code>CPU</code>所生成的地址。逻辑地址是内部和变成使用的、并不唯一。例如，你在C语言指针变成中，可以读取指针变量本身值(&amp;操作)，实际上这个值就是逻辑地址，它是相对于你当前进程数据段的地址(偏移地址)，不和绝对物理地址想干。</p>
-<h3 id="物理地址"><a class="header-anchor" href="#物理地址">¶</a>物理地址</h3>
-<p>加载到内存地址寄存器中的地址，内存单元的真正地址。</p>
-<h3 id="重定位"><a class="header-anchor" href="#重定位">¶</a>重定位</h3>
-<h4 id="静态重定位"><a class="header-anchor" href="#静态重定位">¶</a>静态重定位</h4>
-<p>静态重定位是在程序执行之前进行重定位，它是根据装配模块将要装入的内存起始位置，直接修改装配模块中的有关使用地址的命令</p>
-<p>例如，MOV    AC，[500]</p>
-<p>静态重定位有着无需硬件支持的<strong>优点</strong>,但存在着如下的<strong>缺点</strong>：</p>
-<ul>
-<li>程序重定位之后就不能再内存中班中了</li>
-<li>要求程序的存储空间是连续的，不能把程序放在若干个不连续的区域内。</li>
-</ul>
-<h4 id="动态重定位"><a class="header-anchor" href="#动态重定位">¶</a>动态重定位</h4>
-<p>不是在程序执行之前而是在程序执行过程中进行地址重定位。更确切的说，是在<code>CPU</code>每次访问内存单元前才进行地址变换，<strong>需要硬件支持</strong></p>
-<p>优点：</p>
-<ul>
-<li>程序占用的内存空间动态可变，不必连续存放在一处。</li>
-<li>比较同意实现几个进程对统一程序副本的共享使用。</li>
-</ul>
-<p>缺点:</p>
-<ul>
-<li>需要附加的硬件支持，增加了机器成本，而且实现存储管理的软件算法比较复杂。</li>
-</ul>
-<p><strong>现在一般计算机系统中都采用动态重定位方法。</strong></p>
-<h3 id="分区管理"><a class="header-anchor" href="#分区管理">¶</a>分区管理</h3>
-<table>
-<thead>
-<tr>
-<th>固定分区</th>
-<th><strong>静态分区</strong>，作业装入之前划分，大小固定，内存利用率不高</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>可变分区</td>
-<td><strong>动态分区</strong>，碎片多。首次适应算法，最佳适应算法，最坏适应算法</td>
-</tr>
-<tr>
-<td>可重定位分区</td>
-<td>合并零散空间</td>
-</tr>
-</tbody>
-</table>
-<h3 id="分页管理"><a class="header-anchor" href="#分页管理">¶</a>分页管理</h3>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png" alt="4"></p>
-<h3 id="分段存储管理"><a class="header-anchor" href="#分段存储管理">¶</a>分段存储管理</h3>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.png" alt="5"></p>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.png" alt="6"></p>
-<h3 id="段页式存储管理"><a class="header-anchor" href="#段页式存储管理">¶</a>段页式存储管理</h3>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.png" alt="7"></p>
-<h2 id="设备管理"><a class="header-anchor" href="#设备管理">¶</a>设备管理</h2>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.png" alt="8"></p>
-<p>在计算机中，I/O系统可以有5种不同的工作方式，分别是</p>
-<ul>
-<li>程序控制方式</li>
-<li>程序中断方式</li>
-<li>DMA工作方式</li>
-<li>通道方式</li>
-<li>I/O处理机</li>
-</ul>
-<h4 id="程序控制方式"><a class="header-anchor" href="#程序控制方式">¶</a>程序控制方式</h4>
-<ul>
-<li>
-<p>无条件传送方式</p>
-<p>I/O端口总是准备好接受主机的输出数据，或是总是准备好想主机输入数据，而cpu在需要时，随时直接利用I/O指令访问对应的I/O端口，实现与外设的数据交换。优点是软、硬件结构简单，缺点是对时序要求高，只是用与简单的I/O控制</p>
-</li>
-<li>
-<p>程序查询方式</p>
-<p>程序查询方式也称为程序轮询方式，该方式采用用户程序直接控制主机与外部设备之间输入/输出操作。CPU必须不停的循环测试I/O设备的状态端口，当发现设备处于准备好(Ready)状态是，CPU就可以与I/O设备进行数据存取操作。这种方式下的CPU与I/O设备是串行工作的。</p>
-</li>
-</ul>
-<h4 id="终端方式"><a class="header-anchor" href="#终端方式">¶</a>终端方式</h4>
-<p>当I/O设备结束(完成、特殊或异常)是，就会向CPU发出终端请求信号，CPU收到信号就可以才去相应措施。当某个进程要启动某个设备室，CPU就向相应的设备控制器发出一条设备I/O启动指令，然后CPU又返回做原来的工作。CPU与I/O设备可以并行工作，与程序查询方式相比，大大提高了CPU的利用率。</p>
-<h4 id="DMA-直接内存存取-方式"><a class="header-anchor" href="#DMA-直接内存存取-方式">¶</a>DMA(直接内存存取)方式</h4>
-<p>DMA方式也称为直接主存存取方式，其思想是：允许主存储器和I/O设备之间通过“DMA控制器(DMAC)”直接进行批量数据交换，除了在数据传输开始和结束是，整个过程无需CPU的干预</p>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.png" alt="9"></p>
-<h4 id="通道控制方式"><a class="header-anchor" href="#通道控制方式">¶</a>通道控制方式</h4>
-<p>在一定的硬件基础上利用软件手段实现I/O的控制和传送，更多地免去了CPU的接入，使主机与外设并行工作程度更高</p>
-<h4 id="I-O处理机"><a class="header-anchor" href="#I-O处理机">¶</a>I/O处理机</h4>
-<p>指专门负责输入/输出的处理机。可以有独立的存储器、运算部件和指令控制部件。</p>
-<h2 id="文件管理"><a class="header-anchor" href="#文件管理">¶</a>文件管理</h2>
-<h4 id="文件的逻辑结构"><a class="header-anchor" href="#文件的逻辑结构">¶</a>文件的逻辑结构</h4>
-<p>文件的逻辑组织是为了方便用户使用。一般文件的逻辑结构可以分文两种：无结构的字符流文件和有结构的记录文件。记录文件由记录组成，即文件内的信息划分成多个记录，以记录为单位组织的使用信息。</p>
-<p>记录文件有：</p>
-<ul>
-<li>
-<p>顺序文件</p>
-<p>大多数文件是顺序文件。顺序文件的记录定长，记录中的数据项的类型长度和次序固定，一般还有一个可以唯一标识记录的数据项，称为键(key)，记录是按键值的约定次序组织的。顺序文件常用于批处理应用，对于查询或更新某个记录的处理性能不太好</p>
-</li>
-<li>
-<p>索引顺序文件</p>
-</li>
-<li>
-<p>索引文件</p>
-</li>
-<li>
-<p>直接文件</p>
-<p>直接文件又称哈希(Hash)文件。记录以他们直接访问存储设备上的物理地址直接(随机地)访问。直接文件常用语需要高速访问文件而且每次仅访问一条记录的应用中。</p>
-</li>
-</ul>
-<h4 id="文件的物理结构"><a class="header-anchor" href="#文件的物理结构">¶</a>文件的物理结构</h4>
-<p>文件的物理结构是指文件在存储设备上的存放方法。文件的物理结构侧重于提高存储器的利用效率和奖代存取时间。文件的存储设备通常划分为大小相同的物理块。物理块是分配和传输信息的基本单位。文件的物理结构设计文件存储设备的组块策略和文件分配策略，决定文件信息在存储设备上的存储位置。常用的文件分配策略有：</p>
-<ul>
-<li>顺序分配(连续分配)</li>
-<li>连接分配( 串联分配)</li>
-<li>索引分配。这是另一种对文件存储不连续分配的方法。采用索引分配方法的系统，为每一个文件建立一张索引表，索引表中每一表项支出文件信息所在的逻辑块好和与之对应的物理块号。</li>
-</ul>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.png" alt="10"></p>
-<h3 id="文件存储设备管理"><a class="header-anchor" href="#文件存储设备管理">¶</a>文件存储设备管理</h3>
-<p>位示图法。该方法是在外存上建立一张位示图（Bitmap），记录文件存储器的使 用情况。每一位仅对应文件存储器上的一个物理块，取值0 和1 分别表示空闲和占用。文件存储器上的物理块依次编号为：0、1、2、…。假如系统中字长为32位，有4096个物理块，那么在位示图中的第1个字对应文件存储器上的0、1、2、…、31号物理块；第2 个字对应文件存储器上的32、33、34、…、63号物理块；第128字对应文件存储器上的4064、4065、…、4095号物理块。这样位示图的大小为32字。</p>
-<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.png" alt="11"></p>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机基础(一)</title>
-    <url>/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="计算机的组成"><a class="header-anchor" href="#计算机的组成">¶</a>计算机的组成</h2>
-<h3 id="硬件系统"><a class="header-anchor" href="#硬件系统">¶</a>硬件系统</h3>
-<ul>
-<li>主机
-<ul>
-<li>中央处理器(运算器、控制器)</li>
-<li>内部存储器(随机存储器、只读存储器)</li>
-<li>I/O设备接口</li>
-</ul>
-</li>
-<li>外部设备
-<ul>
-<li>外部存储器(磁盘、光盘等)</li>
-<li>输入设备(键盘、鼠标、扫描仪等)</li>
-<li>输出设备(显示器，打印机，绘图仪等)</li>
-</ul>
-</li>
-</ul>
-<h3 id="软件系统"><a class="header-anchor" href="#软件系统">¶</a>软件系统</h3>
-<ul>
-<li>系统软件(操作系统、语言处理程序、网络通讯管理程序等)</li>
-<li>应用软件(office办公软件，游戏软件)</li>
-</ul>
-<h2 id="CPU的功能"><a class="header-anchor" href="#CPU的功能">¶</a>CPU的功能</h2>
-<ul>
-<li>程序控制功能。CPU通过<strong>执行指令</strong>来控制程序的执行顺序</li>
-<li>操作控制</li>
-<li>时间控制</li>
-<li>数据处理。<strong>CPU最根本的任务</strong></li>
-</ul>
-<h3 id="CPU的主要部件"><a class="header-anchor" href="#CPU的主要部件">¶</a>CPU的主要部件</h3>
-<h4 id="运算器"><a class="header-anchor" href="#运算器">¶</a>运算器</h4>
-<p>运算器也称为算数逻辑单元(<code>ArithmeticandLogicUnit,ALU</code>),其主要功能是在控制器的控制下完成各种算数运算和逻辑运算。运算器的组成包含如下:</p>
-<ul>
-<li>算术逻辑单元<code>ALU</code>：数据的算数运算和逻辑运算</li>
-<li>累加寄存器<code>AC</code>：通用寄存器，为<code>ALU</code>提供一个工作区，用来暂存数据</li>
-<li>数据缓冲寄存器<code>DR</code>：写内存时，暂存指令或数据</li>
-<li>状态条件寄存器<code>PSW</code>：存状态标志与控制标志</li>
-</ul>
-<h4 id="控制器"><a class="header-anchor" href="#控制器">¶</a>控制器</h4>
-<p>控制器是分析和执行指令的部件，也是统一指挥并控制计算机各部件协调工作的重心部件，所依据的是机器指令。控制器的组成包含如下：</p>
-<ul>
-<li>程序计数器<code>PC</code>:存储下一条要执行指令的地址</li>
-<li>指令寄存器<code>IR</code>:存储即将执行的指令</li>
-<li>指令译码器<code>ID</code>:对指令中的操作码字段进行分析解释</li>
-<li>地址寄存器<code>AR</code>:用来保存当前CPU所访问的内存单元的地址</li>
-<li>时序部件：提供时序控制信号</li>
-</ul>
-<h3 id="指令系统"><a class="header-anchor" href="#指令系统">¶</a>指令系统</h3>
-<h4 id="复杂指令系统CISC的特点"><a class="header-anchor" href="#复杂指令系统CISC的特点">¶</a>复杂指令系统CISC的特点</h4>
-<ul>
-<li>指令数量众多。指令系统拥有大量的指令，通常有100~250条</li>
-<li>指令使用频率相差悬殊。最常用的是一些比较简单的指令，仅占指令总数的20%，但是程序中出现的频率却占80%，而大部分指令却很少使用。</li>
-<li>支持很多种寻址方式。支持的寻址方式通常为5~20种。</li>
-<li>变长的指令。指令长度不是固定的，变长的指令增加指令译码电路的复杂性。</li>
-<li>指令可以对主存单元中的数据直接进行处理。典型的CISC通常都有指令能够直接对存单元中的数据进行处理，其执行速度较慢</li>
-<li>以微程序控制为主。CISC的指令系统很复杂，难以用硬布线逻辑(组合逻辑)电路实现控制器，通常采用微程序控制。</li>
-</ul>
-<h4 id="精简指令系统RISC的特点"><a class="header-anchor" href="#精简指令系统RISC的特点">¶</a>精简指令系统RISC的特点</h4>
-<ul>
-<li>指令数量少。有限选取使用频率最高的一些简单指令和一些常用指令。避免使用复杂指令。只提供了<code>LOAD</code>(从存储器种读取)和<code>STORE</code>(把数据写入存储器)两条指令对存储器操作，其余所有的操作都在<code>CPU</code>的寄存器之间进行。</li>
-<li>指令的寻址方式少。通常只支持存储器寻址方式。立即数寻址方式和相对寻址方式</li>
-<li>指令长度固定，指令格式种类少。因为<code>RISC</code>指令数量少、格式少、相对简单，其指令长度固定，指令之间各字段的划分比较一直，译码相对容易</li>
-<li>以硬布线逻辑控制为主。为了提高操作的执行熟读，通常采用硬布线逻辑(组合逻辑)来构建控制器</li>
-<li>单周期指令执行，采用流水线技术。因为简化了指令系统，很容易利用流水线技术，使得大部分指令都能在一个机器周期内完成。少数指令可能会需要多周期，例如，<code>LOAD/STORE</code>指令因为需要访问存储器，其执行时间就会长一些</li>
-<li>优化的编译器：<code>RISC</code>的精简指令集使编译工作简单化。因为指令长度固定，个事少，寻址方式少，编译时不必再具有相似功能的许多指令种进行选择，也不必为寻址方式的选择而费心，同时易于实现优化，从而可以生成高效率执行的机器代码。</li>
-<li><code>CPU</code>中的通用寄存器数量多，一般在32各以上，有的可达上</li>
-</ul>
-<p>总结图：</p>
-<p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/1.png" alt="image-20200426170025024"></p>
-<h3 id="校验码"><a class="header-anchor" href="#校验码">¶</a>校验码</h3>
-<ul>
-<li>
-<p>奇偶校验码</p>
-<p>只能检测代码中奇数位出错的编码，但不能发现偶数位出错的情况</p>
-</li>
-<li>
-<p>海明码</p>
-</li>
-<li>
-<p>循环冗余校验码CRC</p>
-</li>
-</ul>
-<h3 id="指令控制方式"><a class="header-anchor" href="#指令控制方式">¶</a>指令控制方式</h3>
-<ul>
-<li>
-<p>顺序方式</p>
-<p>各条机器指令之间顺序串行地执行，执行完一条指令后才取下一条指令。缺点是速度慢，机器各部件利用率低。</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2.png" alt="2"></p>
-</li>
-<li>
-<p>重叠方式</p>
-<p>在解释第K条指令的操作完成之前就可以开始解释低K+1条指令。(部分并行)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/3.jpg" alt="3"></p>
-</li>
-<li>
-<p>流水方式</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/4.png" alt="4"></p>
-<p>流水线周期：执行时间最长的一段</p>
-<p>公式：</p>
-<ul>
-<li>理论公式：(t1+t2+…tk)+(n-1)*△t</li>
-<li>实践公式：(k+n-1)*△t</li>
-</ul>
-<p>流水线的吞吐率和最大吞吐率：吞吐率是指单位内流水线处理机流出的结果数。对指令而言，就是单位时间内执行的指令数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 吞吐率</span><br><span class="line">TP &#x3D; 指令条数&#x2F;流水线执行时间</span><br><span class="line"></span><br><span class="line"># 最大吞吐率</span><br><span class="line">TP(max) &#x3D; 1&#x2F;△t</span><br><span class="line"></span><br><span class="line"># 流水线加速比</span><br><span class="line">S &#x3D; 不适用流水线执行时间&#x2F;使用流水线执行时间</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="存储系统"><a class="header-anchor" href="#存储系统">¶</a>存储系统</h2>
-<p>主存：</p>
-<ul>
-<li>CPU内部通用寄存器</li>
-<li>Cache：CPU和主存速度不匹配而产生的中间过渡元件</li>
-</ul>
-<p>外部存储器：</p>
-<ul>
-<li>主存储器</li>
-<li>联机磁盘存储器</li>
-<li>脱机光盘、磁盘存储器</li>
-</ul>
-<h4 id="内存编址"><a class="header-anchor" href="#内存编址">¶</a>内存编址</h4>
-<p>存储器有一块块的空间(存储单元)组成，为了方便寻找到每一块空间，我们需要对每一个空间进行标识------内存编址</p>
-<h4 id="芯片"><a class="header-anchor" href="#芯片">¶</a>芯片</h4>
-<p>存储器由若干个芯片构成</p>
-<h4 id="内存容量"><a class="header-anchor" href="#内存容量">¶</a>内存容量</h4>
-<p>存储器的大小。</p>
-<p>内存容量 = 每个芯片容量*芯片个数</p>
-<p>每个芯片的容量 = 一个地址代表的容量*编址总数</p>
-<h4 id="数据总线"><a class="header-anchor" href="#数据总线">¶</a>数据总线</h4>
-<p>计算机一次处理n位的数据，则数据总线的长度为n。注意的是：数据总线的长度，并不一定代表一个地址的长度</p>
-<h4 id="字"><a class="header-anchor" href="#字">¶</a>字</h4>
-<p>和数据总线密切相关。数据总线有几位，则一个字就由多少位组成。如64位计算机，表示一次可以处理64位数据，则一个字就是64位。</p>
-<h4 id="地址总线"><a class="header-anchor" href="#地址总线">¶</a>地址总线</h4>
-<p>假如需要n位二进制数来表示所有的地址，则地址总线的个数为n。</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/5.png" alt="5"></p>
-<h3 id="Cache"><a class="header-anchor" href="#Cache">¶</a>Cache</h3>
-<p>在<code>CPU</code>的所有操作中，访问内存是最频繁的操作。由于一般微机中的主存储器的工作速度比<code>CPU</code>低一个数量级，加上<code>CPU</code>的所有访问都要通过总线这个瓶颈，所以，缩短存储器的访问时间是提高计算机速度的关键。采用在<code>CPU</code>和内存之间加进告诉缓冲存储器<code>Cache</code>的办法较好的解决了这一问题。</p>
-<p>简单来说<code>Cache</code>是为了解决高速运行的<code>cpu</code>与主存储器速度不匹配的问题。</p>
-<p>Cache的地址映像方法：</p>
-<ul>
-<li>
-<p>直接映像</p>
-<p>缺点：容易造成资源的浪费</p>
-<p>优点：索引容易(找起来更加方便)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/6.png" alt="6"></p>
-</li>
-<li>
-<p>全相连映像</p>
-<p>优点：灵活</p>
-<p>缺点：索引不方便(找起来麻烦)</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/7.png" alt="7"></p>
-</li>
-<li>
-<p>组相连映像</p>
-<p>前两种连接方式的结合，内存先分组在分页。</p>
-<p>缺点：增加开销</p>
-<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/8.jpg" alt="8"></p>
-</li>
-</ul>
-<h5 id="cache的性能"><a class="header-anchor" href="#cache的性能">¶</a>cache的性能</h5>
-<p><code>CPU</code>访问内存是，首先判断所要访问的内容是否在Cache中，如果在，就称为“命中”，此时<code>CPU</code>直接总Cache中调用该内容；否则，就称为“不命中”，<code>CPU</code>只好去内存中调用所需的子程序或指令了。<code>CPU</code>不但可以直接从Cache中读出内容，也可以直接往其中写入内容。由于Cache的存取速率相当快，使得<code>CPU</code>的李永乐大大提高，进而使整个系统的性能得以提升。</p>
-<p>如果以<code>Hc</code>为代表对Cache的访问命中率，<code>tc</code>为Cache的存取时间，<code>tm</code>为主存的访问时间，则Cache的平均访问时间<code>ta</code>为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ta &#x3D; Hctc+(1-Hc)tm</span><br></pre></td></tr></table></figure>
-<p>因为cache的内容是部分主存内容的副本，应该与主存内容保持一致。而<code>CPU</code>对cache的写入更改了cache内容，如何与主存内容保持一致就有几种写操作方式可供选择，统称为写策略。</p>
-<ul>
-<li>
-<p>写回法(write-back)</p>
-<p>当<code>CPU</code>对cache写命中时，只修改cache的内容不立即写入主存，只当此行被换出时才写回主存。这种策略使cache在<code>CPU</code>----主存之间，不仅在读方向而且在写方向都起到了高速缓存作用</p>
-</li>
-<li>
-<p>写直达法(write-through)</p>
-<p>又称全写法，写透。是当cache写命中时，cache与主存同时发生写修改。</p>
-</li>
-<li>
-<p>标记法</p>
-<p>数据进入cache后，有效位置1，当<code>CPU</code>对该数据修改时，数据只写入主存并将该有效位置0。要从cache中读取数据是要测试其有效位，若为1则直接从cache中区属，否则从主存中取数</p>
-</li>
-</ul>
-<h3 id="磁盘存储器"><a class="header-anchor" href="#磁盘存储器">¶</a>磁盘存储器</h3>
-<h3 id="总线"><a class="header-anchor" href="#总线">¶</a>总线</h3>
-<p>总线(Bus)是计算机各种功能部件之间传送信息的公共通信干线。</p>
-<p>按照总线相对应<code>CPU</code>或其他芯片的位置可分为：</p>
-<ul>
-<li>
-<p>内部总线</p>
-<p>寄存器之间和算术逻辑部件<code>ALU</code>与控制部件之间传输数据所用的线。</p>
-</li>
-<li>
-<p>外部总线</p>
-<p><code>CPU</code>与内存和I/O设备接口之间通讯</p>
-</li>
-</ul>
-<p>按总线功能划分：</p>
-<ul>
-<li>地址总线------传送地址信息</li>
-<li>数据总线------传送数据信息</li>
-<li>控制总线-------传送控制信号和时序信号</li>
-</ul>
-<p>按总线在微机中的位置，可分为：</p>
-<ul>
-<li>机内总线</li>
-<li>机外总线</li>
-</ul>
-<p>按总线功能划分：</p>
-<ul>
-<li>局部总线</li>
-<li>系统总线</li>
-<li>通信总线</li>
-</ul>
-<p>按照总线中数据线的多少</p>
-<ul>
-<li>并行总线</li>
-<li>串行总线</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux简单命令</title>
     <url>/Linux/Linux%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1>常用Linux命令的基本使用</h1>
@@ -1567,6 +945,1271 @@ python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
       </categories>
       <tags>
         <tag>简单命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库</title>
+    <url>/uncategorized/%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1>数据库模式</h1>
+<ul>
+<li>
+<p>数据库技术中采用分级的方法将数据库的结构划分为多个层次。最著名的是美国的ANSI/SPARC数据库系统研究组1975年提出的三级划分方法。如图所示</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="1"></p>
+</li>
+<li>
+<p>数据库系统划分为<strong>三个抽象级</strong>：用户级、概念级、物理级。</p>
+<ul>
+<li><strong>用户级数据库</strong>。用户级数据库对应外模式，是最接近用户的一级数据库，是用户可以看到和使用的数据库，又称用户视图。用户数据库主要由外部记录组成，不同的用户视图可以相互重叠，用户的所有操作都是针对用户视图进行的。</li>
+<li><strong>概念级数据库</strong>。概念级数据库对应于概念级模式，介于用户级和数据库之间，是所有用户视图最小并集，是数据库管理员看到和使用的数据库，又称DBA(DateBace  Administrator)视图。概念级数据库由概念记录组成，一个数据库可有多个不同的用户视图，每个用户视图由数据库某一部分的抽象表示所组成。一个数据库应用系统只存在一个DBA视图，他把数据库作为一个整体的抽象表示。概念级模式把用户视图有机的结合整体，综合平衡考虑所有用户要求，实现数据的一致性，最大限度降低数据冗余，准确的反映数据间的联系。</li>
+<li><strong>物理级数据库</strong>。物理级数据库对应于内模式，是数据库的底层表示，它描述数据的实际存储组织，是最接近于物理存储的级，又称内部试图。物理级数据库由内部记录组成，物理级数据库并不是真正的物理存储，而是最接近于物理存储的级。</li>
+</ul>
+</li>
+<li>
+<p>数据库系统的<strong>三级模式</strong>为外模式、概念模式、内模式。</p>
+<ul>
+<li><strong>概念模式</strong>，概念模式。概念模式(模式、逻辑模式)用以描述整个数据库中数据库的逻辑结构，描述显示世界中的实体及其性质与联系，定义记录、数据项、数据的完整性约束条件及记录之间的联系，是数据项值的框架。
+<ul>
+<li>数据库概念模式通常还包含有访问控制、保密定义、完整性检查等方面的内同，以及概念/物理之间的映射。</li>
+<li>概念模式是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。一个数据库只有一个概念模式</li>
+</ul>
+</li>
+<li><strong>外模式</strong>。外模式(子模式、用户模式)用以描述用户看到或使用的那部分数据的逻辑结构，用户根据外模式用数据操作语句或应用程序去操作数据库中的数据。外模式主要秒速组成用户视图的各个记录的组成、相互关系、数据项的特征、数据的安全性和完整性约束条件。</li>
+<li><strong>内模式</strong>。内模式是整个数据库的最底层表示，不同于物理层，它假设外存是一个无线的线性地址空间。内模式定义的是存储记录的类型、存储域的表示以及存储记录的物理顺序，指引元、索引和存储路径的等数据的存储组织。
+<ul>
+<li>内模式是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。一个数据库只有一个内模式</li>
+<li>内模式、外模式和模式之间的关系如下：
+<ul>
+<li>模式是数据库的中心与关键</li>
+<li>内模式依赖于模式，独立于外模式和存储设备</li>
+<li>外模式面向具体的应用，独立于内模式和存储设备</li>
+<li>应用程序依赖于外模式，独立于模式和内模式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>数据库的<strong>两级独立性</strong></p>
+<ul>
+<li>数据库系统两级独立性是指物理独立性和逻辑独立性。三个抽象级间通过两级映射(外模式—模式映射、模式----内模式映射)进行相互转换，使得数据库的三级形成一个统一的整体
+<ul>
+<li><strong>物理独立性</strong>。物理独立性是指用户的应用程序与存储在磁盘的数据库中的数据是相互独立的。当数据的物理存储改变时，应用程序不需要改变。物理独立性存在与概念模式和内模式之间的映射转换，说明物理组织发生变化时应用程序的独立程度。</li>
+<li><strong>逻辑独立性</strong>。逻辑杜希形是指用户的应用程序与数据库中的逻辑结构时相互独立的。当数据的逻辑结构改变时，应用程序不需要改变。逻辑独立性存在于外模式和概念模式之间的映射转换。说明概念模式发生变化时应用程序的独立独立程度。<strong>逻辑独立性比物理独立性更加难实现。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>数据模型</h1>
+<ul>
+<li>
+<p>数据模型主要有两大类，分别是概念数据模型(实体----联系模型)和基本数据模型(结构数据模型)</p>
+</li>
+<li>
+<p><em>概念数据模型</em>是按照<strong>用户的观点</strong>来对数据和信息建模，主要用于数据库设计。概念模型主要用尸体----联系方法(Entity—RelationshipApproach)表示，所以也称<strong>E—R模型</strong></p>
+</li>
+<li>
+<p><em>基本数据模型</em>是按照<strong>计算机系统的观点</strong>来对数据和信息建模，主要用于<code>DBMS</code>的实现。基本数据模型是数据库系统的核心和基础。基本数据模型通常由<strong>数据结构、数据操作、数据的约束条件</strong>三部分组成。</p>
+<ul>
+<li>其中数据结构是对系统<strong>静态特性</strong>的描述，数据操作是对系统<strong>动态特性</strong>的描述，完整性是一组的集合。</li>
+<li>数据结构：数据模型中的数据结构主要描述数据的类型、内容、性质乙基数据间的联系等。数据结构是数据模型的基础，数据操作和约束都建立在数据结构上。不同的数据结构具有不同的操作和约束。</li>
+<li>数据操作：数据模型中数据操作主要描述在相应的数据结构上的操作类型和操作方式。</li>
+<li>数据约束：数据模型中的数据约束主要描述数据结构内数据间的语法、词义信息、他们之间的制约和依存关系，以及数据动态变化的规则，以保证数据的正确、有效和相容。</li>
+</ul>
+</li>
+<li>
+<p>数据的约束包括实体完整性、参照完整性以及用户定义完整性的约束。</p>
+<ul>
+<li>
+<p><strong>实体完整性</strong></p>
+<p>实体完整性是指实体的主属性不能取空值。实体完整性规则规定实体的所有主属性都不能为空。实体完整性针对基本关系而言的，一个基本关系对应着显示世界中的一个主题，例如学生表对应着学生这个实体，这种标志在关系模型中称之为主码，主码的属性也就是主属性不能为空。</p>
+</li>
+<li>
+<p><strong>参照完整性</strong></p>
+<p>在关系数据库中主要是值得外键参照的完整性。若A关系中的某个或者某些属性参照B或其他几个关系中的属性，那么在关系A中该属性要么为空，要么必须出现B或者其他的关系的对应1属性。如选课关系的stu_id和cour_id分别是参照学生的课程的外键，那么对于显示的系统而言，stu_id和cour_id必须分别出现在学生和课程关系中，这就是外键参考的完整性，同时删除的时候根据设置的不同有不同的处理方式。</p>
+</li>
+<li>
+<p><strong>用户定义完整性</strong></p>
+<p>用户定义完整性是针对某一具体的约束条件。它反应的某一具体应用所对应的数据必须满足一定的约束条件。它反应的某一具体应用所对应的数据必须满足一定的约束条件。例如，某些属性必须取唯一值，某些指的范围为0-100等。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>E-R模型</strong></p>
+<ul>
+<li>
+<p>实体</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/19.png" alt="19"></p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/20.png" alt="20"></p>
+</li>
+<li>
+<p>联系</p>
+<p>数据对象彼此之间相互连接的方式称为联系，也称关系。联系类型可分为一下3种类型</p>
+<ul>
+<li>一对一联系(1:1)</li>
+<li>一对多联系(1:N)</li>
+<li>多对多联系(M:N)</li>
+</ul>
+</li>
+<li>
+<p>属性</p>
+<p>可以分为以下几种类型</p>
+<ul>
+<li>简单属性和符合属性：如职工的通信地址可以进一步分为邮编、省、市、街道。</li>
+<li>简单属性和多值属性：如职工的亲属的姓名有多个数目。</li>
+<li>NULL属性：没有值或属性值未知。</li>
+<li>派生属性：如，职工工作年限可由当前时间和参加工作时间得到。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/21.png" alt="21"></p>
+<ul>
+<li>常用的数据模型有层次模型、网状模型、关系模型和面向对象模型。</li>
+<li>层次模型用树形结构表示实体类型及实体间的联系。层次模型的优先是记录之间的联系通过针织来实现，查询效率较高。层次模型的缺点是只能只能表示1:n的关系，虽然有多重个辅助手段实现m:n联系，但比较复杂，用户不易掌握。由于层次顺序的严格和复杂，导致数据的查询和更新操作很复杂，应用程序的编写也比较复杂。</li>
+</ul>
+<h1>数据模型</h1>
+<ul>
+<li><strong>层次模型</strong></li>
+</ul>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="2"></p>
+<ul>
+<li>
+<p><strong>网状模型</strong></p>
+<p>用有向图 表示实体类型及实体间的联系。网状模型的优点是记录之间的联系通过指针实现，m:n联系也容易实现，查询效率高。其缺点是编写应用程序的过程比较复杂，程序员必须熟悉数据库的逻辑结构</p>
+</li>
+</ul>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="3"></p>
+<ul>
+<li>
+<p><strong>关系模型</strong></p>
+<p>用表格结构表达实体集，用外键表示实体间的联系。其优点有：</p>
+<ul>
+<li>
+<p>间隙在严格的数学概念基础上</p>
+</li>
+<li>
+<p>概念(关系)单一，结构简单、清晰，用户易懂易用</p>
+</li>
+<li>
+<p>存取路径对用户透明，从而数据独立性、安全性好，简化数据库开发工作</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/4.png" alt="4"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/5.png" alt="5"></p>
+<h1>关系代数</h1>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>名词解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U</td>
+<td>并</td>
+<td>关系R与S的并是由属于R或S的元组构成的集合</td>
+</tr>
+<tr>
+<td>-</td>
+<td>差</td>
+<td>关系R与S的差是由属于R但不属于S的元组构成的集合</td>
+</tr>
+<tr>
+<td>∩</td>
+<td>交</td>
+<td>关系R与S的交是由属于R同时又属于S的元组构成的集合</td>
+</tr>
+<tr>
+<td>×</td>
+<td>笛卡尔积</td>
+<td>两个元组分别为n目和m目的关系R和S的笛卡尔积是一个(n+m)列的元组的集合。元组的前n列是关系R的一个元组，后m列是关系S的一个元组</td>
+</tr>
+<tr>
+<td>σ</td>
+<td>选择</td>
+<td>取得关系R中条件符合的行</td>
+</tr>
+<tr>
+<td>π</td>
+<td>投影</td>
+<td>取得关系R中条件的列</td>
+</tr>
+<tr>
+<td>⋈</td>
+<td>连接</td>
+<td>等值连接：关系R、S，取两者笛卡尔积中属性值相等的元组。自然连接：一种特殊的等值连接，它要求比较的属性列表必须是相同的属性组，并且把结果中重复属性去掉。注意与笛卡尔积的区别。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>外连接</p>
+<p>两个关系R和S进行自然连接时，选择两个关系R和S公共属性相等的元组，去掉重复的属性列构成新关系。这样，关系R中的某些元组有可能在关系S中不存在公共属性值相等的元组，造成关系R中这些元组的值在运算时舍弃了；同样关系S中的某些元组也可能舍弃。为此，空充了关系运算外连接、右外链接和完全外连接。</p>
+<ul>
+<li>左外连接：R和S进行自然连接时，只把R中舍弃的元组放到新关系中。</li>
+<li>右外连接：R和S进行自然连接时，只把S中舍弃的元组放到新的关系中</li>
+<li>完全外连接：R和S进行自然连接时，只把R和S中舍弃的元组都放到新关系中。</li>
+</ul>
+<p>实例：</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/7.png" alt="7"></p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/8.png" alt="8"></p>
+<ul>
+<li>
+<p>自然连接</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/9.png" alt="9"></p>
+</li>
+<li>
+<p>左外连接</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/10.png" alt="10"></p>
+</li>
+<li>
+<p>右外连接</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/11.png" alt="11"></p>
+</li>
+<li>
+<p>完全外连接</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/13.png" alt="13"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>函数依赖</strong>：设R(U)是属性集U上的关系模式，X，Y是U的子集。若对R(U)的任何一个可能的挂你r，r中不可能存在两个元组在X上的属性值相等，而在Y上的属性值不等，则称X函数上决定Y或Y函数依赖于X，记作X-&gt;Y。如“学号-&gt;姓名”。</p>
+</li>
+<li>
+<p><strong>完全依赖函数</strong>：在R(U)中，如果X-&gt;Y，并且对于X的任何一个真子集X都有X不能决定Y，则称Y对于X完全依赖，记作X f Y。如：给定一个学生选课关系SC(Sno,Cno,G)，可以得到F=｛(Sno，Cno，-&gt;G)｝,对于(Sno,Cno)中任何一个真子集Sno或Cno都不能决定G，所以，G完全依赖于Sno、Cno。</p>
+</li>
+<li>
+<p><strong>部分函数依赖</strong>：如果X-&gt;Y，但Y不完全函数依赖于X，则称Y对于X部分函数依赖，记作X p Y。如：F = ｛(Sno,Cno,-&gt;Sname)｝，其中Sno，-&gt;Sname</p>
+</li>
+<li>
+<p><strong>传递依赖</strong>：在R(U,F)中，如果X-&gt;Y,Y，Y∉X，Y→Z，则称Z对X传递依赖。</p>
+</li>
+<li>
+<p><strong>Armstrong</strong>公理：从已知的一些函数依赖，可以推出另外一些函数依赖，这就需要一系列推理规则，这些规则常被称作&quot;Armston公理&quot;。</p>
+</li>
+<li>
+<p>设关系式R(U,F),U是关系模式R的属性集，F是U上一组函数依赖关系，则有以下三条推理规则：</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/14.png" alt="14"></p>
+</li>
+<li>
+<p>超键：在关系中能<strong>唯一标识</strong>元组的属性集称为关系模式的超键。</p>
+</li>
+<li>
+<p>候选键：<strong>不含有多余属性</strong>的超键称为候选键。</p>
+</li>
+<li>
+<p>主键：用户选作元组<strong>标识的有一个候选键成为主键</strong>。例如：学生(学号,姓名,性别,专业号,年龄)。其中(学号，姓名)是超键,但不是候选键。学号是候选键，同时也是超键。</p>
+</li>
+<li>
+<p>外键：如果关系模式R中的某些属性集不是R的候选键，而是<strong>关系模式S的候选键</strong>，则这个属性集对模式R而言是外键。例如：学生(学号,姓名,性别,专业号,年龄)，专业(专业号,专业名)</p>
+</li>
+<li>
+<p>主属性和非主属性。包含在任何一个*<strong>候选键中的属性</strong>称为主属性，否则被称为非主属性</p>
+</li>
+</ul>
+<h1>关系数据库规划化</h1>
+<p>关系数据库设计的方法之一是设计满足适当凡是的模式，通常可以通过判断分解后的模式达到几凡是来评价模式规范化程度。通过分解，可以将一个低一级范式的关系模式转化成若干个高一级范式的模式关系，这个过程称为规范化。</p>
+<ul>
+<li>
+<p>1NF(第一范式)。若关系模式R的每一个分量是不可再分的数据项，则关系模式R属于第一范式。如下图不属于第一范式。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/15.png" alt="15"></p>
+</li>
+<li>
+<p>2NF(第二范式)。若关系模式R属于1NF,且每一个非主属性完全依赖主键是，则关系式R式2NF(第二范式)</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/16.png" alt="16"></p>
+</li>
+<li>
+<p>3NF(第三范式)。即当2NF消除了非主属性对码的传递函数依赖，则称为3NF。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/17.png" alt="17"></p>
+</li>
+<li>
+<p>BCNF</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/18.png" alt="18"></p>
+</li>
+</ul>
+<h1>SQL语言基础</h1>
+<p>结构化查询语句SQL是关系数据库的标准语言，它是集DDL(数据定义)、DML(数据操作)和数据控制功能(授权、完整性规则和事物控制语句)于一体的数据库语言。</p>
+<ul>
+<li>
+<p>数据定义语言</p>
+<p>SQL的DDL主要包括SQL模式、基本表及视图的定义和撤销的操作。包括以下几种，如表所示。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/22.png" alt="22"></p>
+<ul>
+<li>
+<p>创建基本表的语法格式如下：</p>
+<p>CREATE TABLE&lt;表名&gt;</p>
+<p>&lt;列名&gt;&lt;数据类型&gt;[列级完整性约束条件]
+　　[,&lt;列名&gt;&lt;数据类型&gt;[列级完整性约束条件]]…
+　　[,&lt;表级完整性约束条件&gt;]）；</p>
+</li>
+<li>
+<p>修改基本表的语法格式如下：</p>
+<p>ALTER TABLE &lt;表名&gt;
+　　[ADD &lt;新列名&gt;&lt;数据类型&gt;[列级完整性约束条件]]
+　　[DROP &lt;表级完整性约束条件&gt;]
+　　[MODIFY &lt;列名&gt;&lt;数据类型&gt;];</p>
+</li>
+</ul>
+</li>
+<li>
+<p>数据操纵语言</p>
+<p>数据操纵语言可以分为数据查询和数据更新(插入、删除、更新)两大类操作。其中由SELECT语句实现的数据查询是核心操作，也是理念考试中最重要的考点，其语法格式如下：</p>
+<p>SELECT [ALL|DISINCT] &lt;目标列表达式&gt;[,&lt;目标列表达式&gt;]…
+FROM &lt;表或视图名&gt;[,&lt;表或视图名&gt;]…</p>
+<p>[WHERE &lt;条件表达式&gt;]
+[GROUP BY &lt;列名1&gt; [HAVING &lt;条件表达式&gt;]]
+[ORDER BY &lt;列名2&gt; [ASC|DESC]];</p>
+</li>
+</ul>
+<p>举个例子：</p>
+<p>如：student （Sno,Sname,Ssex,Sage,Sdept）：学生（学号，姓名，性别，年龄、所在系）
+　　course （Cno,Cname,Cpno,Ccredit）：课程（课程号，课程名，基础课号，学分）
+　　SC （Sno,Cno,Grade）：学生选修表（学号，课程号，成绩）</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/23.png" alt="23"></p>
+<p>对查询结果进行处理</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/24.png" alt="24"></p>
+<p>联接查询</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/25.png" alt="25"></p>
+<p>从上表中，我们可以发现在SQL与关系代数表达式的转换中，有这样几个规律：SELECT后面的&lt;列名&gt;一般体现为投影运算；FROM后面列出了关系模式，WHERE子句的等值部分通常是转为&quot;自然联接&quot;、&quot;笛卡尔积&quot;等运算；而非等值比较则通常是转为&quot;选择&quot;运算。</p>
+<p>嵌套查询：即在WHERE子句中包含有另一个SELECT查询语句。
+　　在嵌套查询中，上层的查询块称为外层查询或父查询；下层查询块称为内层查询或子查询。SQL语言允许多层嵌套查询。要注意的是，子查询的SELECT语句中不能够使用ORDER BY子句。嵌套查询一般的求解方法是由里向外处理的。即每个子查询在上一级查询处理之前求解，子查询的结果用于建立其父查询的查找条件。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/26.png" alt="26"></p>
+<p>数据更新操作</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/27.png" alt="27"></p>
+<ul>
+<li>
+<p>视图</p>
+<p>视图是关系数据库系统提供给用户以多种角度来观察数据库中数据的重要机制。它是从一个或多个基本表（及视图）中导出的表，它是一个虚表，只存储定义不存储数据，数据仍然存储在基本表中，基本表数据变化时，视图也就变化了。它和基本表一样可以查询、删除、更新，但都有一些限制，不同的DBMS不尽相同。视图能够简化用户的操作，能够以多种角度来看待同一数据，提供了一定程度上的逻辑独立性，能够对机密数据提供安全保护。</p>
+</li>
+</ul>
+<h1>事务管理</h1>
+<p>数据库系统运行的基本单位是十五，事务相当于操作系统中的进程，是用户定义的一个数据库操作序列，这些操作序列要么全做要么全不做，是一个不可分割的工作单位，事务具有以下特性：</p>
+<ul>
+<li>原子性(Atomicity)：数据库的逻辑单位。</li>
+<li>一致性(Consistency)：使数据库从一个一致性状态变到另一个一致性状态。</li>
+<li>隔离性(lsolation)：不能使其他事物干扰。</li>
+<li>持续性(永久性)(Durability)：一旦提交，改变就是永久性的</li>
+</ul>
+<p>事务通常以 BEGIN TRANSACTION（事务开始）语句开始，以 COMMIT 或 ROLLBACK 语句结束。COMMIT 称为“事务提交语句”，表示事务执行成功的结束。ROLLBACK 称为“事务回退语句”，表示事务执行不成功的结束。从终端用户来看，事务是一个原子，是不可分割的操作序列。事务中包括的所有操作要么都做，要么都不做（就效果而言）。事务不应该丢失或被分割地完成。</p>
+<h1>并发控制</h1>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/28.png" alt="28"></p>
+<ul>
+<li>处理并发控制的主要方法是采用封锁技术。它有两种类型：排他型封锁（X 封锁）和共享型封锁（S 封锁）。</li>
+<li>数据库是一个共享资源，它允许多个用户程序并行地存取数据库中的数据，但是，如果系统对并行操作不加以控制，就会存取不正确的数据，破坏数据库的完整性。</li>
+<li>在多个事务并发执行的系统中，主要采取封锁协议来进行处理。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>一级封锁协议</th>
+<th>事务T在修改数据R之前必须先对其加X锁，指导事务结束才释放</th>
+<th>可防止丢失修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二级封锁协议</td>
+<td>一级封锁协议加上事务T在读取数据R之前先对其加S锁，读完后即可释放S锁</td>
+<td>可放置丢失修改，还可防止读&quot;脏&quot;数据</td>
+</tr>
+<tr>
+<td>三级封锁协议</td>
+<td>一级封锁协议加上事务T在读取数据R之前先对其加S锁，指导事务结束才释放</td>
+<td>可放置丢失修改，还可放置读&quot;脏&quot;数据与放置数据重复读</td>
+</tr>
+<tr>
+<td>两端锁协议</td>
+<td>可串行化，可能发生死锁</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1>故障与恢复</h1>
+<h2 id="数据库故障"><a class="header-anchor" href="#数据库故障">¶</a>数据库故障</h2>
+<p>1数据库故障可用事务的故障来表示，主要分为四类：</p>
+<ul>
+<li>事务故障。事务在运行过程中由于种种原因，如输入数据的错误、运算溢出、违反了某些完整性限制、某些应用程序的错误。一级并发事务发生死锁等，使事务未运行至正常重点就被撤销。这种情况称为“事务故障”</li>
+<li>系统故障。系统故障是指系统在运行过程中，由于某种原因(如操作系统或数据库管理系统代码错误、操作员操作事务、特定类型的硬件错误(如CPU故障)、突然停电等造成系统停止运行)，致使事务在执行过程中以非正常方式终止，这时内存中的信息丢失，但存储在外存储设备上的数据不受影响。</li>
+<li>介质故障。系统在运行过程中，由于某种硬件故障，如磁盘损坏、磁头碰撞或由于操作系统的某种潜在的错误、瞬时强磁场干扰，使存储在外存上的数据部分损失或部分损失，称为&quot;介质故障&quot;。这类故障比前两类故障的可能性虽然小很多，但破坏性却最大。</li>
+<li>计算机病毒。计算机病毒使一种认为破坏计算机正常工作的特殊程序。通过读写燃有病毒的计算机系统中的程序与数据，这类病毒可以迅速繁殖和传播，危害计算机系统和数据库。目前大多数病毒是在PC和其兼容机上传播的。有的病毒一侵入系统就马上摧毁系统，有的病毒有较长的潜伏期，有的病毒则旨在特定的日期发生破坏，有的病毒感染系统所有的程序和数据，有的只影响特定的程序和数据。</li>
+</ul>
+<h2 id="故障的恢复"><a class="header-anchor" href="#故障的恢复">¶</a>故障的恢复</h2>
+<ul>
+<li>事务故障的恢复。事务故障是指事务未运行至正常终点前被撤销，这时恢复子系统对此时事务撤销处理。事务故障的恢复室友系统自动完成的，不需要用户干预，步骤如下：
+<ul>
+<li>反向扫描日志文件，查找该事务的更新操作。</li>
+<li>对该事务的更新操作执行逆操作。</li>
+<li>继续反向扫描日志文件，查找该事务的其他更新操作，并做同样处理。</li>
+<li>如此处理下去，直至读到此事务的开始标记，事务故障恢复完成。</li>
+</ul>
+</li>
+<li>系统故障的恢复。系统故障发生时，造成数据库不一致状态的原因有两个：一是由于一些未完成事务对数据库的更行已写入数据库：二使由于一些已提交事务对数据库的更新还留在缓冲区没来得及吸入数据库。系统故障的恢复是在重新启动时自动完成的，不需要用户干预，步骤如下：
+<ul>
+<li>正向扫描日志文件，找出在故障发生前已经提交的事务，将其事务标识计入重做(Redo)队列。同时找出故障发生时尚未完成的事务，将其事务标识记入撤销(Undo)队列。</li>
+<li>对撤销队列中的各个事务进行撤销处理：反向扫描日志文件，对每个Undo事务的更新操作执行逆操作。</li>
+<li>对重做队列中的各个四五进行重做处理：正向扫描日志文件，对每个Redo事务重新执行日志文件登记的操作。</li>
+</ul>
+</li>
+<li>介质故障与病毒破坏的恢复。在发生介质故障和遭病毒破坏时，磁盘上的物理数据库被破坏，这是的恢复操作可分为三步：
+<ul>
+<li>装入最新的数据库后备副本，使数据库恢复到最近一次转储使得一致性状态。</li>
+<li>从故障点开始反向读日志文件，找出已提交事务标识将其记入重做队列。</li>
+<li>从起始点开始正向阅读日志文件，根据重做队列中的记录，重做所有已完成事务，将数据库恢复至故障前某一时刻得一致状态。</li>
+</ul>
+</li>
+<li>具体检查点得恢复技术。检查点记录得内容可包括：
+<ul>
+<li>建立检查点时刻所有正在执行得事务请安。这些事务最近一个日志记录得地址。采用检查点得恢复步骤如下。
+<ul>
+<li>从重新开始文件中找到最后一个检查点记录在日志文件中的地址，由该地址在日志文件中找到最后一个检查点记录。</li>
+<li>由该检查点记录得到检查点建立时所有正在执行的事务清单队列(A)。</li>
+<li>建立重做队列®和撤销队列(U),把A队列放入U队列中，R队列为空。</li>
+<li>从检查点开始正向扫描日志文件，若有新事物的开始T1，则把T1放入U队列，若有提交的事务T2，则把T2从U队列移到R队列，直至日志文件结束。</li>
+<li>对U队列的每个事务执行Undo操作，对R队列的每个事务执行Redo操作。</li>
+</ul>
+</li>
+<li>DBA要做的操作时：
+<ul>
+<li>重装最近转储的后援副本。</li>
+<li>运行日志文件，执行系统提供的恢复命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="备份"><a class="header-anchor" href="#备份">¶</a>备份</h2>
+<p>数据库备份按照不同凡是可分为多种，这里按照备份内容分为<strong>物理备份</strong>和<strong>逻辑备份</strong>两类。</p>
+<p>物理备份是在操作系统层面上对数据库的数据文件进行备份，物理备份分为<strong>冷备份</strong>和<strong>热备份</strong>两种。</p>
+<ul>
+<li>冷备份是将数据库正常关闭，在停止状态下利用操作系统的 copy、cp、tar、 cpio 等命令将数据库的文件全部备份下来，当数据库发生故障时，将数据文件复制回来，进行恢复。热备份也分为两种，一种是不关闭数据库，将数据库中需要备份的数据文件依次置于备份状态，相对保持静止，然后再利用操作系统的 copy、cp、tar、cpio 等命令将数据库的文件备份下来，备份完毕后再将数据文件恢复为正常状态，当数据库发生故障时，恢复方法同冷备份一样。</li>
+<li>热备份的另外一种方式是利用备份软件（例如，veritas 公司的 netbackup，legato 公司的 network 等）在数据库正常运行的状态下，将数据库中的数据文件备份出来。</li>
+</ul>
+<p>为了提高物理备份的效率，通常将<strong>完全</strong>、<strong>增量</strong>、<strong>差异</strong>三种备份方式相结合。</p>
+<ul>
+<li>
+<p>完全备份是将数据库的内容全部备份。不足之处在于，各个全备份磁带中的备份数据存在大量的重复信息；另外，由于每次需要备份的数据量相当打，因此备份所需时间较长。</p>
+</li>
+<li>
+<p>增量备份是只备份上次完全、增量或差异备份以来**修改的数据。**因此备份的数据量不大，备份所需的时间很短。但增量备份的数据恢复是比较麻烦的。必须具有上一次全备份和所有增量备份磁带（一旦丢失或损坏其中的一盘磁带，就会造成恢复的失败），并且它们必须沿着从全量备份到依次增量备份的时间顺序逐个反推恢复，因此这就极大地延长了恢复时间。</p>
+</li>
+<li>
+<p>差异备份是备份自上次完全备份后发生变化的所有数据。差异备份在避免了另外两种备份策略缺陷的同时，又具备了它们各自的优点。首先，它具有了增量备份需要时间短、节省磁盘空间的优势；其次，它又具有了全量备份恢复所需磁带少、恢复时间短的特点。系统管理员只需要两盘磁带，即全备份磁带与灾难发生前一天的差异备份磁带，就可以将系统恢复。</p>
+</li>
+<li>
+<p>利用一个完全备份和多个增量、差异备份恢复数据库的步骤如下：</p>
+<ul>
+<li>首先从完全备份恢复数据库。</li>
+<li>然后按照时间顺序从早到晚依次导入多个增量和差异备份文件。</li>
+</ul>
+</li>
+</ul>
+<p>逻辑备份是指利用各数据库系统自带的工具软件备份和恢复数据库的内容，例如，Oracle的导出工具为exp，导入工具为imp，可以按照表、表空间、用户、全库等四个层次备份和恢复数据；Sybase的全库备份命令时dump database，全库恢复命令时load database，另外也可利用BCP命令来备份和恢复指定表。</p>
+<p>在数据库容量不大的情况下逻辑备份是一个非常有效的手段，既简单又方便，但现在随着数据量的越来越大，利用逻辑备份来备份和恢复数据库已力不从心，速度也很慢。针对大型数据库的备份和恢复一般结合磁带库采用物理的完全、增量、差异 三种备份方式相组合来进行。但无论任何时候逻辑备份都是一种非常有效的手段，特别适合于日常维护中的部分指定表的备份和恢复。</p>
+<h1>反规范化</h1>
+<p>数据库中的数据规范化的优点是减少了数据冗余，节约了存储空间，相应逻辑和物理的 I/O 次数减少，同时加快了增、删、改的速度，但是对完全规范的数据库查询，通常需要更多的连接操作，从而影响查询速度。因此，有时为了提高某些查询或应用的性能而破坏规范规则，即反规范化（非规范化处理）。</p>
+<p>常见的反规范化技术包括：</p>
+<ul>
+<li>
+<p>增加冗余列</p>
+<p>增加冗余列是指在多个表中具有相同的列，它常用来在查询时避免连接操作。例如：以规范化设计的理念，学生成绩表中不需要字段“姓名”，因为“姓名”字段可以通过学号查询到，但在反规范化设计中，会将“姓名”字段加入表中。这样查询一个学生的成绩时，不需要与学生表进行连接操作，便可得到对应的“姓名”。</p>
+</li>
+<li>
+<p>增加派生列</p>
+<p>增加派生列指增加的列可以通过表中其他数据计算生成。它的作用是在查询时减少计算量，从而加快查询速度。例如：订单表中，有商品号、商品单价、采购数量，我们需要订单总价时，可以通过计算得到总价，所以规范化设计的理念是无须在订单表中设计“订单总价”字段。但反规范化则不这样考虑，由于订单总价在每次查询都需要计算，这样会占用系统大量资源，所以在此表中增加派生列“订单总价”以提高查询效率。</p>
+</li>
+<li>
+<p>重新组表</p>
+<p>重新组表指如果许多用户需要查看两个表连接出来的结果数据，则把这两个表重新组成一个表来减少连接而提高性能。</p>
+</li>
+<li>
+<p>分割表</p>
+<p>有时对表做分割可以提高性能。表分割有两种方式。</p>
+<ul>
+<li>水平分割：根据一列或多列数据的值把数据行放到两个独立的表中。水平分割通常在下面的情况下使用。
+<ul>
+<li>情况1：表很大，分割后可以降低在查询时需要读的数据和索引的页数，同时也降低了索引的层数，提高查询效率。</li>
+<li>情况2：表中的数据本来就有独立性，例如表中分别记录各个地区的数据或不同时期的数据，特别是有些数据常用，而另外一些数据不常用。</li>
+<li>情况3：需要把数据存放到多个介质上。</li>
+</ul>
+</li>
+<li>垂直分割：把主码和一些列放到一个表，然后把主码和另外的列放到另一个表中。如果一个表中某些列常用，而另外一些列不常用，则可以采用垂直分割，另外垂直分割可以使得数据行变小，一个数据页就能存放更多的数据，在查询时就会减少 I/O 次数。其缺点是需要管理冗余列，查询所有数据需要连接操作。</li>
+</ul>
+</li>
+</ul>
+<h1>数据库设计</h1>
+<p>数据库设计的过程是将数据库系统与现实世界密切地、有机地、协调一致地结合起来的过程。数据库的设计质量与设计者的知识、经验和水平密切相关。作为数据库应用系统的重要组成部分，数据库设计的成败往往直接关系到整个应用系统的成败。</p>
+<p>以数据库为基础的数据库应用系统与其他计算机应用系统相比往往具有数据量庞大、数据保存时间长、数据关联复杂、用户要求多样化等特点。</p>
+<p>数据库设计中面临的主要困难和问题有：</p>
+<ul>
+<li>同时具备数据库知识与应用业务知识的人很少。懂得计算机与数据库的人一般都缺乏应用业务知识和实际经验，而熟悉应用业务的人又往往不懂计算机和数据库。</li>
+<li>项目初期往往不能确定应用业务的数据库系统的目标。</li>
+<li>缺乏完善的设计工具和设计方法。</li>
+<li>需求的不确定性。用户总是在系统的开发过程中不断提出新的要求，甚至在数据库建立之后还会要求修改数据库结构或增加新的应用。</li>
+<li>应用业务系统千差万别，很难找到一种适合所有业务的工具和方法，这就增加了研究数据库自动生成工具的难度。因此，研制适合一切应用业务的全自动数据库生成工具是不可能的。</li>
+</ul>
+<p>数据库设计采用 分步设计法，即遵循自顶向下、逐步求精的原则，将数据库设计过程分解为若干相互独立又相互依存的阶段，每一阶段采用不同的技术与工具，解决不同的问题，从而将问题局部化，减少了局部问题对整体设计的影响。目前，此方法已在数据库设计中得到了广泛应用并获得了较好的效果。
+在分步设计法中，通常将数据库的设计分为需求分析、概念结构设计、逻辑结构设计和数据库物理设计 4 个阶段，如图所示。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/29-1588875406482.png" alt="29"></p>
+<ul>
+<li>
+<p>需求分析</p>
+<p>需求分析是指收集和分析用户对系统的信息需求和处理需求，得到设计系统所必需的需求信息，建立系统说明文档。其目标是通过调查研究，了解用户的数据要求和处理要求，并按一定格式整理形成需求说明书。需求说明书是需求分析阶段的成果，也是今后设计的依据，它包括数据库所涉及的数据、数据的特征、使用频率和数据量的估计，如数据名、属性及其类型、主关键字属性、保密要求、完整性约束条件、更改要求、使用频率、数据量估计等。这些关于数据的数据称为元数据。在设计大型数据库时，这些数据通常由数据字典来管理。用数据字典管理元数据有利于避免数据的重复或重名，以保持数据的一致性及提供各种统计数据，因而有利于提高数据库设计的质量，同时可以减轻设计者的负担。</p>
+</li>
+<li>
+<p>概念结构设计</p>
+<p>它是数据库设计的第二阶段，其目标是对需求说明书提供的所有数据和处理要求进行抽象与综合处理，按一定的方法构造反映用户环境的数据及其相互联系的概念模型，即用户的数据模型或企业数据模型。这种概念数据模型与 DBMS 无关，是面向现实世界的、极易为用户所理解的数据模型。为保证所设计的概念数据模型能正确、完整地反映用户的数据及其相互关系，便于进行所要求的各种处理，在本阶段设计中可吸收用户参与和评议设计。在进行概念结构设计时，可先设计各个应用的视图（view），即各个应用所看到的数据及其结构，然后再进行视图集成，以形成一个单一的概念数据模型。这样形成的初步数据模型还要经过数据库设计者和用户的审查与修改，最后形成所需的概念数据模型。</p>
+</li>
+<li>
+<p>逻辑结构设计</p>
+<p>这一阶段的设计目标是把上一阶段得到的与 DBMS 无关的概念数据模型转换成等价的，并为某个特定的 DBMS 所接受的逻辑模型所表示的概念模式，同时将概念设计阶段得到的应用视图转换成外部模式，即特定 DBMS 下的应用视图。在转换过程中要进一步落实需求说明，并满足 DBMS 的各种限制。该阶段的结果是用 DBMS 所提供的数据定义语言（DDL）写成的数据模式。逻辑设计的具体方法与 DBMS 的逻辑数据模型有关。逻辑模型应满足数据库存取、一致性及运行等各方面的用户需求。</p>
+</li>
+<li>
+<p>数据库物理设计</p>
+<p>理设计阶段的任务是把逻辑设计阶段得到的满足用户需求的已确定的逻辑模型在物理上加以实现，其主要内容是根据 DBMS 提供的各种手段，设计数据的存储形式和存取路径，如文件结构、索引设计等，即设计数据库的内模式或存储模式。数据库的内模式对数据库的性能影响很大，应根据处理需求及 DBMS、操作系统和硬件的性能进行精心设计。
+实际上，数据库设计的基本过程与任何复杂系统开发一样，在每一阶段设计基本完成后，都要进行认真的检查，看是否满足应用需求，是否符合前面已执行步骤的要求和满足后续步骤的需要，并分析设计结果的合理性。在每一步设计中，都可能发现前面步骤的遗漏或处理不当之处，此时，往往需要返回去重新处理并修改设计和有关文档。所以，数据库设计过程通常是一个反复修改、反复设计的迭代过程。</p>
+</li>
+</ul>
+<h1>E-R图集成</h1>
+<p>在数据库的概念设计过程中，先设计各子系统的局部E-R图，其设计过程是，首先，确定局部视图的范围；然后，识别实体及其标识，确定实体之间的联系；最后，分配实体及联系的属性。各子系统的局部E-R图设计好后，下一步就是要将所有的分E-R图综合成一个系统的总体E-R图，一般称为视图的集成。视图集成通常有两种方式，一种方式是多个局部E-R图一次集成，这种方式比较复杂，做起来难度较大；另一种方式是逐步集成，用累加的方式一次集成两个局部E-R图。这种方式每次只集成两个局部E-R图，可以降低复杂度。</p>
+<p>由于各子系统应用所面临的问题不同，且通常是由不同的设计人员进行局部视图设计，这就导致各个局部E-R图之间必定会存在许多不一致的问题，称之为冲突。因此，在合并E-R图时，不能简单地将各个局部E-R图画到一起，而是必须着力消除各个局部E-R图中的不一致，以形成一个能为全系统中所有用户共同理解和接受的统一的概念模型。各局部E-R图之间的冲突主要有三类：属性冲突、命名冲突和结构冲突。</p>
+<ul>
+<li>属性冲突。属性冲突包括属性域冲突和属性取值冲突。属性冲突理论上好解决，只要换成相同的属性就可以了，但实际上需要各部门协商，解决起来并不简单。</li>
+<li>命名冲突。命名冲突包括同名异义和异名同义。处理命名冲突通常也像处理属性冲突一样，通过讨论和协商等行政手段加以解决。</li>
+<li>结构冲突。结构冲突包括同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数和属性排列次序不完全相同。对于前者的解决办法是将属性变换为实体或实体变换为属性，使同一对象具有相同的抽象。对于后者的解决办法是使该实体的属性取各局部E-R图中属性的并集，再适当调整属性的次序。</li>
+</ul>
+<p>另外，实体间的联系在不同的局部E-R图中可能为不同的类型，其解决方法是根据应用的语义对实体联系的类型进行综合或调整。在初步的E-R图中，可能存在一些冗余的数据和实体间冗余的联系。冗余数据和冗余联系容易破坏数据库的完整性，给数据库维护增加困难，应当予以消除。消除冗余的主要方法为分析方法，即以数据字典和数据流图为依据，根据数据字典中关于数据项之间逻辑关系的说明来消除冗余。</p>
+<h1>E-R图向关系模式的转化</h1>
+<p>E-R图向关系模式的转换属于数据库的逻辑设计阶段的工作，该阶段需要将E-R模型转换为某种DBMS能处理的关系模式，具体转换规则如下：</p>
+<ul>
+<li>一个实体转换为一个关系模式，实体的属性就是关系的属性，实体的主键就是关系的主键。</li>
+<li>一个1:1联系可以转换为一个独立的关系模式，也可以与任意一端对应的关系模式合并。如果转换为一个独立的模式，则与该联系相连的各实体的主键和联系本身的属性均转换为关系的属性，每个实体的主键均是该关系的键属性；如果与某一端实体对应的关系模式合并，则需要在该关系模式的属性中加入另一个关系模式的主键和联系本身的属性。</li>
+<li>一个1:n联系可以转换为一个独立的关系模式，也可以与任意n端对应的关系模式合并。如果转换为一个独立的模式，则与该联系相连的各实体的主键和联系本身的属性均转换为关系的属性，而关系的主键为n端实体的主键；如果与n端实体对应的关系模式合并，则需要在该关系模式的属性中加入1端关系模式的主键和联系本身的属性。</li>
+<li>一个m:n联系转换为一个独立的关系模式，与该联系相连的各实体的主键以及联系本身的属性均转换为关系的属性，而关系的主键为各实体主键的组合。</li>
+<li>三个以上实体间的一个多元联系可以转换为一个独立的关系模式，与该联系相连的各实体的主键和联系本身的属性均转换为关系的属性，而关系的主键为各实体主键的组合。</li>
+</ul>
+<p>另外还有四种情况特别注意的：</p>
+<ul>
+<li>多值属性的处理。如果E-R图中某实体具有一个多值属性，则应该进行优化，把该属性提升为一个实体，通常称为弱实体；或者在转化为关系模式时，将实体的主键与多值属性单独构成一个关系模式。</li>
+<li>BLOB型属性的处理。典型的BLOB是一张图片或一个声音文件，由于它们的容量比较大，必须使用特殊的方式来处理。处理BLOB的主要思想就是让文件处理器（例如，数据库管理器）不去理会文件是什么，而是关心如何去处理它。因此，从优化的角度考虑，应采用的设计方案是将BLOB属性与关系的主键独立为一个关系模式。</li>
+<li>派生属性的处理。因为派生属性可由其他属性计算得到，因此，在转化成关系模式时，通常不转换派生属性。</li>
+<li>在面向对象的模型中，关系模式就对应类，关系模式的属性就对应类的属性。</li>
+</ul>
+<h1>分布式数据库</h1>
+<p>分布式数据库（Distributed DataBase，DDB）比较确切的定义是：分布式数据库是由一组数据组成的，这组数据分布在计算机网络的不同计算机上，网络中的每个结点具有独立处理的能力，成为场地自治，它可以执行局部应用，同时，每个结点也能通过网络通信子系统执行全局应用。负责分布式数据库的建立、查询、更新、复制、管理和维护的软件，称为分布式数据库管理系统（Distributed DataBase Management System， DDBMS）。分布式数据库管理系统保证分布式数据库中数据的物理分布对用户的透明性。一个计算机网络组成的计算机系统，在配置了分布式数据库管理系统，并在其上建立了分布式数据库和相应的应用程序后，就称其为分布式数据库系统（Distributed  DataBase System，DDBS）。分布式数据库管理系统是分布式数据库系统的核心。</p>
+<p>分布式数据库的特点从上面的定义可以看出分布式数据库系统有以下几个特点：</p>
+<ul>
+<li>数据的分布性。分布式数据库中的数据分布于网络中的各个结点，它既不同于传统的集中式数据库，也不同于通过计算机网络共享的集中式数据库系统。</li>
+<li>统一性。主要表现在数据在逻辑上的统一性和数据在管理上的统一性两个方面。分布式数据库系统通过网络技术把局部的、分散的数据库构成一个在逻辑上单一的数据库，从而呈现在用户面前的就如同是一个统一的、集中式的数据库。这就是数据在逻辑上的统一性，因此，它不同于由网络互联的多个独立数据库。分布式数据库是由分布式数据库管理系统统一管理和维护的，这种管理上的统一性又使它不同于一般的分布式文件系统。</li>
+<li>透明性。用户在使用分布式数据库时，与使用集中式数据库一样，无须知道其所关心的数据存放在哪里，存储了几次。用户需要关心的仅仅是整个数据库的逻辑结构。</li>
+</ul>
+<p>与集中式数据库相比，分布式数据库具有下列<strong>优点</strong>：</p>
+<ul>
+<li>坚固性好。由于分布式数据库系统是由多个位置上的多台计算机构成的，在个别结点或个别通信链路发生故障的情况下，它仍然可以降低级别继续工作，如果采用冗余技术，还可以获得一定的容错能力。因此，系统的坚固性好，即系统的可靠性和可用性好。</li>
+<li>可扩充性好。可根据发展的需要增减结点，或对系统重新配置，这比用一个更大的系统代替一个已有的集中式数据库要容易得多。</li>
+<li>可改善性能。在分布式数据库中可按就近分布，合理地冗余的原则来分布各结点上的数据，构造分布式数据库，使大部分数据可以就近访问，避免了集中式数据库中的瓶颈问题，减少了系统的响应时间，提高了系统的效率，而且也降低了通信费用。</li>
+<li>自治性好。数据可以分散管理，统一协调，即系统中各结点的数据操纵和相互作用是高度自治的，不存在主从控制，因此，分布式数据库较好地满足了一个单位中各部门希望拥有自己的数据，管理自己的数据，同时又想共享其他部门有关数据的要求。</li>
+</ul>
+<p>虽然分布式数据库系统与集中式数据库相比有不少优点，但同时也需要解决一些集中式数据库所没有的问题。首先，异构数据库的集成问题是一项比较复杂的技术问题，目前还很难用一个通用的分布式数据库管理系统来解决这一问题。其次，如果数据库设计得不好，数据分布不合理，以致远距离访问过多，尤其是分布连接操作过多，不但不能改善性能，反而会使性能降低。</p>
+<h1>分布式数据库的架构</h1>
+<p>分布式数据库系统的模式结构有六个层次，如图所示，实际的系统并非都具有这种结构。在这种结构中各级模式的层次清晰，可以概括和说明任何分布式数据库系统的概念和结构。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/30.png" alt="30"></p>
+<p>分布式数据库的模式结构从整体上可以分为两大部分：下半部分是集中式数据库的模式结构，代表了各局部场地上局部数据库系统的基本结构；上半部分是分布式数据库系统增加的模式级别。</p>
+<ul>
+<li>
+<p><strong>全局模式</strong>。它们是全局应用的用户视图，是全局概念模式的子集。</p>
+</li>
+<li>
+<p><strong>全局概念模式</strong>。它定义分布式数据库中数据的整体逻辑结构，数据就如同根本没有分布一样，可用传统的集中式数据库中所采用的方法定义。全局概念模式中所用的数据模型应该易于向其他层次的模式映像，通常采用关系模型。这样，全局概念模式包括一组全局关系的定义。</p>
+</li>
+<li>
+<p><strong>分片模式</strong>。每一个全局关系可以划分为若干不相交的部分，每一部分称为一个片段，即“数据分片”。分片模式就是定义片段及全局关系到片段的映像。这种映像是一对多的，即每个片段来自一个全局关系，而一个全局关系可对应多个片段。</p>
+</li>
+<li>
+<p><strong>分布模式</strong>。由数据分片得到的片断仍然是 DDB 的全局数据，是全局关系的逻辑部分，每一个片段在物理上可以分配到网络的一个或多个不同结点上。分布模式定义片段的存放结点。分布模式的映像类型确定了分布式数据库是冗余的还是非冗余的。若映像是一对多的，即一个片段分配到多个结点上存放，则是冗余的分布数据库，否则是不冗余的分布数据库。</p>
+<p>根据分布模式提供的信息，一个全局查询可分解为若干子查询，每一子查询要访问的数据属于同一场地的局部数据库。由分布模式到各局部数据库的映像（映像 4）把存储在局部场地的全局关系或全局关系的片段映像为各局部概念模式采用局部场地的 DBMS 所支持的数据模型。
+分片模式和分布模式均是全局的，分布式数据库系统中增加的这些模式和相应的映像使分布式数据库系统具有了分布透明性。</p>
+</li>
+<li>
+<p><strong>局部概念模式</strong>。</p>
+<p>一个全局关系经逻辑划分成一个或多个逻辑片断，每个逻辑片断被分配在一个或多个场地上，称为该逻辑片断在某场地上的物理映像或物理片断。分配在同一场地上的同一个全局概念模式的若干片断（物理片断）构成了该全局概念在该场地上的一个物理映像。
+一个场地上的局部概念模式是该场地上所有全局概念模式在该场地上物理映像的集合。由此可见，全局概念模式与场地独立，而局部概念模式与场地相关。</p>
+</li>
+<li>
+<p><strong>局部内模式</strong>。</p>
+<p>局部内模式是 DDB 中关于物理数据库的描述，类似于集中式 DB 中的内模式，但其描述的内容不仅包含局部本场地的数据的存储描述，还包括全局数据在本场地的存储描述。</p>
+</li>
+</ul>
+<p>在六层模式结构中，全局概念模式、分片模式和分布模式是与场地特征无关的，是全局的，因此它们不依赖于局部 DBMS 的数据模型。在低层次上，需要把物理映像映射成由局部 DBMS 支持的数据模型。这种映像由局部映射模式完成。具体的映射关系，由局部 DBMS 的类型决定。在异构型系统中，可在不同场地上拥有类型的局部映射模式。</p>
+<p>这种分层的模式结构为理解 DDB 提供了一种通用的概念结构。它有三个显著的特征：</p>
+<ul>
+<li>数据分片和数据分配概念的分离，形成了“数据分布独立型”概念。</li>
+<li>数据冗余的显示控制。数据在各个场地的分配情况在分配模式中一目了然，便于系统管理。</li>
+<li>局部 DBMS 的独立性。这个特征也称为“局部映射透明性”。此特征允许在不考虑局部 DBMS 专用数据模型的情况下研究 DDB 管理的有关问题。</li>
+</ul>
+<p>将数据分片，使数据存放的单位不是关系而是片段，这既有利于按照用户的需求较好地组织数据的分布，也有利于控制数据的冗余度。分片的方式有多种，水平分片和垂直分片是两种基本的分片方式，混合分片和导出分片是较复杂的分片方式。
+分布透明性指用户不必关心数据的逻辑分片，不必关心数据存储的物理位置分配细节，也不必关心局部场地上数据库的数据模型。
+分布透明性包括：<strong>分片透明性</strong>、<strong>位置透明性</strong>和<strong>局部数据模型透明性</strong>。</p>
+<ul>
+<li>分片透明性是分布透明性的最高层次。所谓分片透明性是指用户或应用程序只对全局关系进行操作而不必考虑数据的分片。当分片模式改变时，只要改变全局模式到分片模式的映像(映像2)，而不影响全局模式和应用程序。全局模式不变，应用程序不必改写，这就是分片透明性。</li>
+<li>位置透明性是分布透明性的下一层次。所谓位置透明性是指，用户或应用程序应当了解分片情况，但不必了解片段的存储场地。当存储场地改变时，只要改变分片模式到分配模式的映像(映像3)，而不影响应用程序。同时，若片段的重复副本数目改变了，那么数据的冗余也会改变，但用户不必关心如何保持各副本的一致性，这也提供了重复副本的透明性。</li>
+<li>局部数据模型（逻辑透明）透明性是指用户或应用程序应当了解分片及各片断存储的场地，但不必了解局部场地上使用的是何种数据模型。模型的转换及语言等的转换均由映像 4 来完成。</li>
+</ul>
+<h1>数据仓库</h1>
+<p>著名的数据仓库专家 W.H.Inmon 在《Building the Data Warehouse》一书中将数据仓库定义为：数据仓库（Data Warehouse）是一个<strong>面向主题的、集成的、相对稳定的、反映历史变化</strong>的数据集合，用于支持管理决策。</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/31.jpg" alt="31"></p>
+<p>数据仓库的结构如下图所示：</p>
+<p><img src="/source/images/%E6%95%B0%E6%8D%AE%E5%BA%93/32.png" alt="32"></p>
+<ul>
+<li><strong>数据源</strong> 。是数据仓库系统的基础，是整个系统的数据源泉。通常包括企业内部信息和外部信息。内部信息包括存放于 RDBMS（关系型 DBMS）中的各种业务处理数据和各类文档数据。外部信息包括各类法律法规、市场信息和竞争对手的信息等。</li>
+<li><strong>数据的存储与管理</strong>。是整个数据仓库系统的核心。数据仓库的真正关键是数据的存储和管理。数据仓库的组织管理方式决定了它有别于传统数据库，同时也决定了其对外部数据的表现形式。要决定采用什么产品和技术来建立数据仓库的核心，则需要从数据仓库的技术特点着手分析。针对现有各业务系统的数据，进行抽取、清理，并有效集成，按照主题进行组织。数据仓库按照数据的覆盖范围可以分为企业级数据仓库和部门级数据仓库（通常称为数据集市）。</li>
+<li><strong>OLAP服务器</strong>。对分析需要的数据进行有效集成，按多维模型予以组织，以便进行多角度、多层次的分析，并发现趋势。其具体实现可以分为：ROLAP、MOLAP 和 HOLAP。ROLAP 基本数据和聚合数据均存放在 RDBMS 之中；MOLAP 基本数据和聚合数据均存放于多维数据库中；HOLAP 基本数据存放于 RDBMS 之中，聚合数据存放于多维数据库中。</li>
+<li><strong>前端工具</strong>。主要包括各种报表工具、查询工具、数据分析工具、数据挖掘工具及各种基于数据仓库或数据集市的应用开发工具。其中数据分析工具主要针对 OLAP 服务器，报表工具、数据挖掘工具主要针对数据仓库。</li>
+</ul>
+<p>数据仓库的实现方法。</p>
+<p>从整体的角度来看，数据仓库的实现方法主要有自顶向下法、自底向上法和联合方法。</p>
+<ul>
+<li>
+<p><strong>自顶向下法</strong>。</p>
+<p>在该方法中，首先应找出数据仓库解决方案所要满足的商业需求，把商业需求视为实现数据仓库的首要任务。数据仓库是一种功能而不是一种特征，数据仓库保存信息，并以外部工具易于显示和操作的方式组织这些信息。因此，如果不借助于可以利用这种功能的外部工具，最终用户就无法将这种功能嵌入数据仓库中。这样，就很难定出该功能的范围，除非用广义上的商业术语，如“数据仓库将包含有关客户、供应商、市场、产品的信息”。</p>
+</li>
+<li>
+<p><strong>自底向上法</strong>。</p>
+<p>自底向上方法一般从实验和基于技术的原形入手。先选择一个特定的、众所周知的商业问题的子集，再为该子集制订方案。实现自底向上一般是比较快的。自底向上可以使一个单位在发展时用尽可能少的经费和时间，就可以在做出有效的投入之前评估技术的收益情况。在数据仓库领域，自底向上方法是快速实现数据集市、部门级数据仓库的有效手段。</p>
+</li>
+<li>
+<p><strong>混合法</strong></p>
+<p>拥有以上两种方法的优点。适合数据仓库技术的快速试运行，并且保留了建立长远的决策方案的机会。</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Markdown 学习</title>
+    <url>/cmpr/markdown-%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1>基础</h1>
+<h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
+<h3 id="1-使用-和-标记一级和二级标题"><a class="header-anchor" href="#1-使用-和-标记一级和二级标题">¶</a>1.使用<code>=</code>和<code>-</code>标记一级和二级标题</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure>
+<p>效果图如下
+<img src="/images/markdown/1.png" alt=""></p>
+<h3 id="2-使用-号标记"><a class="header-anchor" href="#2-使用-号标记">¶</a>2.使用<code>#</code>号标记</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>注：每个<code>#</code>号后最好都有一个空格</p>
+<p>效果图如下
+<img src="/images/markdown/2.png" alt=""></p>
+<h2 id="段落"><a class="header-anchor" href="#段落">¶</a>段落</h2>
+<h3 id="1-段落"><a class="header-anchor" href="#1-段落">¶</a>1.段落</h3>
+<p>markdown段落没有特殊的格式，直接编写文字就好<strong>段落的换行是使用两个以上空格加回车</strong></p>
+<h3 id="2-字体"><a class="header-anchor" href="#2-字体">¶</a>2.字体</h3>
+<p>可以使用如下字体</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_ 斜体文本 _</span><br><span class="line">** 粗体文本 **</span><br><span class="line">__ 粗体文本 __</span><br><span class="line">*** 粗斜体文本 ***</span><br><span class="line">___ 粗斜体文本 ___</span><br></pre></td></tr></table></figure>
+<p>注:上面文字前面和后面都有一个空格，把空格去掉才是正确使用方法
+效果图如下
+<em>斜体</em>
+<em>斜体</em>
+<strong>粗斜体</strong>
+<strong>粗斜体</strong>
+<em><strong>粗斜体</strong></em>
+<em><strong>粗斜体</strong></em><br>
+注:下划线都是英文的下划线</p>
+<h3 id="3-分隔线"><a class="header-anchor" href="#3-分隔线">¶</a>3.分隔线</h3>
+<p>可以使用星号，减号，底线来建立分割线，行内不能有其他东西。也可在型号或者减号中间出入空格.以下是写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/images/markdown/3.png" alt=""></p>
+<h3 id="4-删除线"><a class="header-anchor" href="#4-删除线">¶</a>4.删除线</h3>
+<p>如果要在文字上添加上出现，只需要在文字的两端加上波浪线就~~可以了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hape</span><br><span class="line">~~hape~~</span><br></pre></td></tr></table></figure>
+<p>效果图
+hape
+<s>hape</s></p>
+<h3 id="5-下划线"><a class="header-anchor" href="#5-下划线">¶</a>5.下划线</h3>
+<p>下划线可以噶通过HTML的<code>&lt;u&gt;</code>标签来实现:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;xxxx&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+<p>效果:
+<u>xxx</u></p>
+<h3 id="6-脚注"><a class="header-anchor" href="#6-脚注">¶</a>6.脚注</h3>
+<p>脚注是对文本的补充说明:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^你想要标注的内容]</span><br></pre></td></tr></table></figure>
+<p>效果图:<br>
+python:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项  </span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项  </span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>显示结果:</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h3 id="列表嵌套"><a class="header-anchor" href="#列表嵌套">¶</a>列表嵌套</h3>
+<p>列表嵌套只需在子列表中的选项添加四个空格即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.第一项:  </span><br><span class="line">  - 嵌套在第一项中的第一个元素  </span><br><span class="line">  - 嵌套在第一项中的第二个元素</span><br><span class="line">2.第二项:  </span><br><span class="line">  - 嵌套在第二项中的第一个元素  </span><br><span class="line">  - 嵌套在第二项中的第二个元素</span><br></pre></td></tr></table></figure>
+<p>显示结果:<br>
+1.第一项:</p>
+<ul>
+<li>嵌套在第一项中的第一个元素</li>
+<li>嵌套在第一项中的第二个元素</li>
+</ul>
+<p>2.第二项:</p>
+<ul>
+<li>嵌套在第二项中的第一个元素</li>
+<li>嵌套在第二项中的第二个元素</li>
+</ul>
+<h2 id="区块"><a class="header-anchor" href="#区块">¶</a>区块</h2>
+<p>markdown区块引用时在段落开头使用<code>&gt;</code>符号，然后紧跟一个空格符号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块应用</span><br></pre></td></tr></table></figure>
+<p>区块嵌套</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure>
+<p>效果图:</p>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="区块中使用列表"><a class="header-anchor" href="#区块中使用列表">¶</a>区块中使用列表</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1.第一项</span><br><span class="line">&gt; 2.第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块中使用列表
+1.第一项
+2.第二项</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<h3 id="列表中使用区块"><a class="header-anchor" href="#列表中使用区块">¶</a>列表中使用区块</h3>
+<p>如果要在列表中放进去区块，需要在在<code>&gt;</code>前添加四个空格的缩进</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 第一个区块</span><br><span class="line">    &gt; 第二个区块</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<ul>
+<li>第一项
+<blockquote>
+<p>第一个区块
+第二个区块</p>
+</blockquote>
+</li>
+<li>第二项</li>
+</ul>
+<h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
+<p>如果你只是想把一个东西包起来,像这样<code>x</code>，那么只需要这样:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;x&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="代码区块"><a class="header-anchor" href="#代码区块">¶</a>代码区块</h3>
+<p>使用<code>```</code>包裹一段代码，并指定一种语言(也可以不指定)</p>
+<p>效果图：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Helloworld"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h2>
+<p>链接使用方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)  </span><br><span class="line">或者  </span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个链接[百度](www.baidu.com)</span><br></pre></td></tr></table></figure>
+<p>效果:
+这是一个链接<a href="www.baidu.com">百度</a></p>
+<h2 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h2>
+<p>用法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](路径名)</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h2>
+<p>markdown制作表格使用<code>|</code>来分割不同的单元格，使用<code>-</code>来分割表头和其他行.语法如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+<p>效果:</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对齐方式"><a class="header-anchor" href="#对齐方式">¶</a>对齐方式:</h3>
+<p><code>-:</code>设置内容和标题栏居右对齐<br>
+<code>:-</code>设置内容和标题栏居左对齐
+<code>:-:</code>设置内容和标题栏居中对齐
+实现如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐|</span><br><span class="line">| ：-----| ----：|：----：|</span><br><span class="line">|单元格|单元格|单元格|</span><br><span class="line">|单元格|单元格|单元格|</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">单元格</td>
+<td style="text-align:left">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:right">单元格</td>
+<td style="text-align:left">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<h1>进阶</h1>
+<h2 id="支持HTML元素"><a class="header-anchor" href="#支持HTML元素">¶</a>支持HTML元素</h2>
+<p>很多HTML元素都能在markdown文件中使用</p>
+<p>在更新中…</p>
+<h3 id="做思维导图"><a class="header-anchor" href="#做思维导图">¶</a>做思维导图</h3>
+<p>不想做了…</p>
+<h3 id="公式编辑"><a class="header-anchor" href="#公式编辑">¶</a>公式编辑</h3>
+<p>我的博客不允许我公式编辑,查了很多资料也还没有找到,如果你知道的话,请告诉我…</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一种编程语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>cmpr</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统基础</title>
+    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="操作系统的功能"><a class="header-anchor" href="#操作系统的功能">¶</a>操作系统的功能</h2>
+<ul>
+<li>处理机管理</li>
+<li>存储器管理</li>
+<li>设备管理</li>
+<li>文件管理</li>
+<li>用户接口</li>
+</ul>
+<h2 id="操作系统类型"><a class="header-anchor" href="#操作系统类型">¶</a>操作系统类型</h2>
+<ul>
+<li>
+<p>单用户系统</p>
+<p><strong>一台</strong>处理机只支持<strong>一个</strong>用户程序</p>
+</li>
+<li>
+<p>批处理系统</p>
+<p>用户将一批作业提交给操作系统后<strong>不再干预</strong>，由操作系统控制它们自动运行。<strong>人机不交互</strong></p>
+</li>
+<li>
+<p>分时操作系统</p>
+<p>把处理机的运行时间<strong>分成很短的时间片</strong>，按时间片轮流把处理机分配给各联机作业使用。</p>
+</li>
+<li>
+<p>网络操作系统</p>
+<p>一种在通常操作系统功能的基础上提供<strong>网络通信</strong>和<strong>网络服务</strong>功能的操作系统</p>
+</li>
+<li>
+<p>分布式操作系统</p>
+<p>以计算机网络为基础的，讲物理上分布的具有<strong>自治功能</strong>的数据处理系统或计算机系统互联起来的操作系统</p>
+</li>
+<li>
+<p>嵌入式操作系统</p>
+<p>运行在<strong>嵌入式智能芯片</strong>环境中，对整个智能芯片及其它所操作、控制的各种部件装置等资源进行统一协调、处理、指挥和控制。</p>
+</li>
+</ul>
+<h2 id="进程"><a class="header-anchor" href="#进程">¶</a>进程</h2>
+<p>进行资源分配和调度的使用。</p>
+<p>进程的组成：</p>
+<ul>
+<li>程序</li>
+<li>数据集合</li>
+<li>进程控制块PCB</li>
+</ul>
+<p>为了描述和控制进程的运行，系统为每个进程定义了一个数据结构--------进程控制块<code>PCB</code>。它是进程重要的组成部分，它记录了操作系统所需的、用于描述进程的当前状态和控制进程的全部信息。操作系统就是根据进程的<code>PCB</code>来感知进程的存在，并依此对进程进行管理和控制。</p>
+<p><strong><code>PCB</code>是进程存在的唯一标识</strong></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" alt="1"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-1587971806115.png" alt="2"></p>
+<h2 id="PV操作"><a class="header-anchor" href="#PV操作">¶</a>PV操作</h2>
+<p>P操作是阻塞，V操作是唤醒</p>
+<p>P操作：</p>
+<ul>
+<li>将信号量S的值减少1，即 S = S-1</li>
+<li>如果S&gt;=0,则该进程继续执行，否则该进程置为等待状态</li>
+</ul>
+<p>V操作：</p>
+<ul>
+<li>将信号量S的值加1，即S = S+1</li>
+<li>如果S&gt;0该进程继续执行，否则说明有等待队列中有等待进程，需要唤醒等待进程。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png" alt="3"></p>
+<h2 id="存储管理"><a class="header-anchor" href="#存储管理">¶</a>存储管理</h2>
+<h3 id="逻辑管理"><a class="header-anchor" href="#逻辑管理">¶</a>逻辑管理</h3>
+<p><code>CPU</code>所生成的地址。逻辑地址是内部和变成使用的、并不唯一。例如，你在C语言指针变成中，可以读取指针变量本身值(&amp;操作)，实际上这个值就是逻辑地址，它是相对于你当前进程数据段的地址(偏移地址)，不和绝对物理地址想干。</p>
+<h3 id="物理地址"><a class="header-anchor" href="#物理地址">¶</a>物理地址</h3>
+<p>加载到内存地址寄存器中的地址，内存单元的真正地址。</p>
+<h3 id="重定位"><a class="header-anchor" href="#重定位">¶</a>重定位</h3>
+<h4 id="静态重定位"><a class="header-anchor" href="#静态重定位">¶</a>静态重定位</h4>
+<p>静态重定位是在程序执行之前进行重定位，它是根据装配模块将要装入的内存起始位置，直接修改装配模块中的有关使用地址的命令</p>
+<p>例如，MOV    AC，[500]</p>
+<p>静态重定位有着无需硬件支持的<strong>优点</strong>,但存在着如下的<strong>缺点</strong>：</p>
+<ul>
+<li>程序重定位之后就不能再内存中班中了</li>
+<li>要求程序的存储空间是连续的，不能把程序放在若干个不连续的区域内。</li>
+</ul>
+<h4 id="动态重定位"><a class="header-anchor" href="#动态重定位">¶</a>动态重定位</h4>
+<p>不是在程序执行之前而是在程序执行过程中进行地址重定位。更确切的说，是在<code>CPU</code>每次访问内存单元前才进行地址变换，<strong>需要硬件支持</strong></p>
+<p>优点：</p>
+<ul>
+<li>程序占用的内存空间动态可变，不必连续存放在一处。</li>
+<li>比较同意实现几个进程对统一程序副本的共享使用。</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>需要附加的硬件支持，增加了机器成本，而且实现存储管理的软件算法比较复杂。</li>
+</ul>
+<p><strong>现在一般计算机系统中都采用动态重定位方法。</strong></p>
+<h3 id="分区管理"><a class="header-anchor" href="#分区管理">¶</a>分区管理</h3>
+<table>
+<thead>
+<tr>
+<th>固定分区</th>
+<th><strong>静态分区</strong>，作业装入之前划分，大小固定，内存利用率不高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可变分区</td>
+<td><strong>动态分区</strong>，碎片多。首次适应算法，最佳适应算法，最坏适应算法</td>
+</tr>
+<tr>
+<td>可重定位分区</td>
+<td>合并零散空间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分页管理"><a class="header-anchor" href="#分页管理">¶</a>分页管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png" alt="4"></p>
+<h3 id="分段存储管理"><a class="header-anchor" href="#分段存储管理">¶</a>分段存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.png" alt="5"></p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.png" alt="6"></p>
+<h3 id="段页式存储管理"><a class="header-anchor" href="#段页式存储管理">¶</a>段页式存储管理</h3>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.png" alt="7"></p>
+<h2 id="设备管理"><a class="header-anchor" href="#设备管理">¶</a>设备管理</h2>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.png" alt="8"></p>
+<p>在计算机中，I/O系统可以有5种不同的工作方式，分别是</p>
+<ul>
+<li>程序控制方式</li>
+<li>程序中断方式</li>
+<li>DMA工作方式</li>
+<li>通道方式</li>
+<li>I/O处理机</li>
+</ul>
+<h4 id="程序控制方式"><a class="header-anchor" href="#程序控制方式">¶</a>程序控制方式</h4>
+<ul>
+<li>
+<p>无条件传送方式</p>
+<p>I/O端口总是准备好接受主机的输出数据，或是总是准备好想主机输入数据，而cpu在需要时，随时直接利用I/O指令访问对应的I/O端口，实现与外设的数据交换。优点是软、硬件结构简单，缺点是对时序要求高，只是用与简单的I/O控制</p>
+</li>
+<li>
+<p>程序查询方式</p>
+<p>程序查询方式也称为程序轮询方式，该方式采用用户程序直接控制主机与外部设备之间输入/输出操作。CPU必须不停的循环测试I/O设备的状态端口，当发现设备处于准备好(Ready)状态是，CPU就可以与I/O设备进行数据存取操作。这种方式下的CPU与I/O设备是串行工作的。</p>
+</li>
+</ul>
+<h4 id="程序中断方式"><a class="header-anchor" href="#程序中断方式">¶</a>程序中断方式</h4>
+<p>当I/O设备结束(完成、特殊或异常)时，就会向CPU发出终端请求信号，CPU收到信号就可以才去相应措施。当某个进程要启动某个设备时，CPU就向相应的设备控制器发出一条设备I/O启动指令，然后CPU又返回做原来的工作。CPU与I/O设备可以并行工作，与程序查询方式相比，大大提高了CPU的利用率。</p>
+<h4 id="DMA-直接内存存取-方式"><a class="header-anchor" href="#DMA-直接内存存取-方式">¶</a>DMA(直接内存存取)方式</h4>
+<p>DMA方式也称为直接主存存取方式，其思想是：允许主存储器和I/O设备之间通过“DMA控制器(DMAC)”直接进行批量数据交换，除了在数据传输开始和结束时，整个过程无需CPU的干预</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.png" alt="9"></p>
+<h4 id="通道控制方式"><a class="header-anchor" href="#通道控制方式">¶</a>通道控制方式</h4>
+<p>在一定的硬件基础上利用软件手段实现I/O的控制和传送，更多地免去了CPU的接入，使主机与外设并行工作程度更高</p>
+<h4 id="I-O处理机"><a class="header-anchor" href="#I-O处理机">¶</a>I/O处理机</h4>
+<p>指专门负责输入/输出的处理机。可以有独立的存储器、运算部件和指令控制部件。</p>
+<h2 id="文件管理"><a class="header-anchor" href="#文件管理">¶</a>文件管理</h2>
+<h4 id="文件的逻辑结构"><a class="header-anchor" href="#文件的逻辑结构">¶</a>文件的逻辑结构</h4>
+<p>文件的逻辑组织是为了方便用户使用。一般文件的逻辑结构可以分文两种：无结构的字符流文件和有结构的记录文件。记录文件由记录组成，即文件内的信息划分成多个记录，以记录为单位组织的使用信息。</p>
+<p>记录文件有：</p>
+<ul>
+<li>
+<p>顺序文件</p>
+<p>大多数文件是顺序文件。顺序文件的记录定长，记录中的数据项的类型长度和次序固定，一般还有一个可以唯一标识记录的数据项，称为键(key)，记录是按键值的约定次序组织的。顺序文件常用于批处理应用，对于查询或更新某个记录的处理性能不太好</p>
+</li>
+<li>
+<p>索引顺序文件</p>
+</li>
+<li>
+<p>索引文件</p>
+</li>
+<li>
+<p>直接文件</p>
+<p>直接文件又称哈希(Hash)文件。记录以他们直接访问存储设备上的物理地址直接(随机地)访问。直接文件常用语需要高速访问文件而且每次仅访问一条记录的应用中。</p>
+</li>
+</ul>
+<h4 id="文件的物理结构"><a class="header-anchor" href="#文件的物理结构">¶</a>文件的物理结构</h4>
+<p>文件的物理结构是指文件在存储设备上的存放方法。文件的物理结构侧重于提高存储器的利用效率和奖代存取时间。文件的存储设备通常划分为大小相同的物理块。物理块是分配和传输信息的基本单位。文件的物理结构设计文件存储设备的组块策略和文件分配策略，决定文件信息在存储设备上的存储位置。常用的文件分配策略有：</p>
+<ul>
+<li>顺序分配(连续分配)</li>
+<li>连接分配( 串联分配)</li>
+<li>索引分配。这是另一种对文件存储不连续分配的方法。采用索引分配方法的系统，为每一个文件建立一张索引表，索引表中每一表项支出文件信息所在的逻辑块好和与之对应的物理块号。</li>
+</ul>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.png" alt="10"></p>
+<h3 id="文件存储设备管理"><a class="header-anchor" href="#文件存储设备管理">¶</a>文件存储设备管理</h3>
+<p>位示图法。该方法是在外存上建立一张位示图（Bitmap），记录文件存储器的使 用情况。每一位仅对应文件存储器上的一个物理块，取值0 和1 分别表示空闲和占用。文件存储器上的物理块依次编号为：0、1、2、…。假如系统中字长为32位，有4096个物理块，那么在位示图中的第1个字对应文件存储器上的0、1、2、…、31号物理块；第2 个字对应文件存储器上的32、33、34、…、63号物理块；第128字对应文件存储器上的4064、4065、…、4095号物理块。这样位示图的大小为32字。</p>
+<p><img src="/source/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.png" alt="11"></p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机基础(一)</title>
+    <url>/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="计算机的组成"><a class="header-anchor" href="#计算机的组成">¶</a>计算机的组成</h2>
+<h3 id="硬件系统"><a class="header-anchor" href="#硬件系统">¶</a>硬件系统</h3>
+<ul>
+<li>主机
+<ul>
+<li>中央处理器(运算器、控制器)</li>
+<li>内部存储器(随机存储器、只读存储器)</li>
+<li>I/O设备接口</li>
+</ul>
+</li>
+<li>外部设备
+<ul>
+<li>外部存储器(磁盘、光盘等)</li>
+<li>输入设备(键盘、鼠标、扫描仪等)</li>
+<li>输出设备(显示器，打印机，绘图仪等)</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件系统"><a class="header-anchor" href="#软件系统">¶</a>软件系统</h3>
+<ul>
+<li>系统软件(操作系统、语言处理程序、网络通讯管理程序等)</li>
+<li>应用软件(office办公软件，游戏软件)</li>
+</ul>
+<h2 id="CPU的功能"><a class="header-anchor" href="#CPU的功能">¶</a>CPU的功能</h2>
+<ul>
+<li>程序控制功能。CPU通过<strong>执行指令</strong>来控制程序的执行顺序</li>
+<li>操作控制</li>
+<li>时间控制</li>
+<li>数据处理。<strong>CPU最根本的任务</strong></li>
+</ul>
+<h3 id="CPU的主要部件"><a class="header-anchor" href="#CPU的主要部件">¶</a>CPU的主要部件</h3>
+<h4 id="运算器"><a class="header-anchor" href="#运算器">¶</a>运算器</h4>
+<p>运算器也称为算数逻辑单元(<code>ArithmeticandLogicUnit,ALU</code>),其主要功能是在控制器的控制下完成各种算数运算和逻辑运算。运算器的组成包含如下:</p>
+<ul>
+<li>算术逻辑单元<code>ALU</code>：数据的算数运算和逻辑运算</li>
+<li>累加寄存器<code>AC</code>：通用寄存器，为<code>ALU</code>提供一个工作区，用来暂存数据</li>
+<li>数据缓冲寄存器<code>DR</code>：写内存时，暂存指令或数据</li>
+<li>状态条件寄存器<code>PSW</code>：存状态标志与控制标志</li>
+</ul>
+<h4 id="控制器"><a class="header-anchor" href="#控制器">¶</a>控制器</h4>
+<p>控制器是分析和执行指令的部件，也是统一指挥并控制计算机各部件协调工作的重心部件，所依据的是机器指令。控制器的组成包含如下：</p>
+<ul>
+<li>程序计数器<code>PC</code>:存储下一条要执行指令的地址</li>
+<li>指令寄存器<code>IR</code>:存储即将执行的指令</li>
+<li>指令译码器<code>ID</code>:对指令中的操作码字段进行分析解释</li>
+<li>地址寄存器<code>AR</code>:用来保存当前CPU所访问的内存单元的地址</li>
+<li>时序部件：提供时序控制信号</li>
+</ul>
+<h3 id="指令系统"><a class="header-anchor" href="#指令系统">¶</a>指令系统</h3>
+<h4 id="复杂指令系统CISC的特点"><a class="header-anchor" href="#复杂指令系统CISC的特点">¶</a>复杂指令系统CISC的特点</h4>
+<ul>
+<li>指令数量众多。指令系统拥有大量的指令，通常有100~250条</li>
+<li>指令使用频率相差悬殊。最常用的是一些比较简单的指令，仅占指令总数的20%，但是程序中出现的频率却占80%，而大部分指令却很少使用。</li>
+<li>支持很多种寻址方式。支持的寻址方式通常为5~20种。</li>
+<li>变长的指令。指令长度不是固定的，变长的指令增加指令译码电路的复杂性。</li>
+<li>指令可以对主存单元中的数据直接进行处理。典型的CISC通常都有指令能够直接对存单元中的数据进行处理，其执行速度较慢</li>
+<li>以微程序控制为主。CISC的指令系统很复杂，难以用硬布线逻辑(组合逻辑)电路实现控制器，通常采用微程序控制。</li>
+</ul>
+<h4 id="精简指令系统RISC的特点"><a class="header-anchor" href="#精简指令系统RISC的特点">¶</a>精简指令系统RISC的特点</h4>
+<ul>
+<li>指令数量少。有限选取使用频率最高的一些简单指令和一些常用指令。避免使用复杂指令。只提供了<code>LOAD</code>(从存储器种读取)和<code>STORE</code>(把数据写入存储器)两条指令对存储器操作，其余所有的操作都在<code>CPU</code>的寄存器之间进行。</li>
+<li>指令的寻址方式少。通常只支持存储器寻址方式。立即数寻址方式和相对寻址方式</li>
+<li>指令长度固定，指令格式种类少。因为<code>RISC</code>指令数量少、格式少、相对简单，其指令长度固定，指令之间各字段的划分比较一直，译码相对容易</li>
+<li>以硬布线逻辑控制为主。为了提高操作的执行熟读，通常采用硬布线逻辑(组合逻辑)来构建控制器</li>
+<li>单周期指令执行，采用流水线技术。因为简化了指令系统，很容易利用流水线技术，使得大部分指令都能在一个机器周期内完成。少数指令可能会需要多周期，例如，<code>LOAD/STORE</code>指令因为需要访问存储器，其执行时间就会长一些</li>
+<li>优化的编译器：<code>RISC</code>的精简指令集使编译工作简单化。因为指令长度固定，个事少，寻址方式少，编译时不必再具有相似功能的许多指令种进行选择，也不必为寻址方式的选择而费心，同时易于实现优化，从而可以生成高效率执行的机器代码。</li>
+<li><code>CPU</code>中的通用寄存器数量多，一般在32各以上，有的可达上</li>
+</ul>
+<p>总结图：</p>
+<p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/1.png" alt="image-20200426170025024"></p>
+<h3 id="校验码"><a class="header-anchor" href="#校验码">¶</a>校验码</h3>
+<ul>
+<li>
+<p>奇偶校验码</p>
+<p>只能检测代码中奇数位出错的编码，但不能发现偶数位出错的情况</p>
+</li>
+<li>
+<p>海明码</p>
+</li>
+<li>
+<p>循环冗余校验码CRC</p>
+</li>
+</ul>
+<h3 id="指令控制方式"><a class="header-anchor" href="#指令控制方式">¶</a>指令控制方式</h3>
+<ul>
+<li>
+<p>顺序方式</p>
+<p>各条机器指令之间顺序串行地执行，执行完一条指令后才取下一条指令。缺点是速度慢，机器各部件利用率低。</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2.png" alt="2"></p>
+</li>
+<li>
+<p>重叠方式</p>
+<p>在解释第K条指令的操作完成之前就可以开始解释低K+1条指令。(部分并行)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/3.jpg" alt="3"></p>
+</li>
+<li>
+<p>流水方式</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/4.png" alt="4"></p>
+<p>流水线周期：执行时间最长的一段</p>
+<p>公式：</p>
+<ul>
+<li>理论公式：(t1+t2+…tk)+(n-1)*△t</li>
+<li>实践公式：(k+n-1)*△t</li>
+</ul>
+<p>流水线的吞吐率和最大吞吐率：吞吐率是指单位内流水线处理机流出的结果数。对指令而言，就是单位时间内执行的指令数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 吞吐率</span><br><span class="line">TP &#x3D; 指令条数&#x2F;流水线执行时间</span><br><span class="line"></span><br><span class="line"># 最大吞吐率</span><br><span class="line">TP(max) &#x3D; 1&#x2F;△t</span><br><span class="line"></span><br><span class="line"># 流水线加速比</span><br><span class="line">S &#x3D; 不适用流水线执行时间&#x2F;使用流水线执行时间</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="存储系统"><a class="header-anchor" href="#存储系统">¶</a>存储系统</h2>
+<p>主存：</p>
+<ul>
+<li>CPU内部通用寄存器</li>
+<li>Cache：CPU和主存速度不匹配而产生的中间过渡元件</li>
+</ul>
+<p>外部存储器：</p>
+<ul>
+<li>主存储器</li>
+<li>联机磁盘存储器</li>
+<li>脱机光盘、磁盘存储器</li>
+</ul>
+<h4 id="内存编址"><a class="header-anchor" href="#内存编址">¶</a>内存编址</h4>
+<p>存储器有一块块的空间(存储单元)组成，为了方便寻找到每一块空间，我们需要对每一个空间进行标识------内存编址</p>
+<h4 id="芯片"><a class="header-anchor" href="#芯片">¶</a>芯片</h4>
+<p>存储器由若干个芯片构成</p>
+<h4 id="内存容量"><a class="header-anchor" href="#内存容量">¶</a>内存容量</h4>
+<p>存储器的大小。</p>
+<p>内存容量 = 每个芯片容量*芯片个数</p>
+<p>每个芯片的容量 = 一个地址代表的容量*编址总数</p>
+<h4 id="数据总线"><a class="header-anchor" href="#数据总线">¶</a>数据总线</h4>
+<p>计算机一次处理n位的数据，则数据总线的长度为n。注意的是：数据总线的长度，并不一定代表一个地址的长度</p>
+<h4 id="字"><a class="header-anchor" href="#字">¶</a>字</h4>
+<p>和数据总线密切相关。数据总线有几位，则一个字就由多少位组成。如64位计算机，表示一次可以处理64位数据，则一个字就是64位。</p>
+<h4 id="地址总线"><a class="header-anchor" href="#地址总线">¶</a>地址总线</h4>
+<p>假如需要n位二进制数来表示所有的地址，则地址总线的个数为n。</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/5.png" alt="5"></p>
+<h3 id="Cache"><a class="header-anchor" href="#Cache">¶</a>Cache</h3>
+<p>在<code>CPU</code>的所有操作中，访问内存是最频繁的操作。由于一般微机中的主存储器的工作速度比<code>CPU</code>低一个数量级，加上<code>CPU</code>的所有访问都要通过总线这个瓶颈，所以，缩短存储器的访问时间是提高计算机速度的关键。采用在<code>CPU</code>和内存之间加进告诉缓冲存储器<code>Cache</code>的办法较好的解决了这一问题。</p>
+<p>简单来说<code>Cache</code>是为了解决高速运行的<code>cpu</code>与主存储器速度不匹配的问题。</p>
+<p>Cache的地址映像方法：</p>
+<ul>
+<li>
+<p>直接映像</p>
+<p>缺点：容易造成资源的浪费</p>
+<p>优点：索引容易(找起来更加方便)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/6.png" alt="6"></p>
+</li>
+<li>
+<p>全相连映像</p>
+<p>优点：灵活</p>
+<p>缺点：索引不方便(找起来麻烦)</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/7.png" alt="7"></p>
+</li>
+<li>
+<p>组相连映像</p>
+<p>前两种连接方式的结合，内存先分组在分页。</p>
+<p>缺点：增加开销</p>
+<p><img src="/source/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/8.jpg" alt="8"></p>
+</li>
+</ul>
+<h5 id="cache的性能"><a class="header-anchor" href="#cache的性能">¶</a>cache的性能</h5>
+<p><code>CPU</code>访问内存是，首先判断所要访问的内容是否在Cache中，如果在，就称为“命中”，此时<code>CPU</code>直接总Cache中调用该内容；否则，就称为“不命中”，<code>CPU</code>只好去内存中调用所需的子程序或指令了。<code>CPU</code>不但可以直接从Cache中读出内容，也可以直接往其中写入内容。由于Cache的存取速率相当快，使得<code>CPU</code>的李永乐大大提高，进而使整个系统的性能得以提升。</p>
+<p>如果以<code>Hc</code>为代表对Cache的访问命中率，<code>tc</code>为Cache的存取时间，<code>tm</code>为主存的访问时间，则Cache的平均访问时间<code>ta</code>为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ta &#x3D; Hctc+(1-Hc)tm</span><br></pre></td></tr></table></figure>
+<p>因为cache的内容是部分主存内容的副本，应该与主存内容保持一致。而<code>CPU</code>对cache的写入更改了cache内容，如何与主存内容保持一致就有几种写操作方式可供选择，统称为写策略。</p>
+<ul>
+<li>
+<p>写回法(write-back)</p>
+<p>当<code>CPU</code>对cache写命中时，只修改cache的内容不立即写入主存，只当此行被换出时才写回主存。这种策略使cache在<code>CPU</code>----主存之间，不仅在读方向而且在写方向都起到了高速缓存作用</p>
+</li>
+<li>
+<p>写直达法(write-through)</p>
+<p>又称全写法，写透。是当cache写命中时，cache与主存同时发生写修改。</p>
+</li>
+<li>
+<p>标记法</p>
+<p>数据进入cache后，有效位置1，当<code>CPU</code>对该数据修改时，数据只写入主存并将该有效位置0。要从cache中读取数据是要测试其有效位，若为1则直接从cache中区属，否则从主存中取数</p>
+</li>
+</ul>
+<h3 id="磁盘存储器"><a class="header-anchor" href="#磁盘存储器">¶</a>磁盘存储器</h3>
+<h3 id="总线"><a class="header-anchor" href="#总线">¶</a>总线</h3>
+<p>总线(Bus)是计算机各种功能部件之间传送信息的公共通信干线。</p>
+<p>按照总线相对应<code>CPU</code>或其他芯片的位置可分为：</p>
+<ul>
+<li>
+<p>内部总线</p>
+<p>寄存器之间和算术逻辑部件<code>ALU</code>与控制部件之间传输数据所用的线。</p>
+</li>
+<li>
+<p>外部总线</p>
+<p><code>CPU</code>与内存和I/O设备接口之间通讯</p>
+</li>
+</ul>
+<p>按总线功能划分：</p>
+<ul>
+<li>地址总线------传送地址信息</li>
+<li>数据总线------传送数据信息</li>
+<li>控制总线-------传送控制信号和时序信号</li>
+</ul>
+<p>按总线在微机中的位置，可分为：</p>
+<ul>
+<li>机内总线</li>
+<li>机外总线</li>
+</ul>
+<p>按总线功能划分：</p>
+<ul>
+<li>局部总线</li>
+<li>系统总线</li>
+<li>通信总线</li>
+</ul>
+<p>按照总线中数据线的多少</p>
+<ul>
+<li>并行总线</li>
+<li>串行总线</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>
