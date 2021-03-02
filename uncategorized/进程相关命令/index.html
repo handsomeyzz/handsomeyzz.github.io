@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/unname.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/unname.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-- Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux进程相关的命令pstree以树状显示进程的父子状态 ps显示系统中的进程的详细信息 ps支持三个类型的选项  unix类型： -字母 BSD类型：字母 GNU类型：—单词  &#x2F;proc下那些以数字为名称的目录的数字就是进程的信息映射 ps auxa:显示现行终端下的所有进程的信息（包括其他用户的进程信息） u:显示进程是哪个用户发起的 x:显示终端无关的进程信息 ps aux显示的信息：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进程相关命令">
+<meta property="og:url" content="https://handsomeyzz.github.io/uncategorized/%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Harry&#39;s  Note">
+<meta property="og:description" content="Linux进程相关的命令pstree以树状显示进程的父子状态 ps显示系统中的进程的详细信息 ps支持三个类型的选项  unix类型： -字母 BSD类型：字母 GNU类型：—单词  &#x2F;proc下那些以数字为名称的目录的数字就是进程的信息映射 ps auxa:显示现行终端下的所有进程的信息（包括其他用户的进程信息） u:显示进程是哪个用户发起的 x:显示终端无关的进程信息 ps aux显示的信息：">
+<meta property="article:published_time" content="2021-03-02T15:07:31.000Z">
+<meta property="article:modified_time" content="2021-03-02T15:09:33.163Z">
+<meta property="article:author" content="Harry">
+<meta property="article:tag" content="-- Linux">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://handsomeyzz.github.io/uncategorized/进程相关命令/"/>
+
+
+
+
+
+  <title>进程相关命令 | Harry's  Note</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/handsomeyzz" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harry's  Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://handsomeyzz.github.io/uncategorized/%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's  Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">进程相关命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-02T23:07:31+08:00">
+                2021-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/uncategorized/%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="uncategorized/进程相关命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux进程相关的命令"><a href="#Linux进程相关的命令" class="headerlink" title="Linux进程相关的命令"></a>Linux进程相关的命令</h1><h2 id="pstree"><a href="#pstree" class="headerlink" title="pstree"></a>pstree</h2><p>以树状显示进程的父子状态</p>
+<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>显示系统中的进程的详细信息</p>
+<p><code>ps</code>支持三个类型的选项</p>
+<ul>
+<li><code>unix</code>类型： -字母</li>
+<li><code>BSD</code>类型：字母</li>
+<li><code>GNU</code>类型：—单词</li>
+</ul>
+<p><code>/proc</code>下那些以数字为名称的目录的数字就是进程的信息映射</p>
+<h3 id="ps-aux"><a href="#ps-aux" class="headerlink" title="ps aux"></a>ps aux</h3><p><code>a</code>:显示现行终端下的所有进程的信息（包括其他用户的进程信息）</p>
+<p><code>u</code>:显示进程是哪个用户发起的</p>
+<p><code>x</code>:显示终端无关的进程信息</p>
+<p><code>ps aux</code>显示的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">USER    PID %CPU %MEM   VSZ  RSS TTY    STAT START  TIME COMMAND </span><br><span class="line">root     1  0.0  0.0 168820 14688 ?     Ss  19:27  0:02 &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;systemd --switch </span><br><span class="line">root     2  0.0  0.0    0   0 ?     S   19:27  0:00 [kthreadd] </span><br><span class="line">root     3  0.0  0.0    0   0 ?     I&lt;  19:27  0:00 [rcu_gp] </span><br><span class="line">root     4  0.0  0.0    0   0 ?     I&lt;  19:27  0:00 [rcu_par_gp] </span><br><span class="line">root     6  0.0  0.0    0   0 ?     I&lt;  19:27  0:00 [kworker&#x2F;0:0H-events_highpri] </span><br><span class="line">root     8  0.0  0.0    0   0 ?     I   19:27  0:00 [kworker&#x2F;u32:0-btrfs-endio-write] </span><br><span class="line">root     9  0.0  0.0    0   0 ?     I&lt;  19:27  0:00 [mm_percpu_wq] </span><br><span class="line">root     10  0.0  0.0    0   0 ?     S   19:27  0:00 [ksoftirqd&#x2F;0]</span><br></pre></td></tr></table></figure>
+<p><code>USER</code>：进程的属主</p>
+<p><code>PID</code>：</p>
+<p><code>%CPU  %MEM</code>： 占用内存和空间CPU时间的百分比</p>
+<p><code>VSZ</code>：  每个进程的虚拟内存集大小</p>
+<p><code>RSS</code>：每个进程的常驻内存集大小</p>
+<p><code>TTY</code>：终端编号     ？表示终端无关编号</p>
+<p><code>STAT</code> 表示进程的状态</p>
+<pre><code>Here are the different values that the s, stat and state output specifiers (header &quot;STAT&quot; or &quot;S&quot;) will display to
+describe the state of a
+process:
+    D   uninterruptible sleep (usually IO)    //不可中断睡眠
+    I   Idle kernel thread                    //闲置内核线程
+    R   running or runnable (on run queue)     //运行或者可运行 
+    S   interruptible sleep (waiting for an event to complete)   // 可中断睡眠
+    T   stopped by job control signal                         //被作业控制信号停止
+    t   stopped by debugger during the tracing                //在跟踪期间由调试器停止
+    W   paging (not valid since the 2.6.xx kernel)            //内核2.6之后被启用
+    X   dead (should never be seen)                           //死的进程
+    Z   defunct (&quot;zombie&quot;) process, terminated but not reaped by its parent    ////将要死的进程
+
+For BSD formats and when the **stat** keyword is used, additional characters may be displayed: 
+
+    &lt;   high-priority (not nice to other users)    //高优先级
+    N   low-priority (nice to other users)         //低优先级
+    L   has pages locked into memory (for real-time and cust om IO)   //有页被锁住了
+    s   is a session leader                        //会话进程的首进程
+    l   is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)    //多线程进程
+    \+   is in the foreground process group               //前台进程组中的进程
+</code></pre><p><code>START</code>:进程的启动时间</p>
+<p><code>TIME</code>：进程在CPU上累计运行时间</p>
+<p><code>COMMAND</code>：执行哪个binging发起的这个进程</p>
+<p>​                      <code>[]</code>：表示进程是由内核发起的进程</p>
+<h3 id="ps-elf"><a href="#ps-elf" class="headerlink" title="ps -elf"></a>ps -elf</h3><p><code>-e</code>：显示所有进程（包括终端相关和无关），等同于ps -e = ps au</p>
+<p><code>-l</code>：以长格式显示</p>
+<p><code>-f</code>：显示进程的完整信息</p>
+<p><code>ps -elf  | head</code>显示的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD</span><br><span class="line">4 S root         1     0  0  80   0 - 42244 -      00:40 ?        00:00:03 &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;systemd --switched-root --system --deserialize 29</span><br><span class="line">1 S root         2     0  0  80   0 -     0 -      00:40 ?        00:00:00 [kthreadd]</span><br><span class="line">1 I root         3     2  0  60 -20 -     0 -      00:40 ?        00:00:00 [rcu_gp]</span><br><span class="line">1 I root         4     2  0  60 -20 -     0 -      00:40 ?        00:00:00 [rcu_par_gp]</span><br><span class="line">1 I root         6     2  0  60 -20 -     0 -      00:40 ?        00:00:00 [kworker&#x2F;0:0H-events_highpri]</span><br><span class="line">1 I root         9     2  0  60 -20 -     0 -      00:40 ?        00:00:00 [mm_percpu_wq]</span><br><span class="line">1 S root        10     2  0  80   0 -     0 -      00:40 ?        00:00:01 [ksoftirqd&#x2F;0]</span><br><span class="line">1 I root        11     2  0  80   0 -     0 -      00:40 ?        00:01:36 [rcu_sched]</span><br><span class="line">1 S root        12     2  0 -40   - -     0 -      00:40 ?        00:00:00 [migration&#x2F;0]</span><br></pre></td></tr></table></figure>
+<p><code>F</code>：进程的标志位，通常为1和4,1表示fork之后未执行的进程，4表示root用户的进程</p>
+<p><code>S</code>：进程的状态</p>
+<p><code>UID</code>：进程的属主</p>
+<p><code>PID</code>：进程的编号</p>
+<p><code>PPID</code>：该进程的父进程的<code>PID</code></p>
+<p><code>C</code>：该进程对<code>CPU</code>的百分率，以证书来显示</p>
+<p><code>PRI</code>：优先级，越小越高</p>
+<p><code>NI</code>：进程的<code>nice</code>值（默认<code>nice</code>值都是<code>0</code>）</p>
+<p><code>ADDR</code>：运行中的进程在内存中的地址编号</p>
+<p><code>SZ</code>：进程用掉的<code>swap</code>大小</p>
+<p><code>WCHAN</code>：表示进程是否处于运行状态，-表示正在运行</p>
+<p><code>STIME</code>：进程的发起时间</p>
+<p><code>TTY</code>：进程的终端编号，是否跟终端有关</p>
+<p><code>TIME</code>：实际占用<code>CPU</code>的时间</p>
+<p><code>CMD</code>：发起该进程的路径</p>
+<h3 id="ps-eFH"><a href="#ps-eFH" class="headerlink" title="ps -eFH"></a>ps -eFH</h3><p><code>-F</code> ：显示比小f更详细的信息</p>
+<p><code>-H</code>：以层级方式显示(树状图形式)</p>
+<p>命令显示信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">UID        PID  PPID  C    SZ   RSS PSR STIME TTY          TIME CMD</span><br><span class="line">root         2     0  0     0     0   4 00:40 ?        00:00:00 [kthreadd]</span><br><span class="line">root         3     2  0     0     0   0 00:40 ?        00:00:00   [rcu_gp]</span><br><span class="line">root         4     2  0     0     0   0 00:40 ?        00:00:00   [rcu_par_gp]</span><br><span class="line">root         6     2  0     0     0   0 00:40 ?        00:00:00   [kworker&#x2F;0:0H-events_highpri]</span><br><span class="line">root         9     2  0     0     0   0 00:40 ?        00:00:00   [mm_percpu_wq]</span><br><span class="line">root        10     2  0     0     0   0 00:40 ?        00:00:01   [ksoftirqd&#x2F;0]</span><br><span class="line">root        11     2  0     0     0   6 00:40 ?        00:01:39   [rcu_sched]</span><br><span class="line">root        12     2  0     0     0   0 00:40 ?        00:00:00   [migration&#x2F;0]</span><br><span class="line">root        13     2  0     0     0   0 00:40 ?        00:00:00   [idle_inject&#x2F;0]</span><br></pre></td></tr></table></figure>
+<p><code>PSR</code>：显示的是cpu的编号</p>
+<h3 id="显示指定用户的进程"><a href="#显示指定用户的进程" class="headerlink" title="显示指定用户的进程"></a>显示指定用户的进程</h3><p><code>-u username</code> ：显示制定用户发起的进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -u zx   &#x2F;&#x2F;显示zx用户发起的进程</span><br></pre></td></tr></table></figure>
+<h3 id="显示指定进程的PID值"><a href="#显示指定进程的PID值" class="headerlink" title="显示指定进程的PID值"></a>显示指定进程的PID值</h3><p><code>-C</code>：进程名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ps -C  chrome -o  pid   &#x2F;&#x2F;显示chrome进程的pid</span><br><span class="line"></span><br><span class="line">  PID</span><br><span class="line"> 3593</span><br><span class="line"> 3625</span><br><span class="line"> 3626</span><br><span class="line"> 3662</span><br><span class="line"> 3735</span><br><span class="line"> 3738</span><br><span class="line"> 3753</span><br><span class="line"> 3771</span><br><span class="line"> 3773</span><br><span class="line"> 3785</span><br><span class="line"> 3791</span><br><span class="line"> 3815</span><br><span class="line"> 3866</span><br><span class="line"> 3880</span><br><span class="line"> 3911</span><br><span class="line"> 3965</span><br><span class="line"> 3988</span><br><span class="line"> 4070</span><br><span class="line"> 4071</span><br><span class="line"> 4086</span><br><span class="line"> 4615</span><br><span class="line">10536</span><br><span class="line">22301</span><br></pre></td></tr></table></figure>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><code>o</code>：指定要显示的字段部分，通常<code>ax</code>组合使用</p>
+<p>例子：仅仅显示<code>pid</code>和<code>command</code>两个部分</p>
+<p>命令：<code>ps axo pid,command | head</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PID COMMAND</span><br><span class="line">  1 &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;systemd --switched-root --system --deserialize 29</span><br><span class="line">  2 [kthreadd]</span><br><span class="line">  3 [rcu_gp]</span><br><span class="line">  4 [rcu_par_gp]</span><br><span class="line">  6 [kworker&#x2F;0:0H-events_highpri]</span><br><span class="line">  9 [mm_percpu_wq]</span><br><span class="line"> 10 [ksoftirqd&#x2F;0]</span><br><span class="line"> 11 [rcu_sched]</span><br><span class="line"> 12 [migration&#x2F;0]</span><br></pre></td></tr></table></figure>
+<h2 id="pgrep和pkill"><a href="#pgrep和pkill" class="headerlink" title="pgrep和pkill"></a>pgrep和pkill</h2><p>（显示的是静态信息）</p>
+<p><code>pgrep</code>：查找符合某个规则的进程（默认仅仅显示进程的ID号）</p>
+<p><code>pkill</code> ：结束符合某个规则的进程</p>
+<p>选项：</p>
+<ul>
+<li><code>-U uid|userName</code>:指定真实用户（也就是且混用户前的那个用户）</li>
+<li><code>-u uid|useName</code>:指定运行进程的有效用户（当前运行进程的那个用户）</li>
+<li><code>-t  term</code>：过滤指定终端相关的进程</li>
+<li><code>-p ppid</code>：过滤出以指定进程为父进程的子进程的列表</li>
+<li><code>-l</code>  ：列举出进程的名称</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pgrep bash # 过滤出进程信息中包含bash的进程id</span><br><span class="line">pgrep -u tom -l #过滤出以tom身份运行的进程，要求显示进程id和进程名称</span><br><span class="line">pgrep -U tom  #过滤出tom发起的进程</span><br><span class="line">pgrep -u tom bash #过滤出以tom身份运行，并且和bash想关的进程</span><br></pre></td></tr></table></figure>
+<h2 id="pidof"><a href="#pidof" class="headerlink" title="pidof"></a>pidof</h2><p>（显示的是静态信息）显示指定进程的PID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pidof chrome  #显示chrome的pid</span><br></pre></td></tr></table></figure>
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>（以动态方式，实时显示系统的进程，<code>cpu</code>，内存等信息）</p>
+<p>默认：5s刷新一次         </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">top - 14:52:07 up 14:11,  3 users,  load average: 0.42, 0.50, 0.55</span><br><span class="line">Tasks: 401 total,   1 running, 399 sleeping,   0 stopped,   1 zombie</span><br><span class="line">%Cpu(s):  3.2 us,  1.6 sy,  0.0 ni, 94.8 id,  0.1 wa,  0.0 hi,  0.3 si,  0.0 st</span><br><span class="line">MiB Mem : 15355.27+total, 2801.105 free, 6329.191 used, 6224.977 buff&#x2F;cache</span><br><span class="line">MiB Swap:    0.000 total,    0.000 free,    0.000 used. 8275.203 avail Mem </span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                </span><br><span class="line"> 1735 root      20   0 1696064 142216  88400 S 16.89 0.904  30:25.18 X                                     </span><br><span class="line"> 3866 aa        20   0 4974704 281008 129404 S 12.25 1.787  20:32.01 chrome                                 </span><br><span class="line"> 2681 aa        20   0 2060752 116748  90468 S 9.934 0.742   0:53.43 konsole                                </span><br><span class="line"> 1861 aa        20   0 2771544 154652 114672 S 9.272 0.984   3:54.61 kwin_x11                               </span><br><span class="line"> 3735 aa        20   0  728160 213520 116904 S 3.311 1.358  55:17.44 chrome</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top - 14:52:07 up 14:11,  3 users,  load average: 0.42, 0.50, 0.55</span><br><span class="line">       系统时间 系统运行时长  登录用户个数  cpu的在1,5,15内的平均负载情况</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Tasks: 401 total,   1 running, 399 sleeping,   0 stopped,   1 zombie</span><br><span class="line">系统中总进程数量401个    运行和睡眠状态数量       停止运行的进程个数   僵尸进程的的个数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%Cpu(s):  3.2 us,  1.6 sy,  0.0 ni, 94.8 id,  0.1 wa,  0.0 hi,  0.3 si,  0.0 st</span><br><span class="line">整行表示cpu的详细负载</span><br><span class="line">us：用户空间进程对于cpu的使用率（cpu运行用户进程占用的时间比例）</span><br><span class="line">sy：内核进程对于cpu的使用率（cpu运行内核进程占用的时间比例）</span><br><span class="line">ni：调整过nice值的进程所占的比例 （cpu调整过nice值的进程所占用的时间比例）</span><br><span class="line">id：空闲进程所占的比例 （cpu空闲的时间比例）</span><br><span class="line">wa：等待IO完成的进程所占的比例，百分之2左右就有点儿多了 （等待IO所花费的时间比例）</span><br><span class="line">hi：表示硬中断时间比例</span><br><span class="line">si：软中断时间比例</span><br><span class="line">st：被偷走的时间比例  (在虚拟化场景中，被虚拟机中的进程所占的使用比例)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MiB Mem : 15355.27+total, 2801.105 free, 6329.191 used, 6224.977 buff&#x2F;cache</span><br><span class="line">显示和内存相关的信息</span><br><span class="line">total：总的内存</span><br><span class="line">free：空闲的</span><br><span class="line">used：使用的</span><br><span class="line">buff&#x2F;cache：缓冲和缓存</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MiB Swap:    0.000 total,    0.000 free,    0.000 used. 8275.203 avail Mem </span><br><span class="line">交换分区（最好是0,不推荐使用交换分区）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                </span><br><span class="line">1735 root      20   0 1696064 142216  88400 S 16.89 0.904  30:25.18 X                                     </span><br><span class="line">3866 aa        20   0 4974704 281008 129404 S 12.25 1.787  20:32.01 chrome                                 </span><br><span class="line">2681 aa        20   0 2060752 116748  90468 S 9.934 0.742   0:53.43 konsole                                </span><br><span class="line">1861 aa        20   0 2771544 154652 114672 S 9.272 0.984   3:54.61 kwin_x11                               </span><br><span class="line">3735 aa        20   0  728160 213520 116904 S 3.311 1.358  55:17.44 chrome   </span><br><span class="line">具体进程相关信息</span><br><span class="line">PID：进程编号</span><br><span class="line">USER：表示拥有此进程的用户</span><br><span class="line">PR：进程的优先级</span><br><span class="line">NI：进程的nice值</span><br><span class="line">VIRT：虚拟内存集（代码，数据，共享库）</span><br><span class="line">RES：常驻内存集</span><br><span class="line">SHR：共享内存空间的大小</span><br><span class="line">S：进程状态信息   D：不可中断睡眠 R：运行状态 S：可中断睡眠  T：处于停止状态 Z：僵尸状态</span><br></pre></td></tr></table></figure>
+<p>负载：<code>cpu</code>队列中等待使用<code>cpu</code>的任务个数</p>
+<p>命令行选项：</p>
+<ul>
+<li><code>-d</code> ：指定刷新间隔</li>
+<li><code>-p</code>：仅显示指定id进程信息</li>
+<li><code>-S</code>：使用累加模式</li>
+<li><code>-i</code>：不显示空闲和僵尸状态的进程</li>
+<li><code>-c</code>：显示整个所执行的命令</li>
+<li><code>-n  num</code>：指定刷新的次数</li>
+</ul>
+<p>交互式命令：</p>
+<ul>
+<li><code>l</code>：显示/关闭第一行信息</li>
+</ul>
+<h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>top命令的升级版本</p>
+<ul>
+<li><code>Arrows</code>：可以滚动显示</li>
+<li><code>digits</code>：可以按照pid数字查找</li>
+<li><code>F3 /</code>：</li>
+<li><code>space</code>（空格） ：标记选中的进程</li>
+<li><code>U</code>：取消所有标记的进程</li>
+<li><code>F9</code>或<code>k</code>：杀死某个进程</li>
+<li><code>F7</code>：高优先级，提高某个进程的优先级，减小nice值</li>
+<li><code>F8</code>：降低某个进程的优先级</li>
+<li><code>a</code>：设置cpu绑定，让某个进程工作在特定的cpu上</li>
+<li><code>i</code>：设置IO进程优先级</li>
+<li><code>l</code> ：显示进程所打开的文件</li>
+<li><code>s</code>：追踪进程所发起的进程调用</li>
+<li><code>F2</code>：设置</li>
+<li><code>F1</code> ：打开帮助页面</li>
+<li><code>F10</code>或者<code>q</code>：退出</li>
+<li><code>F5</code>：树状来显示</li>
+</ul>
+<h2 id="vmstat"><a href="#vmstat" class="headerlink" title="vmstat"></a>vmstat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 0  0      0 2378064   3220 6603016    0    0     4    41   17   53  3  1 96  0  0</span><br></pre></td></tr></table></figure>
+<p><code>procs</code> ：显示当前系统的队列信息</p>
+<ul>
+<li><code>r</code>:正在运行和等候运行进程的数量</li>
+<li><code>b</code>:表示的是阻塞的队列长度（其实就是等待<code>IO</code>完成的进程的个数，也就是处于不可中断状态的内存个数）</li>
+</ul>
+<p><code>memory</code>：表示内存相关的信息</p>
+<ul>
+<li><code>swap</code>：表示从物理内存移动到swap中的数据量</li>
+<li><code>free</code>：空闲物理内存大小</li>
+<li><code>buff</code>：缓存空间数据量（向磁盘进行写操作的内容）</li>
+<li><code>cache</code>：缓存空间的数据量（从磁盘进行读操作的内容）</li>
+</ul>
+<p><code>swap</code>：表示的是使用<code>swap</code>的速率信息</p>
+<ul>
+<li><code>si</code>：数据进入交互分区的速率，单位是<code>kb/s</code></li>
+<li><code>so</code>：数据离开交互分区的速率，单位是<code>kb/s</code></li>
+</ul>
+<p><code>io</code>：显示磁盘IO速率</p>
+<ul>
+<li><code>bi</code>：从内存向磁盘快写入数据的速率，单位是<code>kb/s</code></li>
+<li><code>bo</code>：内存从磁盘块读取数据的速率，单位是<code>kb/s</code></li>
+</ul>
+<p><code>system</code>：</p>
+<ul>
+<li><code>in</code>：系统每秒产生的中断数</li>
+<li><code>cs（content Switch）</code>：系统每秒进行多少次进程切换</li>
+</ul>
+<h2 id="dstat"><a href="#dstat" class="headerlink" title="dstat"></a>dstat</h2><p> <code>dstat</code>是<code>vmstat</code>的升级版本</p>
+<p>选项：</p>
+<ul>
+<li><code>-c</code>：显示<code>cpu</code>的统计信息</li>
+<li><code>-C  cpu</code>编号：显示具体的哪个<code>CPU</code>的信息</li>
+<li><code>-d</code>：只显示磁盘的统计信息</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一分一毛也是心意</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.jpg" alt="Harry 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alibaba.jpg" alt="Harry 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-linux"></i> -- Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncategorized/md/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="md/数据库">
+                <i class="fa fa-chevron-left"></i> md/数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="uncategorized/进程相关命令/"
+           data-title="进程相关命令" data-url="https://handsomeyzz.github.io/uncategorized/%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Harry" />
+            
+              <p class="site-author-name" itemprop="name">Harry</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/handsomeyzz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:handsomeyzz@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/356595360" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+                  </span>
+                
+            </div>
+          
+          
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux进程相关的命令"><span class="nav-number">1.</span> <span class="nav-text">Linux进程相关的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pstree"><span class="nav-number">1.1.</span> <span class="nav-text">pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps"><span class="nav-number">1.2.</span> <span class="nav-text">ps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">1.2.1.</span> <span class="nav-text">ps aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-elf"><span class="nav-number">1.2.2.</span> <span class="nav-text">ps -elf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-eFH"><span class="nav-number">1.2.3.</span> <span class="nav-text">ps -eFH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示指定用户的进程"><span class="nav-number">1.2.4.</span> <span class="nav-text">显示指定用户的进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示指定进程的PID值"><span class="nav-number">1.2.5.</span> <span class="nav-text">显示指定进程的PID值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">1.2.6.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pgrep和pkill"><span class="nav-number">1.3.</span> <span class="nav-text">pgrep和pkill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pidof"><span class="nav-number">1.4.</span> <span class="nav-text">pidof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">1.5.</span> <span class="nav-text">top</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htop"><span class="nav-number">1.6.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vmstat"><span class="nav-number">1.7.</span> <span class="nav-text">vmstat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dstat"><span class="nav-number">1.8.</span> <span class="nav-text">dstat</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("04/08/2020 14:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"your-duoshuo-shortname"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '6bBKwYikPBUvasbhJYt8bRAn-gzGzoHsz',
+        appKey: 'alzOWvJQWVW7eulWxwdDqG8k',
+        placeholder: '留下你的宝贵的建议吧！爱你哟~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+
+<!doctype html>
+...
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  ...
+</head>
