@@ -4,9 +4,34 @@
         <link>http://example.org/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>handsomeyzz123@gmail.com (HarryHape)</managingEditor>
-            <webMaster>handsomeyzz123@gmail.com (HarryHape)</webMaster><lastBuildDate>Tue, 07 Mar 2023 20:56:25 &#43;0800</lastBuildDate>
+            <webMaster>handsomeyzz123@gmail.com (HarryHape)</webMaster><lastBuildDate>Wed, 08 Mar 2023 00:00:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Code</title>
+    <link>http://example.org/code/</link>
+    <pubDate>Wed, 08 Mar 2023 00:00:49 &#43;0800</pubDate>
+    <author>HarryHape</author>
+    <guid>http://example.org/code/</guid>
+    <description><![CDATA[CODE 1 2 3 4 func main(){ fmt.Println(&#34;helloworld&#34;) fmt.Println(&#34;cnmd&#34;) } ]]></description>
+</item>
+<item>
+    <title>Helloworld</title>
+    <link>http://example.org/helloworld/</link>
+    <pubDate>Tue, 07 Mar 2023 22:35:08 &#43;0800</pubDate>
+    <author>HarryHape</author>
+    <guid>http://example.org/helloworld/</guid>
+    <description><![CDATA[helloworld hhhhhh]]></description>
+</item>
+<item>
+    <title>Ilove</title>
+    <link>http://example.org/ilove/</link>
+    <pubDate>Tue, 07 Mar 2023 22:14:20 &#43;0800</pubDate>
+    <author>HarryHape</author>
+    <guid>http://example.org/ilove/</guid>
+    <description><![CDATA[ok I love
+It&rsquo;s OK ]]></description>
+</item>
+<item>
     <title>First</title>
     <link>http://example.org/first/</link>
     <pubDate>Tue, 07 Mar 2023 20:56:25 &#43;0800</pubDate>
